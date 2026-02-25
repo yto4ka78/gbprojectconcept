@@ -47,7 +47,7 @@ const faqs = [
     ],
   },
   {
-    cat: "Garanties & SAV",
+    cat: "Garantie 10 ANS & SAV",
     items: [
       {
         q: "Quelles garanties proposez-vous ?",
@@ -88,8 +88,8 @@ function AccordionItem({ q, a }) {
     <div
       style={{
         borderBottom: "1px solid #1A1A1A",
-        transition: "background 0.2s ease",
         background: open ? "rgba(200,169,110,0.03)" : "transparent",
+        transition: "background 0.2s ease",
       }}
     >
       <button
@@ -99,19 +99,20 @@ function AccordionItem({ q, a }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "24px",
-          padding: "28px 0",
+          gap: "20px",
+          padding: "24px 0",
           background: "none",
           border: "none",
           cursor: "pointer",
           textAlign: "left",
+          minHeight: "64px",
         }}
       >
         <span
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 500,
-            fontSize: "1rem",
+            fontSize: "0.95rem",
             color: open ? "#C8A96E" : "#F0EBE3",
             lineHeight: 1.4,
             transition: "color 0.2s ease",
@@ -150,8 +151,8 @@ function AccordionItem({ q, a }) {
             fontSize: "0.9rem",
             color: "#6A6560",
             lineHeight: 1.8,
-            paddingBottom: "28px",
-            paddingRight: "56px",
+            paddingBottom: "24px",
+            paddingRight: "52px",
           }}
         >
           {a}
@@ -164,11 +165,12 @@ function AccordionItem({ q, a }) {
 export default function FAQ() {
   return (
     <>
+      {/* ── HERO ── */}
       <section
         style={{
           background: "#0A0A0A",
           paddingTop: "160px",
-          paddingBottom: "80px",
+          paddingBottom: "72px",
           position: "relative",
           overflow: "hidden",
         }}
@@ -176,7 +178,7 @@ export default function FAQ() {
         <div style={{ position: "absolute", top: "88px", left: "40px", width: "80px", height: "80px", border: "1px solid rgba(200,169,110,0.08)" }} />
         <div style={{ position: "absolute", bottom: "40px", right: "10%", width: "160px", height: "160px", border: "1px solid rgba(200,169,110,0.05)" }} />
 
-        <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}>
+        <div className="container">
           <p className="section-label" style={{ marginBottom: "24px" }}>Questions fréquentes</p>
           <h1
             style={{
@@ -187,7 +189,7 @@ export default function FAQ() {
               letterSpacing: "-0.04em",
               color: "#F0EBE3",
               maxWidth: "700px",
-              marginBottom: "32px",
+              marginBottom: "28px",
             }}
           >
             Vos questions,<br />
@@ -196,7 +198,23 @@ export default function FAQ() {
           <p style={{ fontSize: "1rem", color: "#6A6560", maxWidth: "480px", lineHeight: 1.8 }}>
             Retrouvez les réponses aux questions les plus fréquentes. Vous ne trouvez pas ce que vous cherchez ? Contactez-nous directement.
           </p>
-          <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "24px", fontSize: "0.8rem", color: "#C8A96E", textDecoration: "none", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+          <Link
+            href="/contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              marginTop: "24px",
+              fontSize: "0.8rem",
+              color: "#C8A96E",
+              textDecoration: "none",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 500,
+              minHeight: "44px",
+            }}
+          >
             Poser votre question
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
@@ -205,189 +223,201 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section style={{ background: "#0A0A0A", padding: "80px 0 120px" }}>
-        <div
-          style={{
-            maxWidth: "1400px",
-            margin: "0 auto",
-            padding: "0 40px",
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-            gap: "80px",
-            alignItems: "start",
-          }}
-        >
-          <div style={{ position: "sticky", top: "100px" }}>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.7rem", fontWeight: 600, color: "#4A4540", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "20px" }}>
-              Catégories
-            </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "4px" }}>
-              {faqs.map((cat, i) => (
-                <li key={i}>
-                  <a
-                    href={`#cat-${i}`}
+      {/* ── FAQ CONTENT ── */}
+      <section className="section-lg" style={{ background: "#0A0A0A", paddingTop: "60px" }}>
+        <div className="container">
+          <div className="faq-layout">
+            {/* Sidebar — hidden on mobile via CSS */}
+            <div className="faq-sidebar" style={{ position: "sticky", top: "100px" }}>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.7rem", fontWeight: 600, color: "#4A4540", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "20px" }}>
+                Catégories
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "4px" }}>
+                {faqs.map((cat, i) => (
+                  <li key={i}>
+                    <a
+                      href={`#cat-${i}`}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        padding: "12px 16px",
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.85rem",
+                        fontWeight: 500,
+                        color: "#6A6560",
+                        textDecoration: "none",
+                        border: "1px solid transparent",
+                        transition: "all 0.2s ease",
+                        minHeight: "44px",
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.color = "#C8A96E";
+                        e.currentTarget.style.borderColor = "rgba(200,169,110,0.2)";
+                        e.currentTarget.style.background = "rgba(200,169,110,0.04)";
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.color = "#6A6560";
+                        e.currentTarget.style.borderColor = "transparent";
+                        e.currentTarget.style.background = "transparent";
+                      }}
+                    >
+                      <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.65rem", color: "#3A3530" }}>0{i + 1}</span>
+                      {cat.cat}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <div
+                style={{
+                  marginTop: "48px",
+                  padding: "24px",
+                  border: "1px solid #1A1A1A",
+                  background: "#111111",
+                }}
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: "16px" }}>
+                  <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#F0EBE3", marginBottom: "8px" }}>
+                  Pas de réponse ?
+                </h3>
+                <p style={{ fontSize: "0.8rem", color: "#5A5550", lineHeight: 1.6, marginBottom: "20px" }}>
+                  Notre équipe est disponible du lundi au vendredi, de 8h à 18h.
+                </p>
+                <Link href="/contact" className="btn-gold" style={{ padding: "10px 20px", fontSize: "0.75rem" }}>
+                  <span>Nous contacter</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Accordion content */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "56px" }}>
+              {faqs.map((cat, ci) => (
+                <div key={ci} id={`cat-${ci}`}>
+                  <div
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "12px",
-                      padding: "12px 16px",
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "0.85rem",
-                      fontWeight: 500,
-                      color: "#6A6560",
-                      textDecoration: "none",
-                      border: "1px solid transparent",
-                      transition: "all 0.2s ease",
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.color = "#C8A96E";
-                      e.currentTarget.style.borderColor = "rgba(200,169,110,0.2)";
-                      e.currentTarget.style.background = "rgba(200,169,110,0.04)";
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.color = "#6A6560";
-                      e.currentTarget.style.borderColor = "transparent";
-                      e.currentTarget.style.background = "transparent";
+                      gap: "16px",
+                      marginBottom: "8px",
+                      paddingBottom: "20px",
+                      borderBottom: "1px solid rgba(200,169,110,0.15)",
+                      flexWrap: "wrap",
                     }}
                   >
-                    <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.65rem", color: "#3A3530" }}>0{i + 1}</span>
-                    {cat.cat}
-                  </a>
-                </li>
+                    <span
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "2.2rem",
+                        color: "#1A1A1A",
+                        letterSpacing: "-0.05em",
+                        lineHeight: 1,
+                      }}
+                    >
+                      0{ci + 1}
+                    </span>
+                    <h2
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "1.25rem",
+                        color: "#F0EBE3",
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {cat.cat}
+                    </h2>
+                    <span
+                      style={{
+                        marginLeft: "auto",
+                        padding: "3px 10px",
+                        border: "1px solid #242424",
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.65rem",
+                        color: "#4A4540",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      {cat.items.length} questions
+                    </span>
+                  </div>
+
+                  <div>
+                    {cat.items.map((item, ii) => (
+                      <AccordionItem key={ii} q={item.q} a={item.a} />
+                    ))}
+                  </div>
+                </div>
               ))}
-            </ul>
-
-            <div
-              style={{
-                marginTop: "48px",
-                padding: "28px",
-                border: "1px solid #1A1A1A",
-                background: "#111111",
-              }}
-            >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: "16px" }}>
-                <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#F0EBE3", marginBottom: "8px" }}>
-                Pas de réponse ?
-              </h3>
-              <p style={{ fontSize: "0.8rem", color: "#5A5550", lineHeight: 1.6, marginBottom: "20px" }}>
-                Notre équipe est disponible du lundi au vendredi, de 8h à 18h.
-              </p>
-              <Link href="/contact" className="btn-gold" style={{ padding: "10px 20px", fontSize: "0.75rem" }}>
-                <span>Nous contacter</span>
-              </Link>
             </div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "64px" }}>
-            {faqs.map((cat, ci) => (
-              <div key={ci} id={`cat-${ci}`}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "20px",
-                    marginBottom: "8px",
-                    paddingBottom: "24px",
-                    borderBottom: "1px solid rgba(200,169,110,0.15)",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "2.5rem",
-                      color: "#1A1A1A",
-                      letterSpacing: "-0.05em",
-                      lineHeight: 1,
-                    }}
-                  >
-                    0{ci + 1}
-                  </span>
-                  <h2
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontWeight: 600,
-                      fontSize: "1.3rem",
-                      color: "#F0EBE3",
-                      letterSpacing: "-0.02em",
-                    }}
-                  >
-                    {cat.cat}
-                  </h2>
-                  <span
-                    style={{
-                      marginLeft: "auto",
-                      padding: "3px 10px",
-                      border: "1px solid #242424",
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "0.65rem",
-                      color: "#4A4540",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {cat.items.length} questions
-                  </span>
-                </div>
-
-                <div>
-                  {cat.items.map((item, ii) => (
-                    <AccordionItem key={ii} q={item.q} a={item.a} />
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
+      {/* ── CTA ── */}
       <section
         style={{
           background: "#111111",
           borderTop: "1px solid #1A1A1A",
-          padding: "80px 0",
+          padding: "72px 0",
         }}
       >
-        <div
-          style={{
-            maxWidth: "1400px",
-            margin: "0 auto",
-            padding: "0 40px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "40px",
-            flexWrap: "wrap",
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
-                letterSpacing: "-0.03em",
-                color: "#F0EBE3",
-                marginBottom: "8px",
-              }}
-            >
-              Prêt à démarrer votre projet ?
-            </h2>
-            <p style={{ fontSize: "0.9rem", color: "#5A5550" }}>
-              Consultation et devis gratuits, sous 48h.
-            </p>
-          </div>
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <Link href="/contact" className="btn-gold">
-              <span>Demander un devis</span>
-            </Link>
-            <a href="tel:+33123456789" className="btn-outline">
-              <span>+33 1 23 45 67 89</span>
-            </a>
+        <div className="container">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "32px",
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                  marginBottom: "8px",
+                }}
+              >
+                Prêt à démarrer votre projet ?
+              </h2>
+              <p style={{ fontSize: "0.9rem", color: "#5A5550" }}>
+                Consultation et devis gratuits, sous 48h.
+              </p>
+            </div>
+            <div className="cta-row">
+              <Link href="/contact" className="btn-gold">
+                <span>Demander un devis</span>
+              </Link>
+              <a href="tel:+33620783131" className="btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>+33 1 23 45 67 89</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* ── Mobile sticky CTA bar ── */}
+      <div className="mobile-cta-bar">
+        <Link href="/contact" className="btn-gold">
+          <span>Devis gratuit</span>
+        </Link>
+        <a href="tel:+33620783131" className="btn-call" aria-label="Appeler">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </a>
+      </div>
     </>
   );
 }

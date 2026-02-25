@@ -24,31 +24,31 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2012", title: "Fondation",      desc: "Création de projet concept par Marc Dumont, artisan paysagiste depuis 15 ans." },
-  { year: "2015", title: "Expansion",      desc: "Ouverture d'une seconde équipe pour couvrir toute l'Île-de-France." },
-  { year: "2018", title: "Certification",  desc: "Obtention des labels RGE et Qualipaysage, référence du secteur." },
-  { year: "2020", title: "200 projets",    desc: "Franchissement du cap symbolique des 200 chantiers réalisés." },
-  { year: "2022", title: "Innovation",     desc: "Lancement de notre bureau d'études et de conception 3D." },
-  { year: "2024", title: "Aujourd'hui",    desc: "340+ projets, 3 équipes spécialisées, 98% de satisfaction client." },
+  { year: "2012", title: "Fondation",     desc: "Création de projet concept par Marc Dumont, artisan paysagiste depuis 15 ans." },
+  { year: "2015", title: "Expansion",     desc: "Ouverture d'une seconde équipe pour couvrir toute l'Île-de-France." },
+  { year: "2018", title: "Certification", desc: "Obtention des labels RGE et Qualipaysage, référence du secteur." },
+  { year: "2020", title: "200 projets",   desc: "Franchissement du cap symbolique des 200 chantiers réalisés." },
+  { year: "2022", title: "Innovation",    desc: "Lancement de notre bureau d'études et de conception 3D." },
+  { year: "2024", title: "Aujourd'hui",   desc: "340+ projets, 3 équipes spécialisées, 98% de satisfaction client." },
 ];
 
 const team = [
   {
     name: "Marc Dumont",
     role: "Fondateur & Directeur",
-    img: "/51c2bece-0fc1-48e5-8c8a-52222944481e.jpg",
+    img: "/gbprojectconcept_service9.webp",
     desc: "25 ans d'expérience en maçonnerie paysagère. Formé à l'École Nationale Supérieure du Paysage.",
   },
   {
     name: "Sophie Renard",
     role: "Chef de projet",
-    img: "/94dc1b4d-a340-44d2-98ed-17b9941301bd.jpg",
+    img: "/gbprojectconcept_service10.webp",
     desc: "Architecte paysagiste, spécialisée dans les jardins contemporains et espaces de prestige.",
   },
   {
     name: "Thomas Merle",
     role: "Responsable technique",
-    img: "/772d09ab-e1c1-4baa-98f7-6df2662c3d09.jpg",
+    img: "/gbprojectconcept_service11.webp",
     desc: "Expert en structures béton et maçonnerie. 15 ans sur le terrain avec une rigueur exemplaire.",
   },
 ];
@@ -56,6 +56,7 @@ const team = [
 export default function About() {
   return (
     <>
+      {/* ── HERO ── */}
       <section
         style={{
           position: "relative",
@@ -66,10 +67,8 @@ export default function About() {
         }}
       >
         <div
+          className="about-hero-img"
           style={{
-            position: "absolute",
-            right: 0, top: 0, bottom: 0,
-            width: "45%",
             backgroundImage: "url('/heroGB.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -83,15 +82,9 @@ export default function About() {
             background: "linear-gradient(to right, #0A0A0A 20%, transparent 100%)",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            top: "88px", right: "40px",
-            width: "120px", height: "120px",
-            border: "1px solid rgba(200,169,110,0.12)",
-          }}
-        />
-        <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px", position: "relative", zIndex: 2 }}>
+        <div className="hidden-mobile" style={{ position: "absolute", top: "88px", right: "40px", width: "120px", height: "120px", border: "1px solid rgba(200,169,110,0.12)" }} />
+
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <p className="section-label" style={{ marginBottom: "24px" }}>Notre identité</p>
           <h1
             style={{
@@ -115,126 +108,114 @@ export default function About() {
         </div>
       </section>
 
-      <section style={{ background: "#0D0D0D", padding: "100px 0" }}>
-        <div
-          style={{
-            maxWidth: "1400px", margin: "0 auto", padding: "0 40px",
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center",
-          }}
-        >
-          <div style={{ position: "relative", height: "540px" }}>
-            <div
-              style={{
-                position: "absolute", top: 0, left: 0, right: "18%", bottom: "18%",
-                backgroundImage: "url('/850fa79a-2e5a-429a-86ed-5d0054f7d14e.jpg')",
-                backgroundSize: "cover", backgroundPosition: "center",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute", bottom: 0, right: 0, width: "52%", height: "44%",
-                backgroundImage: "url('/f69080ac-8ea3-4fda-a652-93f3758fddb9.jpg')",
-                backgroundSize: "cover", backgroundPosition: "center",
-                border: "4px solid #0D0D0D",
-              }}
-            />
-            <div style={{
-              position: "absolute", bottom: "44%", right: 0, width: "52%", height: "3px",
-              background: "linear-gradient(to right, transparent, #C8A96E)",
-            }} />
-          </div>
-
-          <div>
-            <p className="section-label" style={{ marginBottom: "24px" }}>Notre histoire</p>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700,
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1,
-                letterSpacing: "-0.03em", color: "#F0EBE3", marginBottom: "28px",
-              }}
-            >
-              Une passion née<br />
-              <span style={{ color: "#C8A96E" }}>du terrain</span>
-            </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8 }}>
-                Projet concept est né de la conviction que les espaces extérieurs méritent autant d&apos;attention que l&apos;intérieur. Trop souvent négligés, ils représentent pourtant le premier contact visuel avec un lieu de vie.
-              </p>
-              <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8 }}>
-                Fondée en 2012 par Marc Dumont, artisan paysagiste de formation, notre entreprise s&apos;est bâtie sur des valeurs simples : excellence technique, respect des délais et transparence absolue.
-              </p>
-              <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8 }}>
-                Aujourd&apos;hui, nos équipes spécialisées interviennent sur toute l&apos;Île-de-France, de la réalisation de terrasses privées aux grands aménagements paysagers de résidences.
-              </p>
+      {/* ── STORY ── */}
+      <section className="section-xl" style={{ background: "#0D0D0D" }}>
+        <div className="container">
+          <div className="grid-2col">
+            {/* Collage */}
+            <div className="about-collage">
+              <div
+                style={{
+                  position: "absolute", top: 0, left: 0, right: "18%", bottom: "18%",
+                  backgroundImage: "url('/gbprojectconcept_service2.webp')",
+                  backgroundSize: "cover", backgroundPosition: "center",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute", bottom: 0, right: 0, width: "52%", height: "44%",
+                  backgroundImage: "url('/gbprojectconcept_service3.webp')",
+                  backgroundSize: "cover", backgroundPosition: "center",
+                  border: "4px solid #0D0D0D",
+                }}
+              />
+              <div style={{
+                position: "absolute", bottom: "44%", right: 0, width: "52%", height: "3px",
+                background: "linear-gradient(to right, transparent, #C8A96E)",
+              }} />
             </div>
-            <div
-              style={{
-                marginTop: "40px", padding: "24px 28px",
-                border: "1px solid rgba(200,169,110,0.15)",
-                background: "rgba(200,169,110,0.03)",
-              }}
-            >
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1rem", color: "#C8A96E", fontStyle: "italic", lineHeight: 1.7 }}>
-                « L&apos;extérieur d&apos;une propriété est son âme visible. Nous lui donnons la forme qu&apos;elle mérite. »
-              </p>
-              <p style={{ marginTop: "12px", fontSize: "0.75rem", color: "#4A4540", letterSpacing: "0.1em" }}>— Marc Dumont, Fondateur</p>
+
+            {/* Text */}
+            <div>
+              <p className="section-label" style={{ marginBottom: "24px" }}>Notre histoire</p>
+              <h2
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1,
+                  letterSpacing: "-0.03em", color: "#F0EBE3", marginBottom: "28px",
+                }}
+              >
+                Une passion née<br />
+                <span style={{ color: "#C8A96E" }}>du terrain</span>
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8 }}>
+                  Projet concept est né de la conviction que les espaces extérieurs méritent autant d&apos;attention que l&apos;intérieur. Trop souvent négligés, ils représentent pourtant le premier contact visuel avec un lieu de vie.
+                </p>
+                <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8 }}>
+                  Fondée en 2012 par Marc Dumont, artisan paysagiste de formation, notre entreprise s&apos;est bâtie sur des valeurs simples : excellence technique, respect des délais et transparence absolue.
+                </p>
+              </div>
+              <div
+                style={{
+                  marginTop: "36px", padding: "24px 28px",
+                  border: "1px solid rgba(200,169,110,0.15)",
+                  background: "rgba(200,169,110,0.03)",
+                }}
+              >
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1rem", color: "#C8A96E", fontStyle: "italic", lineHeight: 1.7 }}>
+                  « L&apos;extérieur d&apos;une propriété est son âme visible. Nous lui donnons la forme qu&apos;elle mérite. »
+                </p>
+                <p style={{ marginTop: "12px", fontSize: "0.75rem", color: "#4A4540", letterSpacing: "0.1em" }}>— Marc Dumont, Fondateur</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section style={{ background: "#111111", borderTop: "1px solid #1A1A1A", padding: "80px 0" }}>
-        <div
-          style={{
-            maxWidth: "1400px", margin: "0 auto", padding: "0 40px",
-            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "#1A1A1A",
-          }}
-        >
-          {[
-            { val: "12+",  label: "Années d'expérience",   sub: "Depuis 2012" },
-            { val: "340+", label: "Chantiers réalisés",     sub: "En Île-de-France" },
-            { val: "98%",  label: "Satisfaction client",    sub: "Mesurée en 2024" },
-            { val: "3",    label: "Équipes spécialisées",   sub: "Disponibles toute l'année" },
-          ].map((s, i) => (
-            <div key={i} style={{ background: "#0A0A0A", padding: "56px 40px" }}>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2.5rem, 4vw, 4rem)", color: "#C8A96E", letterSpacing: "-0.05em", lineHeight: 1 }}>{s.val}</div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.9rem", color: "#F0EBE3", marginTop: "8px" }}>{s.label}</div>
-              <div style={{ fontSize: "0.75rem", color: "#3A3530", letterSpacing: "0.05em", marginTop: "4px" }}>{s.sub}</div>
-            </div>
-          ))}
+      {/* ── STATS ── */}
+      <section style={{ background: "#111111", borderTop: "1px solid #1A1A1A", padding: "64px 0" }}>
+        <div className="container">
+          <div className="stats-bar">
+            {[
+              { val: "12+",  label: "Années d'expérience",   sub: "Depuis 2012" },
+              { val: "340+", label: "Chantiers réalisés",     sub: "En Île-de-France" },
+              { val: "98%",  label: "Satisfaction client",    sub: "Mesurée en 2024" },
+              { val: "10",   label: "Ans de garantie",      sub: "Sur nos réalisations" },
+            ].map((s, i) => (
+              <div key={i} style={{ background: "#0A0A0A", padding: "44px 32px" }}>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "#C8A96E", letterSpacing: "-0.05em", lineHeight: 1 }}>{s.val}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.85rem", color: "#F0EBE3", marginTop: "8px" }}>{s.label}</div>
+                <div style={{ fontSize: "0.72rem", color: "#3A3530", letterSpacing: "0.05em", marginTop: "4px" }}>{s.sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section style={{ background: "#0A0A0A", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}>
-          <div style={{ textAlign: "center", marginBottom: "80px" }}>
+      {/* ── VALUES ── */}
+      <section className="section-xl" style={{ background: "#0A0A0A" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <p className="section-label" style={{ justifyContent: "center", marginBottom: "20px" }}>Ce en quoi nous croyons</p>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700,
-                fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "-0.03em", color: "#F0EBE3",
-              }}
-            >
+            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "-0.03em", color: "#F0EBE3" }}>
               Nos valeurs fondamentales
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
+          <div className="values-grid">
             {values.map((v, i) => (
               <div
                 key={i}
                 className="card-hover"
-                style={{
-                  background: "#111111", padding: "56px 48px",
-                  display: "flex", gap: "32px", alignItems: "flex-start", cursor: "default",
-                }}
+                style={{ background: "#111111", padding: "48px 40px", display: "flex", gap: "28px", alignItems: "flex-start", cursor: "default" }}
               >
-                <div style={{ width: "56px", height: "56px", border: "1px solid rgba(200,169,110,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <div style={{ width: "52px", height: "52px", border: "1px solid rgba(200,169,110,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d={v.icon} />
                   </svg>
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1.2rem", color: "#F0EBE3", marginBottom: "12px", letterSpacing: "-0.02em" }}>{v.title}</h3>
+                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1.1rem", color: "#F0EBE3", marginBottom: "10px", letterSpacing: "-0.02em" }}>{v.title}</h3>
                   <p style={{ fontSize: "0.88rem", color: "#5A5550", lineHeight: 1.8 }}>{v.desc}</p>
                 </div>
               </div>
@@ -243,62 +224,96 @@ export default function About() {
         </div>
       </section>
 
-      <section style={{ background: "#0D0D0D", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}>
-          <div style={{ textAlign: "center", marginBottom: "80px" }}>
+      <section className="section-xl" style={{ background: "#0D0D0D" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "72px" }}>
             <p className="section-label" style={{ justifyContent: "center", marginBottom: "20px" }}>Notre parcours</p>
             <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "-0.03em", color: "#F0EBE3" }}>
               Une croissance <span style={{ color: "#C8A96E" }}>maîtrisée</span>
             </h2>
           </div>
-          <div style={{ position: "relative", maxWidth: "900px", margin: "0 auto" }}>
-            <div style={{
-              position: "absolute", left: "50%", top: 0, bottom: 0, width: "1px",
-              background: "linear-gradient(to bottom, transparent, rgba(200,169,110,0.2) 10%, rgba(200,169,110,0.2) 90%, transparent)",
-              transform: "translateX(-50%)",
-            }} />
+          <div style={{ position: "relative", maxWidth: "720px", margin: "0 auto", paddingLeft: "56px" }}>
+            <div
+              style={{
+                position: "absolute",
+                left: "23px",
+                top: "24px",
+                bottom: "24px",
+                width: "1px",
+                background: "linear-gradient(to bottom, transparent, rgba(200,169,110,0.25) 8%, rgba(200,169,110,0.25) 92%, transparent)",
+              }}
+            />
             {timeline.map((item, i) => (
-              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 60px 1fr", gap: "20px", marginBottom: "48px", alignItems: "center" }}>
-                {i % 2 === 0 ? (
-                  <div style={{ textAlign: "right", paddingRight: "20px" }}>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1rem", color: "#F0EBE3", marginBottom: "8px" }}>{item.title}</h3>
-                    <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.6 }}>{item.desc}</p>
-                  </div>
-                ) : <div />}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", zIndex: 2 }}>
-                  <div style={{ width: "40px", height: "40px", background: "#0A0A0A", border: "1px solid rgba(200,169,110,0.4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div
+                key={i}
+                className="timeline-item"
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "24px",
+                  marginBottom: i < timeline.length - 1 ? "40px" : 0,
+                }}
+              >
+                <div
+                  className="tl-dot"
+                  style={{
+                    flexShrink: 0,
+                    width: "48px",
+                    marginLeft: "-56px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "6px",
+                    zIndex: 2,
+                    order: 1,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "38px",
+                      height: "38px",
+                      background: "#0D0D0D",
+                      border: "1px solid rgba(200,169,110,0.4)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
                     <div style={{ width: "6px", height: "6px", background: "#C8A96E", borderRadius: "50%" }} />
                   </div>
-                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.75rem", color: "#C8A96E", letterSpacing: "0.1em" }}>{item.year}</span>
+                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.7rem", color: "#C8A96E", letterSpacing: "0.1em" }}>
+                    {item.year}
+                  </span>
                 </div>
-                {i % 2 === 1 ? (
-                  <div style={{ paddingLeft: "20px" }}>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1rem", color: "#F0EBE3", marginBottom: "8px" }}>{item.title}</h3>
-                    <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.6 }}>{item.desc}</p>
-                  </div>
-                ) : <div />}
+                <div className="tl-content" style={{ flex: 1, minWidth: 0, order: 2 }}>
+                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1rem", color: "#F0EBE3", marginBottom: "8px" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.6 }}>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ background: "#0A0A0A", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}>
-          <div style={{ marginBottom: "64px" }}>
+      {/* ── TEAM ── */}
+      <section className="section-xl" style={{ background: "#0A0A0A" }}>
+        <div className="container">
+          <div style={{ marginBottom: "56px" }}>
             <p className="section-label" style={{ marginBottom: "20px" }}>Les visages de projet concept</p>
             <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "-0.03em", color: "#F0EBE3" }}>
               Notre équipe
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }}>
+          <div className="team-grid">
             {team.map((member, i) => (
               <div key={i} className="card-hover" style={{ background: "#111111", overflow: "hidden" }}>
-                <div style={{ height: "360px", backgroundImage: `url('${member.img}')`, backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.65, filter: "grayscale(20%)" }} />
-                <div style={{ padding: "28px 32px 32px" }}>
+                <div style={{ height: "300px", backgroundImage: `url('${member.img}')`, backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.65, filter: "grayscale(20%)" }} />
+                <div style={{ padding: "24px 28px 28px" }}>
                   <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1.1rem", color: "#F0EBE3", letterSpacing: "-0.02em" }}>{member.name}</h3>
-                  <p style={{ fontSize: "0.75rem", color: "#C8A96E", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "4px" }}>{member.role}</p>
-                  <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.7, marginTop: "16px" }}>{member.desc}</p>
+                  <p style={{ fontSize: "0.72rem", color: "#C8A96E", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "4px" }}>{member.role}</p>
+                  <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.7, marginTop: "14px" }}>{member.desc}</p>
                 </div>
               </div>
             ))}
@@ -306,20 +321,23 @@ export default function About() {
         </div>
       </section>
 
-      <section style={{ background: "#111111", borderTop: "1px solid #1A1A1A", padding: "100px 0" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 40px", textAlign: "center" }}>
+      {/* ── CTA ── */}
+      <section style={{ background: "#111111", borderTop: "1px solid #1A1A1A", padding: "80px 0" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
           <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "-0.04em", color: "#F0EBE3", marginBottom: "24px", lineHeight: 1.0 }}>
             Travaillons ensemble
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "#5A5550", lineHeight: 1.8, marginBottom: "40px" }}>
+          <p style={{ fontSize: "0.95rem", color: "#5A5550", lineHeight: 1.8, marginBottom: "36px" }}>
             Discutons de votre projet lors d&apos;une consultation gratuite. Nos experts sont à votre écoute.
           </p>
-          <Link href="/contact" className="btn-gold">
-            <span>Prendre contact</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
+          <div className="cta-row-center">
+            <Link href="/contact" className="btn-gold">
+              <span>Prendre contact</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
     </>
