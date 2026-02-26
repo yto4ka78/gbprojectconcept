@@ -395,6 +395,11 @@ h6 {
   justify-content: space-between;
 }
 
+/* Hero — фоновая картинка */
+.hero-bg-img {
+  object-position: 0% 100%;
+}
+
 /* Hero */
 .hero-wrap {
   position: relative;
@@ -664,6 +669,10 @@ h6 {
   /* Hero */
   .hero-wrap {
     padding: 24px 20px 0 !important;
+  }
+  /* Hero: на мобильных сдвигаем кадр влево (привязка 30% по горизонтали) */
+  .hero-bg-img {
+    object-position: 70% 100% !important;
   }
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr) !important;

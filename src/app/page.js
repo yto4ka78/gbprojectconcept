@@ -123,6 +123,7 @@ export default function Home() {
           priority
           quality={85}
           sizes="100vw"
+          className="hero-bg-img"
           style={{ objectFit: "cover", objectPosition: "0% 100%", opacity: 0.92, filter: "brightness(0.78) contrast(1.06)" }}
         />
         <div

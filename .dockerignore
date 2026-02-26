@@ -1,0 +1,11 @@
+.next
+node_modules
+.git
+.gitignore
+.env*
+*.md
+.DS_Store
+.cursor
+mcps
+*.log
+npm-debug.log*
