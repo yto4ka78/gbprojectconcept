@@ -121,19 +121,21 @@ export default function PartnersSection({
                     cursor: "pointer",
                   }}
                 >
-                  <Image
-                    src={s.logo}
-                    alt={`Logo ${s.name}`}
-                    width={s.width}
-                    height={s.height}
-                    style={{
-                      objectFit: "contain",
-                      maxWidth: "100%",
-                      maxHeight: "72px",
-                      width: "auto",
-                      height: "auto",
-                    }}
-                  />
+                  <span className="supplier-card-logo">
+                    <Image
+                      src={s.logo}
+                      alt={`Logo ${s.name}`}
+                      width={s.width}
+                      height={s.height}
+                      style={{
+                        objectFit: "contain",
+                        maxWidth: "100%",
+                        maxHeight: "72px",
+                        width: "auto",
+                        height: "auto",
+                      }}
+                    />
+                  </span>
                 </a>
               ))}
             </div>
@@ -193,6 +195,7 @@ export default function PartnersSection({
                         <img
                           src={logo}
                           alt={`Logo ${name}`}
+                          className="brand-logo-img"
                           style={{
                             maxHeight: "44px",
                             maxWidth: "120px",

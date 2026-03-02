@@ -460,6 +460,12 @@ h6 {
 .supplier-card:hover {
   border-color: rgba(200, 169, 110, 0.2) !important;
 }
+.supplier-card-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
 /* Brand logos grid */
 .brands-logos-grid {
@@ -810,13 +816,45 @@ h6 {
   /* Partners → stacked on mobile */
   .partners-layout {
     grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    gap: 32px !important;
   }
   .suppliers-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .supplier-card {
+    min-height: 64px !important;
+    padding: 10px 12px !important;
+  }
+  .supplier-card-logo img,
+  .supplier-card-logo span {
+    max-height: 48px !important;
+    max-width: 100% !important;
   }
   .brands-logos-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .brand-logo-card {
+    padding: 12px 8px 10px !important;
+    gap: 6px !important;
+  }
+  .brand-logo-inner {
+    min-height: 36px !important;
+  }
+  .brand-logo-img {
+    max-height: 32px !important;
+    max-width: 90px !important;
+  }
+  .brand-logo-name {
+    font-size: 0.58rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+  }
+  .partners-block .suppliers-grid + p,
+  .partners-block .brands-logos-grid + p {
+    margin-top: 14px !important;
   }
 
   /* Trust → 2×2 */
