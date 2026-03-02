@@ -233,6 +233,13 @@ h6 {
   gap: 0;
   animation: marquee 24s linear infinite;
   width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
 }
 .marquee-track:hover {
   animation-play-state: paused;
@@ -436,6 +443,75 @@ h6 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 2px;
+}
+
+/* Partners section */
+.partners-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.suppliers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.supplier-card:hover {
+  border-color: rgba(200, 169, 110, 0.2) !important;
+}
+
+/* Brand logos grid */
+.brands-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.brand-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 12px 14px;
+  border: 1px solid #1E1E1E;
+  border-radius: 10px;
+  background: #111111;
+  transition: border-color 0.2s ease;
+  cursor: default;
+}
+.brand-logo-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  width: 100%;
+}
+.brand-logo-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3A3530;
+  text-align: center;
+  white-space: nowrap;
+}
+.brand-logo-card:hover {
+  border-color: rgba(200, 169, 110, 0.25) !important;
+}
+.brand-logo-card:hover .brand-logo-name {
+  color: rgba(200, 169, 110, 0.5);
+}
+
+/* Reviews grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.review-card:hover {
+  border-color: rgba(200, 169, 110, 0.25) !important;
 }
 
 /* Projects grid — выравнивание карточек по высоте */
@@ -725,6 +801,24 @@ h6 {
     gap: 16px !important;
   }
 
+  /* Reviews → 1 col on mobile */
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Partners → stacked on mobile */
+  .partners-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .suppliers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .brands-logos-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
   /* Trust → 2×2 */
   .trust-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -932,6 +1026,15 @@ h6 {
   }
   .projects-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brands-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .partners-layout {
+    gap: 48px;
   }
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);

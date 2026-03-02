@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
+import PartnersSection from "@/components/PartnersSection";
 
 // ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
@@ -12,10 +13,11 @@ export const metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title:       `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
-    description: "Clôtures, allées, terrasses, maçonnerie paysagère en Île-de-France. Devis gratuit, garantie 10 ans.",
-    url:         SITE_URL,
-    images:      OG_IMAGES,
+    title: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
+    description:
+      "Clôtures, allées, terrasses, maçonnerie paysagère en Île-de-France. Devis gratuit, garantie 10 ans.",
+    url: SITE_URL,
+    images: OG_IMAGES,
   },
 };
 
@@ -24,17 +26,17 @@ const pageSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type":    "WebPage",
-      "@id":      `${SITE_URL}/#webpage`,
-      url:        SITE_URL,
-      name:       `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
-      isPartOf:   { "@id": `${SITE_URL}/#website` },
-      about:      { "@id": `${SITE_URL}/#organization` },
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "fr-FR",
     },
     {
       "@type": "BreadcrumbList",
-      "@id":   `${SITE_URL}/#breadcrumb`,
+      "@id": `${SITE_URL}/#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
       ],
@@ -42,46 +44,181 @@ const pageSchema = {
   ],
 };
 
+// ── Google Reviews data ───────────────────────────────────────────────────────
+const GOOGLE_REVIEWS_URL = "https://share.google/48MGU4p0cDixVoBSg";
+
+const reviews = [
+  {
+    name: "Sophie M.",
+    rating: 5,
+    date: "Il y a 2 semaines",
+    text: "Équipe sérieuse et professionnelle. Nos travaux de terrasse ont été réalisés dans les délais prévus avec un résultat impeccable. Je recommande vivement GB Projet Concept !",
+  },
+  {
+    name: "Laurent D.",
+    rating: 5,
+    date: "Il y a 1 mois",
+    text: "Très satisfait de notre clôture et portail motorisé. Devis clair, travaux propres, finitions soignées. L'équipe a été à l'écoute de nos besoins du début à la fin.",
+  },
+  {
+    name: "Isabelle R.",
+    rating: 5,
+    date: "Il y a 2 mois",
+    text: "Allée en pavés magnifique ! Le résultat dépasse toutes nos attentes. Travail de qualité, équipe ponctuelle et respectueuse de notre propriété.",
+  },
+  {
+    name: "Marc T.",
+    rating: 5,
+    date: "Il y a 3 mois",
+    text: "Terrassement et dallage béton réalisés avec soin. Chantier bien organisé, prix honnête. On revient vers eux sans hésitation pour nos prochains projets.",
+  },
+  {
+    name: "Nathalie B.",
+    rating: 5,
+    date: "Il y a 4 mois",
+    text: "Murs en parpaings et portail installés parfaitement. Très bon rapport qualité-prix, équipe agréable. Le jardin a été laissé propre après le chantier.",
+  },
+  {
+    name: "Pierre F.",
+    rating: 5,
+    date: "Il y a 5 mois",
+    text: "Rénovation complète de notre cour. Service impeccable de la prise de contact jusqu'à la livraison. Nos voisins nous demandent déjà leurs coordonnées !",
+  },
+];
+
 // ── Data ─────────────────────────────────────────────────────────────────────
 const services = [
-  { num: "01", title: "Travaux extérieurs",   desc: "Maçonnerie paysagère complète — murets, soutènements, escaliers en pierre.", img: "/gbprojectconcept_service1.webp", href: "/services#travaux" },
-  { num: "02", title: "Allées & Chemins",      desc: "Revêtements béton, pavés ou gravier pour des accès élégants et durables.",   img: "/gbprojectconcept_service2.webp", href: "/services#allees" },
-  { num: "03", title: "Clôtures & Portails",   desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou mixte.",          img: "/gbprojectconcept_service3.webp", href: "/services#clotures" },
-  { num: "04", title: "Terrasses",             desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",     img: "/gbprojectconcept_service4.webp", href: "/services#terrasses" },
-  { num: "05", title: "Aménagement paysager",  desc: "Conception et réalisation complète de jardins contemporains.",               img: "/gbprojectconcept_service5.webp", href: "/services#paysager" },
+  {
+    num: "01",
+    title: "Travaux extérieurs",
+    desc: "Maçonnerie paysagère complète — murets, soutènements, escaliers en pierre.",
+    img: "/gbprojectconcept_service1.webp",
+    href: "/services#travaux",
+  },
+  {
+    num: "02",
+    title: "Allées & Chemins",
+    desc: "Revêtements béton, pavés ou gravier pour des accès élégants et durables.",
+    img: "/gbprojectconcept_service2.webp",
+    href: "/services#allees",
+  },
+  {
+    num: "03",
+    title: "Clôtures & Portails",
+    desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou mixte.",
+    img: "/gbprojectconcept_service3.webp",
+    href: "/services#clotures",
+  },
+  {
+    num: "04",
+    title: "Terrasses",
+    desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
+    img: "/gbprojectconcept_service4.webp",
+    href: "/services#terrasses",
+  },
+  {
+    num: "05",
+    title: "Aménagement paysager",
+    desc: "Conception et réalisation complète de jardins contemporains.",
+    img: "/gbprojectconcept_service5.webp",
+    href: "/services#paysager",
+  },
 ];
 
 const projects = [
-  { title: "Villa Moderne — Yvelines",        tag: "Terrasse & Allée",      img: "/gbprojectconcept_service6.webp", year: "2024" },
-  { title: "Résidence Belvédère",             tag: "Clôture & Portail",     img: "/gbprojectconcept_service7.webp", year: "2023" },
-  { title: "Jardin contemporain — Versailles", tag: "Aménagement complet",  img: "/gbprojectconcept_service8.webp", year: "2023" },
+  {
+    title: "Villa Moderne — Yvelines",
+    tag: "Terrasse & Allée",
+    img: "/gbprojectconcept_service6.webp",
+    year: "2024",
+  },
+  {
+    title: "Résidence Belvédère",
+    tag: "Clôture & Portail",
+    img: "/gbprojectconcept_service7.webp",
+    year: "2023",
+  },
+  {
+    title: "Jardin contemporain — Versailles",
+    tag: "Aménagement complet",
+    img: "/gbprojectconcept_service8.webp",
+    year: "2023",
+  },
 ];
 
 const stats = [
-  { val: "12+",  label: "Années d'expérience" },
-  { val: "340+", label: "Chantiers réalisés" },
-  { val: "98%",  label: "Clients satisfaits" },
-  { val: "10",   label: "Ans de garantie" },
+  { val: "7+", label: "Années d'expérience" },
+  { val: "300+", label: "Chantiers réalisés" },
+  { val: "98%", label: "Clients satisfaits" },
+  { val: "10", label: "Ans de garantie" },
 ];
 
 const process = [
-  { n: "01", title: "Consultation",   desc: "Visite sur site, échange sur votre projet et vos contraintes." },
-  { n: "02", title: "Conception",     desc: "Plans et proposition visuelle adaptés à votre terrain." },
-  { n: "03", title: "Devis détaillé", desc: "Chiffrage transparent, sans surprise, avec planning." },
-  { n: "04", title: "Réalisation",    desc: "Exécution soignée par nos équipes, dans les délais convenus." },
-  { n: "05", title: "Réception",      desc: "Contrôle qualité final et remise Garantie 10 ANS." },
+  {
+    n: "01",
+    title: "Consultation",
+    desc: "Visite sur site, échange sur votre projet et vos contraintes.",
+  },
+  {
+    n: "02",
+    title: "Conception",
+    desc: "Plans et proposition visuelle adaptés à votre terrain.",
+  },
+  {
+    n: "03",
+    title: "Devis détaillé",
+    desc: "Chiffrage transparent, sans surprise, avec planning.",
+  },
+  {
+    n: "04",
+    title: "Réalisation",
+    desc: "Exécution soignée par nos équipes, dans les délais convenus.",
+  },
+  {
+    n: "05",
+    title: "Réception",
+    desc: "Contrôle qualité final et remise Garantie 10 ANS.",
+  },
 ];
 
 const marqueeItems = [
-  "CLÔTURES","TERRASSES","ALLÉES","MAÇONNERIE","PAYSAGISME","PORTAILS","DALLAGE","MURETS","ESPACES VERTS",
-  "CLÔTURES","TERRASSES","ALLÉES","MAÇONNERIE","PAYSAGISME","PORTAILS","DALLAGE","MURETS","ESPACES VERTS",
+  "TERRASE",
+  "ALLÉE",
+  "COUR",
+  "CLÔTURE",
+  "PORTAIL",
+  "MAÇONNERIE",
+  "TERRASSEMENT",
+  "TERRASE",
+  "ALLÉE",
+  "COUR",
+  "CLÔTURE",
+  "PORTAIL",
+  "MAÇONNERIE",
+  "TERRASSEMENT",
 ];
 
 const trustItems = [
-  { icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", title: "Qualité certifiée",  desc: "Artisans qualifiés RGE et assurance décennale" },
-  { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",                                                                                                                                                                                                                                                                                                                                                                                                                                            title: "Délais respectés",  desc: "Planning précis, livraison dans les temps convenus" },
-  { icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",                                                                                                                                                                                                                                                                                                                                                                                              title: "Devis transparent", desc: "Chiffrage détaillé sans frais cachés" },
-  { icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",                                                                                                                                                                                                                                                                                                                   title: "Support continu",   desc: "Suivi post-chantier et service après-vente réactif" },
+  {
+    icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
+    title: "Qualité certifiée",
+    desc: "Artisans qualifiés RGE et assurance décennale",
+  },
+  {
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "Délais respectés",
+    desc: "Planning précis, livraison dans les temps convenus",
+  },
+  {
+    icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
+    title: "Devis transparent",
+    desc: "Chiffrage détaillé sans frais cachés",
+  },
+  {
+    icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
+    title: "Support continu",
+    desc: "Suivi post-chantier et service après-vente réactif",
+  },
 ];
 
 // ── Mosaic column config ──────────────────────────────────────────────────────
@@ -124,20 +261,37 @@ export default function Home() {
           quality={85}
           sizes="100vw"
           className="hero-bg-img"
-          style={{ objectFit: "cover", objectPosition: "0% 100%", opacity: 0.92, filter: "brightness(0.78) contrast(1.06)" }}
+          style={{
+            objectFit: "cover",
+            objectPosition: "0% 100%",
+            opacity: 0.92,
+            filter: "brightness(0.78) contrast(1.06)",
+          }}
         />
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(135deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.55) 100%)",
+            background:
+              "linear-gradient(135deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.55) 100%)",
           }}
         />
-        <div className="scroll-indicator" style={{ position: "absolute", left: "10%", top: "15%", width: "1px", height: "60%", background: "linear-gradient(to bottom, transparent, rgba(200,169,110,0.4), transparent)" }} />
+        <div
+          className="scroll-indicator"
+          style={{
+            position: "absolute",
+            left: "10%",
+            top: "15%",
+            width: "1px",
+            height: "60%",
+            background:
+              "linear-gradient(to bottom, transparent, rgba(200,169,110,0.4), transparent)",
+          }}
+        />
 
         <div className="hero-wrap" style={{ paddingBottom: 0 }}>
           <p className="section-label" style={{ marginBottom: "28px" }}>
-            Aménagement extérieur & Maçonnerie paysagère
+            Aménagement extérieur & Maçonnerie
           </p>
 
           <h1
@@ -152,20 +306,44 @@ export default function Home() {
               marginBottom: "32px",
             }}
           >
-            Façonnez<br />
-            <span style={{ color: "#C8A96E" }}>l&apos;extérieur</span><br />
-            qui dure.
+            Investissez dans un extérieur
+            <br />
+            <span style={{ color: "#C8A96E" }}>
+              qui valorise votre patrimoine.
+            </span>
           </h1>
 
-          <p style={{ fontSize: "1rem", color: "#8A8680", maxWidth: "520px", lineHeight: 1.7, marginBottom: "36px" }}>
-            Vous avez un projet d&apos;aménagement extérieur ? GB Projet Concept met en valeur votre maison, améliore votre extérieur, et s&apos;adapte à vos besoins.
+          <p
+            style={{
+              fontSize: "1rem",
+              color: "#8A8680",
+              maxWidth: "520px",
+              lineHeight: 1.7,
+              marginBottom: "36px",
+            }}
+          >
+            Vous avez un projet d&apos;aménagement extérieur ? GB Projet Concept
+            met en valeur votre maison, améliore votre extérieur, et
+            s&apos;adapte à vos besoins.
           </p>
 
           <div className="cta-row">
             <Link href="/contact" className="btn-gold">
               <span>Demander un devis</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
             <Link href="/services" className="btn-outline">
@@ -174,7 +352,11 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="hero-stats-grid" role="list" aria-label="Chiffres clés">
+          <div
+            className="hero-stats-grid"
+            role="list"
+            aria-label="Chiffres clés"
+          >
             {stats.map((s, i) => (
               <div
                 key={i}
@@ -185,10 +367,26 @@ export default function Home() {
                   paddingLeft: i > 0 ? "20px" : "0",
                 }}
               >
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.5rem", color: "#C8A96E", letterSpacing: "-0.03em" }}>
+                <div
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                    color: "#C8A96E",
+                    letterSpacing: "-0.03em",
+                  }}
+                >
                   {s.val}
                 </div>
-                <div style={{ fontSize: "0.68rem", color: "#4A4540", marginTop: "4px", letterSpacing: "0.04em", lineHeight: 1.4 }}>
+                <div
+                  style={{
+                    fontSize: "0.68rem",
+                    color: "#4A4540",
+                    marginTop: "4px",
+                    letterSpacing: "0.04em",
+                    lineHeight: 1.4,
+                  }}
+                >
                   {s.label}
                 </div>
               </div>
@@ -197,8 +395,23 @@ export default function Home() {
         </div>
 
         <div className="scroll-indicator" aria-hidden="true">
-          <div style={{ width: "1px", height: "60px", background: "linear-gradient(to bottom, rgba(200,169,110,0.6), transparent)" }} />
-          <span style={{ fontSize: "0.65rem", color: "#4A4540", letterSpacing: "0.2em", textTransform: "uppercase", writingMode: "vertical-lr" }}>
+          <div
+            style={{
+              width: "1px",
+              height: "60px",
+              background:
+                "linear-gradient(to bottom, rgba(200,169,110,0.6), transparent)",
+            }}
+          />
+          <span
+            style={{
+              fontSize: "0.65rem",
+              color: "#4A4540",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              writingMode: "vertical-lr",
+            }}
+          >
             Scroll
           </span>
         </div>
@@ -207,46 +420,137 @@ export default function Home() {
       {/* ── MARQUEE ── */}
       <div
         aria-hidden="true"
-        style={{ background: "#111111", borderTop: "1px solid #1A1A1A", borderBottom: "1px solid #1A1A1A", padding: "18px 0", overflow: "hidden" }}
+        style={{
+          background: "#111111",
+          borderTop: "1px solid #1A1A1A",
+          borderBottom: "1px solid #1A1A1A",
+          padding: "18px 0",
+          overflow: "hidden",
+        }}
       >
         <div className="marquee-track">
-          {marqueeItems.map((item, i) => (
-            <span
-              key={i}
-              style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: "0.7rem", letterSpacing: "0.25em", color: i % 2 === 0 ? "#3A3530" : "#C8A96E", padding: "0 36px", whiteSpace: "nowrap" }}
-            >
-              {item}
-              {i % 2 === 0 && <span style={{ marginLeft: "36px", color: "#C8A96E", opacity: 0.3 }}>◆</span>}
-            </span>
-          ))}
+          <div className="marquee-group" aria-hidden="true">
+            {marqueeItems.map((item, i) => (
+              <span
+                key={i}
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.25em",
+                  color: i % 2 === 0 ? "#3A3530" : "#C8A96E",
+                  padding: "0 36px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {item}
+                <span
+                  style={{ marginLeft: "36px", color: "#C8A96E", opacity: 0.3 }}
+                >
+                  ◆
+                </span>
+              </span>
+            ))}
+          </div>
+          <div className="marquee-group" aria-hidden="true">
+            {marqueeItems.map((item, i) => (
+              <span
+                key={`dup-${i}`}
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.25em",
+                  color: i % 2 === 0 ? "#3A3530" : "#C8A96E",
+                  padding: "0 36px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {item}
+                <span
+                  style={{ marginLeft: "36px", color: "#C8A96E", opacity: 0.3 }}
+                >
+                  ◆
+                </span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── SERVICES ── */}
-      <section className="section-xl" style={{ background: "#0A0A0A" }} aria-labelledby="services-heading">
+      <section
+        className="section-xl"
+        style={{ background: "#0A0A0A" }}
+        aria-labelledby="services-heading"
+      >
         <div className="container">
           <div className="services-hdr">
             <div>
-              <p className="section-label" style={{ marginBottom: "20px" }}>Ce que nous faisons</p>
+              <p className="section-label" style={{ marginBottom: "20px" }}>
+                Ce que nous faisons
+              </p>
               <h2
                 id="services-heading"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "#F0EBE3" }}
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                }}
               >
-                Nos domaines<br />
+                Nos domaines
+                <br />
                 <span style={{ color: "#C8A96E" }}>d&apos;excellence</span>
               </h2>
             </div>
             <div style={{ paddingBottom: "4px" }}>
-              <p style={{ fontSize: "0.9rem", color: "#6A6560", lineHeight: 1.8, maxWidth: "380px", marginLeft: "auto" }}>
-                De la conception à la réalisation, chaque projet est traité avec le même niveau d&apos;exigence.
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#6A6560",
+                  lineHeight: 1.8,
+                  maxWidth: "380px",
+                  marginLeft: "auto",
+                }}
+              >
+                De la conception à la réalisation, chaque projet est traité avec
+                le même niveau d&apos;exigence.
               </p>
               <Link
                 href="/services"
-                style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "24px", fontSize: "0.8rem", color: "#C8A96E", textDecoration: "none", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, float: "right" }}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  marginTop: "24px",
+                  fontSize: "0.8rem",
+                  color: "#C8A96E",
+                  textDecoration: "none",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 500,
+                  float: "right",
+                }}
               >
                 Tous les services
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </Link>
             </div>
@@ -262,7 +566,15 @@ export default function Home() {
                   href={svc.href}
                   role="listitem"
                   className="img-overlay card-hover"
-                  style={{ gridColumn: spans.col, height: spans.height, display: "block", position: "relative", textDecoration: "none", background: "#111111", overflow: "hidden" }}
+                  style={{
+                    gridColumn: spans.col,
+                    height: spans.height,
+                    display: "block",
+                    position: "relative",
+                    textDecoration: "none",
+                    background: "#111111",
+                    overflow: "hidden",
+                  }}
                 >
                   <Image
                     src={svc.img}
@@ -274,12 +586,51 @@ export default function Home() {
                     className="mosaic-img"
                   />
                   <div
-                    style={{ position: "absolute", inset: 0, padding: "24px", display: "flex", flexDirection: "column", justifyContent: "space-between", zIndex: 2, background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)" }}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      padding: "24px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      zIndex: 2,
+                      background:
+                        "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)",
+                    }}
                   >
-                    <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.65rem", fontWeight: 700, color: "rgba(200,169,110,0.5)", letterSpacing: "0.2em" }}>{svc.num}</span>
+                    <span
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.65rem",
+                        fontWeight: 700,
+                        color: "rgba(200,169,110,0.5)",
+                        letterSpacing: "0.2em",
+                      }}
+                    >
+                      {svc.num}
+                    </span>
                     <div>
-                      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1.1rem", color: "#F0EBE3", marginBottom: "6px", letterSpacing: "-0.02em" }}>{svc.title}</h3>
-                      <p style={{ fontSize: "0.78rem", color: "#8A8680", lineHeight: 1.5 }}>{svc.desc}</p>
+                      <h3
+                        style={{
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontWeight: 600,
+                          fontSize: "1.1rem",
+                          color: "#F0EBE3",
+                          marginBottom: "6px",
+                          letterSpacing: "-0.02em",
+                        }}
+                      >
+                        {svc.title}
+                      </h3>
+                      <p
+                        style={{
+                          fontSize: "0.78rem",
+                          color: "#8A8680",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {svc.desc}
+                      </p>
                     </div>
                   </div>
                 </Link>
@@ -289,23 +640,406 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROJECTS ── */}
-      <section className="section-xl" style={{ background: "#0D0D0D" }} aria-labelledby="projects-heading">
+      {/* ── GOOGLE REVIEWS ── */}
+      <section
+        className="section-xl"
+        style={{ background: "#111111", borderTop: "1px solid #1A1A1A" }}
+        aria-labelledby="reviews-heading"
+      >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "GB Projet Concept",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "86",
+                bestRating: "5",
+              },
+              review: reviews.map((r) => ({
+                "@type": "Review",
+                author: { "@type": "Person", name: r.name },
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: r.rating,
+                  bestRating: 5,
+                },
+                reviewBody: r.text,
+              })),
+            }),
+          }}
+        />
+
         <div className="container">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "48px", flexWrap: "wrap", gap: "20px" }}>
+          {/* Header */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              marginBottom: "56px",
+              flexWrap: "wrap",
+              gap: "32px",
+            }}
+          >
             <div>
-              <p className="section-label" style={{ marginBottom: "16px" }}>Réalisations récentes</p>
-              <h2 id="projects-heading" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 3.5vw, 3rem)", letterSpacing: "-0.03em", color: "#F0EBE3" }}>
+              <p className="section-label" style={{ marginBottom: "20px" }}>
+                Avis clients
+              </p>
+              <h2
+                id="reviews-heading"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                  marginBottom: "20px",
+                }}
+              >
+                Ce que disent
+                <br />
+                <span style={{ color: "#C8A96E" }}>nos clients</span>
+              </h2>
+
+              {/* Rating summary */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                }}
+              >
+                {/* Google icon badge */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "8px 14px",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: "8px",
+                  }}
+                >
+                  {/* Google G icon */}
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    aria-label="Google"
+                    role="img"
+                  >
+                    <path
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                      fill="#4285F4"
+                    />
+                    <path
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                      fill="#34A853"
+                    />
+                    <path
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                      fill="#FBBC05"
+                    />
+                    <path
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                      fill="#EA4335"
+                    />
+                  </svg>
+                  <span
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: "0.8rem",
+                      color: "#8A8680",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    Google
+                  </span>
+                </div>
+
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                >
+                  {/* Stars */}
+                  <div style={{ display: "flex", gap: "3px" }}>
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <svg
+                        key={s}
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="#C8A96E"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "1.3rem",
+                      color: "#F0EBE3",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    4.9
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.82rem",
+                      color: "#5A5550",
+                    }}
+                  >
+                    / 5 · Basé sur 86 avis
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA button */}
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+              style={{ whiteSpace: "nowrap", flexShrink: 0 }}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span>Voir tous les avis</span>
+            </a>
+          </div>
+
+          {/* Review cards grid */}
+          <div className="reviews-grid" role="list">
+            {reviews.map((review, i) => (
+              <article
+                key={i}
+                role="listitem"
+                className="review-card"
+                style={{
+                  background: "#0A0A0A",
+                  border: "1px solid #1E1E1E",
+                  padding: "28px 28px 24px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "16px",
+                  transition: "border-color 0.2s ease",
+                }}
+              >
+                {/* Stars */}
+                <div
+                  style={{ display: "flex", gap: "3px" }}
+                  aria-label={`${review.rating} étoiles sur 5`}
+                >
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <svg
+                      key={s}
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill={s <= review.rating ? "#C8A96E" : "#2A2A2A"}
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "#8A8680",
+                    lineHeight: 1.75,
+                    flex: 1,
+                    fontStyle: "italic",
+                  }}
+                >
+                  &ldquo;{review.text}&rdquo;
+                </p>
+
+                {/* Author + date */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid #1A1A1A",
+                    paddingTop: "16px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "50%",
+                        background:
+                          "linear-gradient(135deg, #C8A96E 0%, #8A6F3E 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                      aria-hidden="true"
+                    >
+                      <span
+                        style={{
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontWeight: 700,
+                          fontSize: "0.8rem",
+                          color: "#0A0A0A",
+                        }}
+                      >
+                        {review.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <p
+                        style={{
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontWeight: 600,
+                          fontSize: "0.82rem",
+                          color: "#F0EBE3",
+                          letterSpacing: "-0.01em",
+                        }}
+                      >
+                        {review.name}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.7rem",
+                          color: "#3A3530",
+                          marginTop: "2px",
+                        }}
+                      >
+                        {review.date}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Google G small badge */}
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    aria-label="Avis Google"
+                    role="img"
+                  >
+                    <path
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                      fill="#4285F4"
+                    />
+                    <path
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                      fill="#34A853"
+                    />
+                    <path
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                      fill="#FBBC05"
+                    />
+                    <path
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                      fill="#EA4335"
+                    />
+                  </svg>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PARTNERS & BRANDS ── */}
+      <PartnersSection />
+
+      {/* ── PROJECTS ── */}
+      <section
+        className="section-xl"
+        style={{ background: "#0D0D0D" }}
+        aria-labelledby="projects-heading"
+      >
+        <div className="container">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginBottom: "48px",
+              flexWrap: "wrap",
+              gap: "20px",
+            }}
+          >
+            <div>
+              <p className="section-label" style={{ marginBottom: "16px" }}>
+                Réalisations récentes
+              </p>
+              <h2
+                id="projects-heading"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                }}
+              >
                 Projets phares
               </h2>
             </div>
-            <Link href="/services" className="btn-outline"><span>Voir tous les projets</span></Link>
+            <Link href="/services" className="btn-outline">
+              <span>Voir tous les projets</span>
+            </Link>
           </div>
 
           <div className="projects-grid" role="list">
             {projects.map((p, i) => (
-              <article key={i} role="listitem" className="card-hover" style={{ position: "relative", overflow: "hidden", background: "#111111" }}>
-                <div style={{ height: "300px", position: "relative", overflow: "hidden" }}>
+              <article
+                key={i}
+                role="listitem"
+                className="card-hover"
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                  background: "#111111",
+                }}
+              >
+                <div
+                  style={{
+                    height: "300px",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
                   <Image
                     src={p.img}
                     alt={`${p.title} — ${p.tag}`}
@@ -315,17 +1049,78 @@ export default function Home() {
                     style={{ objectFit: "cover", opacity: 1 }}
                     className="project-img"
                   />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }} />
-                  <div style={{ position: "absolute", top: "16px", left: "16px", padding: "4px 10px", border: "1px solid rgba(200,169,110,0.4)", background: "rgba(0,0,0,0.5)" }}>
-                    <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.62rem", color: "#C8A96E", letterSpacing: "0.12em", textTransform: "uppercase" }}>{p.tag}</span>
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "16px",
+                      left: "16px",
+                      padding: "4px 10px",
+                      border: "1px solid rgba(200,169,110,0.4)",
+                      background: "rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.62rem",
+                        color: "#C8A96E",
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {p.tag}
+                    </span>
                   </div>
                 </div>
-                <div style={{ padding: "20px 24px 24px", background: "#111111" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#F0EBE3", letterSpacing: "-0.01em" }}>{p.title}</h3>
-                    <time dateTime={p.year} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "0.7rem", color: "#4A4540" }}>{p.year}</time>
+                <div
+                  style={{ padding: "20px 24px 24px", background: "#111111" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "0.95rem",
+                        color: "#F0EBE3",
+                        letterSpacing: "-0.01em",
+                      }}
+                    >
+                      {p.title}
+                    </h3>
+                    <time
+                      dateTime={p.year}
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.7rem",
+                        color: "#4A4540",
+                      }}
+                    >
+                      {p.year}
+                    </time>
                   </div>
-                  <div style={{ width: "40px", height: "1px", background: "#C8A96E", marginTop: "14px", opacity: 0.6 }} />
+                  <div
+                    style={{
+                      width: "40px",
+                      height: "1px",
+                      background: "#C8A96E",
+                      marginTop: "14px",
+                      opacity: 0.6,
+                    }}
+                  />
                 </div>
               </article>
             ))}
@@ -334,18 +1129,72 @@ export default function Home() {
       </section>
 
       {/* ── TRUST INDICATORS ── */}
-      <section style={{ background: "#1A1A1A", borderTop: "1px solid #1A1A1A", borderBottom: "1px solid #1A1A1A", padding: "64px 0" }} aria-label="Nos engagements qualité">
+      <section
+        style={{
+          background: "#1A1A1A",
+          borderTop: "1px solid #1A1A1A",
+          borderBottom: "1px solid #1A1A1A",
+          padding: "64px 0",
+        }}
+        aria-label="Nos engagements qualité"
+      >
         <div className="container">
           <div className="trust-grid" role="list">
             {trustItems.map((item, i) => (
-              <div key={i} role="listitem" style={{ background: "#0A0A0A", padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                <div style={{ width: "44px", height: "44px", border: "1px solid rgba(200,169,110,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <div
+                key={i}
+                role="listitem"
+                style={{
+                  background: "#0A0A0A",
+                  padding: "40px 32px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "14px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "44px",
+                    height: "44px",
+                    border: "1px solid rgba(200,169,110,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C8A96E"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d={item.icon} />
                   </svg>
                 </div>
-                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#F0EBE3" }}>{item.title}</h3>
-                <p style={{ fontSize: "0.82rem", color: "#5A5550", lineHeight: 1.7 }}>{item.desc}</p>
+                <h3
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "0.95rem",
+                    color: "#F0EBE3",
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "0.82rem",
+                    color: "#5A5550",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -353,32 +1202,107 @@ export default function Home() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="section-xl" style={{ background: "#0A0A0A" }} aria-labelledby="process-heading">
+      <section
+        className="section-xl"
+        style={{ background: "#0A0A0A" }}
+        aria-labelledby="process-heading"
+      >
         <div className="container">
           <div className="process-layout">
             <div className="process-sticky">
-              <p className="section-label" style={{ marginBottom: "20px" }}>Comment nous travaillons</p>
-              <h2 id="process-heading" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 3vw, 2.8rem)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "#F0EBE3", marginBottom: "24px" }}>
-                Un processus<br /><span style={{ color: "#C8A96E" }}>éprouvé</span>
-              </h2>
-              <p style={{ fontSize: "0.88rem", color: "#5A5550", lineHeight: 1.8, marginBottom: "36px" }}>
-                Chaque projet suit un processus rigoureux pour garantir les meilleurs résultats.
+              <p className="section-label" style={{ marginBottom: "20px" }}>
+                Comment nous travaillons
               </p>
-              <Link href="/contact" className="btn-gold"><span>Démarrer un projet</span></Link>
+              <h2
+                id="process-heading"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                  marginBottom: "24px",
+                }}
+              >
+                Un processus
+                <br />
+                <span style={{ color: "#C8A96E" }}>éprouvé</span>
+              </h2>
+              <p
+                style={{
+                  fontSize: "0.88rem",
+                  color: "#5A5550",
+                  lineHeight: 1.8,
+                  marginBottom: "36px",
+                }}
+              >
+                Chaque projet suit un processus rigoureux pour garantir les
+                meilleurs résultats.
+              </p>
+              <Link href="/contact" className="btn-gold">
+                <span>Démarrer un projet</span>
+              </Link>
             </div>
 
-            <ol style={{ display: "flex", flexDirection: "column", listStyle: "none", padding: 0, margin: 0 }}>
+            <ol
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+              }}
+            >
               {process.map((step, i) => (
                 <li
                   key={i}
-                  style={{ display: "grid", gridTemplateColumns: "64px 1fr", gap: "28px", paddingBottom: "40px", borderBottom: i < process.length - 1 ? "1px solid #141414" : "none", paddingTop: i > 0 ? "40px" : "0" }}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "64px 1fr",
+                    gap: "28px",
+                    paddingBottom: "40px",
+                    borderBottom:
+                      i < process.length - 1 ? "1px solid #141414" : "none",
+                    paddingTop: i > 0 ? "40px" : "0",
+                  }}
                 >
                   <div aria-hidden="true">
-                    <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "2.2rem", color: "#1A1A1A", letterSpacing: "-0.05em", lineHeight: 1 }}>{step.n}</span>
+                    <span
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "2.2rem",
+                        color: "#1A1A1A",
+                        letterSpacing: "-0.05em",
+                        lineHeight: 1,
+                      }}
+                    >
+                      {step.n}
+                    </span>
                   </div>
                   <div>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1.1rem", color: "#F0EBE3", marginBottom: "8px", letterSpacing: "-0.02em" }}>{step.title}</h3>
-                    <p style={{ fontSize: "0.88rem", color: "#5A5550", lineHeight: 1.7 }}>{step.desc}</p>
+                    <h3
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#F0EBE3",
+                        marginBottom: "8px",
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.88rem",
+                        color: "#5A5550",
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {step.desc}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -388,27 +1312,115 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ position: "relative", overflow: "hidden", background: "#0D0D0D", padding: "100px 0", borderTop: "1px solid #1A1A1A" }} aria-label="Appel à l'action">
-        <div className="hero-bg-photo hero-bg-photo-cta" style={{ position: "absolute", inset: 0, backgroundImage: "url('/heroGB.webp')", backgroundSize: "cover", opacity: 0.2 }} aria-hidden="true" />
-        <div style={{ position: "absolute", top: "24px", left: "24px", right: "24px", bottom: "24px", border: "1px solid rgba(200,169,110,0.06)", pointerEvents: "none" }} aria-hidden="true" />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: "800px", margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
-          <p className="section-label" style={{ justifyContent: "center", marginBottom: "24px" }}>Prêt à commencer ?</p>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 5vw, 4rem)", lineHeight: 1.0, letterSpacing: "-0.04em", color: "#F0EBE3", marginBottom: "24px" }}>
-            Votre projet mérite<br /><span style={{ color: "#C8A96E" }}>les meilleurs artisans</span>
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          background: "#0D0D0D",
+          padding: "100px 0",
+          borderTop: "1px solid #1A1A1A",
+        }}
+        aria-label="Appel à l'action"
+      >
+        <div
+          className="hero-bg-photo hero-bg-photo-cta"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/heroGB.webp')",
+            backgroundSize: "cover",
+            opacity: 0.2,
+          }}
+          aria-hidden="true"
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: "24px",
+            left: "24px",
+            right: "24px",
+            bottom: "24px",
+            border: "1px solid rgba(200,169,110,0.06)",
+            pointerEvents: "none",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            maxWidth: "800px",
+            margin: "0 auto",
+            padding: "0 24px",
+            textAlign: "center",
+          }}
+        >
+          <p
+            className="section-label"
+            style={{ justifyContent: "center", marginBottom: "24px" }}
+          >
+            Prêt à commencer ?
+          </p>
+          <h2
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(2rem, 5vw, 4rem)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.04em",
+              color: "#F0EBE3",
+              marginBottom: "24px",
+            }}
+          >
+            Votre projet mérite
+            <br />
+            <span style={{ color: "#C8A96E" }}>les meilleurs artisans</span>
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "#6A6560", lineHeight: 1.8, maxWidth: "440px", margin: "0 auto 40px" }}>
+          <p
+            style={{
+              fontSize: "0.95rem",
+              color: "#6A6560",
+              lineHeight: 1.8,
+              maxWidth: "440px",
+              margin: "0 auto 40px",
+            }}
+          >
             Consultation gratuite et devis détaillé sous 48h.
           </p>
           <div className="cta-row-center">
             <Link href="/contact" className="btn-gold">
               <span>Obtenir un devis gratuit</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
             <a href="tel:+33620783131" className="btn-outline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
               <span>06 20 78 31 31</span>
             </a>
@@ -418,9 +1430,25 @@ export default function Home() {
 
       {/* ── Mobile sticky CTA bar ── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
-        <Link href="/contact" className="btn-gold"><span>Devis gratuit</span></Link>
-        <a href="tel:+33620783131" className="btn-call" aria-label="Appeler projet concept">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <Link href="/contact" className="btn-gold">
+          <span>Devis gratuit</span>
+        </Link>
+        <a
+          href="tel:+33620783131"
+          className="btn-call"
+          aria-label="Appeler projet concept"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
             <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
         </a>
