@@ -90,57 +90,57 @@ const reviews = [
 const services = [
   {
     num: "01",
-    title: "Travaux extérieurs",
-    desc: "Maçonnerie paysagère complète — murets, soutènements, escaliers en pierre.",
-    img: "/gbprojectconcept_service1.webp",
-    href: "/services#travaux",
+    title: "Terrasses",
+    desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
+    img: "/gbprojectconcept_service12.webp",
+    href: "/services#terrasses",
   },
   {
     num: "02",
-    title: "Allées & Chemins",
-    desc: "Revêtements béton, pavés ou gravier pour des accès élégants et durables.",
-    img: "/gbprojectconcept_service2.webp",
+    title: "Allée & Cour & Parking",
+    desc: "Pavés, enrobé à chaud ou gravier pour des accès élégants et durables.",
+    img: "/gbprojectconcept_service9.webp",
     href: "/services#allees",
   },
   {
     num: "03",
     title: "Clôtures & Portails",
-    desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou mixte.",
-    img: "/gbprojectconcept_service3.webp",
+    desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou composite.",
+    img: "/gbprojectconcept_service10.webp",
     href: "/services#clotures",
   },
   {
     num: "04",
-    title: "Terrasses",
-    desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
-    img: "/gbprojectconcept_service4.webp",
-    href: "/services#terrasses",
+    title: "Travaux de maçonnerie",
+    desc: "Ouvertures, dallage béton armé, murs en parpaings, façades et finitions.",
+    img: "/gbprojectconcept_service12.webp",
+    href: "/services#travaux",
   },
   {
     num: "05",
-    title: "Aménagement paysager",
-    desc: "Conception et réalisation complète de jardins contemporains.",
-    img: "/gbprojectconcept_service5.webp",
-    href: "/services#paysager",
+    title: "Terrassement",
+    desc: "Déblai, remblai, nivellement et drainage pour préparer votre terrain.",
+    img: "/gbprojectconcept_service7.webp",
+    href: "/services#terrassement",
   },
 ];
 
 const projects = [
   {
     title: "Villa Moderne — Yvelines",
-    tag: "Terrasse & Allée",
+    tag: "Cour & parking",
     img: "/gbprojectconcept_service6.webp",
     year: "2024",
   },
   {
     title: "Résidence Belvédère",
     tag: "Clôture & Portail",
-    img: "/gbprojectconcept_service7.webp",
+    img: "/gbprojectconcept_service13.webp",
     year: "2023",
   },
   {
     title: "Jardin contemporain — Versailles",
-    tag: "Aménagement complet",
+    tag: "Carrelage",
     img: "/gbprojectconcept_service8.webp",
     year: "2023",
   },
@@ -148,7 +148,7 @@ const projects = [
 
 const stats = [
   { val: "7+", label: "Années d'expérience" },
-  { val: "300+", label: "Chantiers réalisés" },
+  { val: "100+", label: "Chantiers réalisés" },
   { val: "98%", label: "Clients satisfaits" },
   { val: "10", label: "Ans de garantie" },
 ];
@@ -198,29 +198,6 @@ const marqueeItems = [
   "TERRASSEMENT",
 ];
 
-const trustItems = [
-  {
-    icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
-    title: "Qualité certifiée",
-    desc: "Artisans qualifiés RGE et assurance décennale",
-  },
-  {
-    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-    title: "Délais respectés",
-    desc: "Planning précis, livraison dans les temps convenus",
-  },
-  {
-    icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
-    title: "Devis transparent",
-    desc: "Chiffrage détaillé sans frais cachés",
-  },
-  {
-    icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
-    title: "Support continu",
-    desc: "Suivi post-chantier et service après-vente réactif",
-  },
-];
-
 // ── Mosaic column config ──────────────────────────────────────────────────────
 const mosaicSpans = [
   { col: "span 5", height: "380px" },
@@ -249,33 +226,40 @@ export default function Home() {
           paddingTop: "96px",
           paddingBottom: "100px",
           overflow: "hidden",
-          background: "#0A0A0A",
+          background: "#000000",
         }}
       >
-        {/* Hero image — next/image with priority for LCP */}
-        <Image
-          src="/heroGB.webp"
-          alt="Aménagement extérieur projet concept — allée en pierre naturelle"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="hero-bg-img"
-          style={{
-            objectFit: "cover",
-            objectPosition: "0% 100%",
-            opacity: 0.92,
-            filter: "brightness(0.78) contrast(1.06)",
-          }}
-        />
+        {/* Hero image — в обёртке, чтобы не было чёрных полос от scale */}
         <div
+          aria-hidden="true"
           style={{
             position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(135deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.55) 100%)",
+            left: "70%",
+            top: "45%",
+            transform: "translate(-50%, -50%)",
+            width: "min(90vw, 90vh)",
+            height: "min(90vw, 90vh)",
+            zIndex: 0,
+            overflow: "hidden",
           }}
-        />
+          className="hero-bg-img-wrap"
+        >
+          <Image
+            src="/photo_logo_backgroundblack.webp"
+            alt="Aménagement extérieur projet concept — allée en pierre naturelle"
+            fill
+            priority
+            quality={85}
+            sizes="85vw"
+            className="hero-bg-img"
+            style={{
+              objectFit: "contain",
+              objectPosition: "center center",
+              opacity: 0.92,
+              filter: "brightness(0.78) contrast(1.06)",
+            }}
+          />
+        </div>
         <div
           className="scroll-indicator"
           style={{
@@ -1123,79 +1107,6 @@ export default function Home() {
                   />
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TRUST INDICATORS ── */}
-      <section
-        style={{
-          background: "#1A1A1A",
-          borderTop: "1px solid #1A1A1A",
-          borderBottom: "1px solid #1A1A1A",
-          padding: "64px 0",
-        }}
-        aria-label="Nos engagements qualité"
-      >
-        <div className="container">
-          <div className="trust-grid" role="list">
-            {trustItems.map((item, i) => (
-              <div
-                key={i}
-                role="listitem"
-                style={{
-                  background: "#0A0A0A",
-                  padding: "40px 32px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "14px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    border: "1px solid rgba(200,169,110,0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  aria-hidden="true"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#C8A96E"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d={item.icon} />
-                  </svg>
-                </div>
-                <h3
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "0.95rem",
-                    color: "#F0EBE3",
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.82rem",
-                    color: "#5A5550",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {item.desc}
-                </p>
-              </div>
             ))}
           </div>
         </div>

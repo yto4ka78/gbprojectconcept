@@ -402,9 +402,13 @@ h6 {
   justify-content: space-between;
 }
 
+/* Hero — обёртка фото (размер ограничен, без scale = нет чёрных полос) */
+.hero-bg-img-wrap {
+  position: relative;
+}
 /* Hero — фоновая картинка */
 .hero-bg-img {
-  object-position: 0% 100%;
+  object-fit: contain;
 }
 
 /* Hero */
@@ -479,7 +483,7 @@ h6 {
   align-items: center;
   gap: 10px;
   padding: 18px 12px 14px;
-  border: 1px solid #1E1E1E;
+  border: 1px solid #1e1e1e;
   border-radius: 10px;
   background: #111111;
   transition: border-color 0.2s ease;
@@ -494,12 +498,12 @@ h6 {
   width: 100%;
 }
 .brand-logo-name {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #3A3530;
+  color: #3a3530;
   text-align: center;
   white-space: nowrap;
 }
@@ -723,6 +727,10 @@ h6 {
    MOBILE  ≤ 767px
    ============================================================ */
 @media (max-width: 767px) {
+  /* Фон темнее на мобильных */
+  body {
+    background-color: #00000015;
+  }
   /* Container */
   .container {
     padding: 0 20px !important;
@@ -752,9 +760,14 @@ h6 {
   .hero-wrap {
     padding: 24px 20px 0 !important;
   }
-  /* Hero: на мобильных сдвигаем кадр влево (привязка 30% по горизонтали) */
+  /* Hero: на мобильных — фото по центру */
+  .hero-bg-img-wrap {
+    left: 50% !important;
+  }
   .hero-bg-img {
-    object-position: 70% 100% !important;
+    object-position: center 35% !important;
+    opacity: 0.8 !important;
+    filter: brightness(0.45) contrast(1.06) !important;
   }
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr) !important;
