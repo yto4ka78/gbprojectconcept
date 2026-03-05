@@ -49,40 +49,40 @@ const GOOGLE_REVIEWS_URL = "https://share.google/48MGU4p0cDixVoBSg";
 
 const reviews = [
   {
-    name: "Sophie M.",
+    name: "Mickael Legoupil",
     rating: 5,
     date: "Il y a 2 semaines",
-    text: "Équipe sérieuse et professionnelle. Nos travaux de terrasse ont été réalisés dans les délais prévus avec un résultat impeccable. Je recommande vivement GB Projet Concept !",
+    text: "J'ai fait appel à Gaisa et son équipe par deux fois et à chaque fois un travail d'une grande qualité.D'abord pour ma terrasse et le pourtour de ma maison en lui demandant un béton lissé, ce qui a été réalisé parfaitement.Plus récemment, Gaisa et son équipe ont réalisé la préparation et le pavage de l'entrée de ma maison avec toujours autant de sérieux et minutie. C'est tellement agréable d'avoir à faire à des professionnels de confiance, qui travaillent vraiment pour la satisfaction du client",
   },
   {
-    name: "Laurent D.",
+    name: "Cedric Zephcontrol",
     rating: 5,
     date: "Il y a 1 mois",
-    text: "Très satisfait de notre clôture et portail motorisé. Devis clair, travaux propres, finitions soignées. L'équipe a été à l'écoute de nos besoins du début à la fin.",
+    text: "Nous avons fait appel à Gaisa sur recommandation d'un proche et il a réalisé plusieurs travaux chez nous : terrasse extérieure, pose du carrelage intérieur et peinture. Délais respectés et chantiers toujours parfaitement nettoyés à la fin. Nous sommes super contents du résultat et n’hésiterons pas à refaire appel à lui. Nous recommandons Gaisa les yeux fermés, merci encore pour ton professionnalisme !",
   },
   {
-    name: "Isabelle R.",
+    name: "Besher Eid",
     rating: 5,
     date: "Il y a 2 mois",
-    text: "Allée en pavés magnifique ! Le résultat dépasse toutes nos attentes. Travail de qualité, équipe ponctuelle et respectueuse de notre propriété.",
+    text: "Excellente prestation du début à la fin. L’enrobé est parfaitement réalisé et la clôture posée avec soin. Équipe sérieuse, ponctuelle et à l’écoute. Très satisfait du résultat final.",
   },
   {
-    name: "Marc T.",
+    name: "Hichem KHEROUF",
     rating: 5,
     date: "Il y a 3 mois",
-    text: "Terrassement et dallage béton réalisés avec soin. Chantier bien organisé, prix honnête. On revient vers eux sans hésitation pour nos prochains projets.",
+    text: "J'ai eu l'occasion de solliciter cette entreprise à deux reprises, l'année dernière et puis à nouveau cette année, et mon constat reste le même : une équipe d'un grand sérieux. Le travail est réalisé avec une précision de véritables professionnels. Un point particulièrement appréciable : la propreté exemplaire du chantier du début à la fin des travaux. C'est rare de trouver une telle rigueur. Je recommande les yeux fermés pour quiconque cherche de la qualité et de la tranquillité d'esprit.",
   },
   {
-    name: "Nathalie B.",
+    name: "Sabrina",
     rating: 5,
     date: "Il y a 4 mois",
-    text: "Murs en parpaings et portail installés parfaitement. Très bon rapport qualité-prix, équipe agréable. Le jardin a été laissé propre après le chantier.",
+    text: "Gaisa et son équipe ont réalisé des travaux de rénovation dans notre maison (peinture et pose de parquet). Nous sommes très satisfaits du résultat et nous les recommandons les yeux fermés. Le travail est soigné, de qualité et pour un prix correct. La satisfaction du client est leur objectif principal.",
   },
   {
-    name: "Pierre F.",
+    name: "HELENE BEUVE",
     rating: 5,
     date: "Il y a 5 mois",
-    text: "Rénovation complète de notre cour. Service impeccable de la prise de contact jusqu'à la livraison. Nos voisins nous demandent déjà leurs coordonnées !",
+    text: "Je recommande Gaisa à 100%, j’ai fait appel à lui pour la pose d’une clôture rigide. Le résultat est impeccable, travail soigneux, rapide. Gaisa a su s’adapter et trouver une solution. Il est en plus très agréable et ponctuel. Je ferai appel à lui sans aucun doute pour mes prochains travaux.",
   },
 ];
 
@@ -92,35 +92,35 @@ const services = [
     num: "01",
     title: "Terrasses",
     desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
-    img: "/gbprojectconcept_service12.webp",
+    img: "/gbprojectconcept_service14.webp",
     href: "/services#terrasses",
   },
   {
     num: "02",
     title: "Allée & Cour & Parking",
     desc: "Pavés, enrobé à chaud ou gravier pour des accès élégants et durables.",
-    img: "/gbprojectconcept_service9.webp",
+    img: "/gbprojectconcept_service15.webp",
     href: "/services#allees",
   },
   {
     num: "03",
     title: "Clôtures & Portails",
     desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou composite.",
-    img: "/gbprojectconcept_service10.webp",
+    img: "/gbprojectconcept_service16.webp",
     href: "/services#clotures",
   },
   {
     num: "04",
     title: "Travaux de maçonnerie",
     desc: "Ouvertures, dallage béton armé, murs en parpaings, façades et finitions.",
-    img: "/gbprojectconcept_service12.webp",
+    img: "/gbprojectconcept_service17.webp",
     href: "/services#travaux",
   },
   {
     num: "05",
     title: "Terrassement",
     desc: "Déblai, remblai, nivellement et drainage pour préparer votre terrain.",
-    img: "/gbprojectconcept_service7.webp",
+    img: "/gbprojectconcept_service18.webp",
     href: "/services#terrassement",
   },
 ];
@@ -775,7 +775,7 @@ export default function Home() {
                       letterSpacing: "-0.02em",
                     }}
                   >
-                    4.9
+                    5
                   </span>
                   <span
                     style={{
@@ -784,7 +784,7 @@ export default function Home() {
                       color: "#5A5550",
                     }}
                   >
-                    / 5 · Basé sur 86 avis
+                    / 5 · Basé sur 18 avis
                   </span>
                 </div>
               </div>
@@ -1234,15 +1234,13 @@ export default function Home() {
         aria-label="Appel à l'action"
       >
         <div
-          className="hero-bg-photo hero-bg-photo-cta"
+          aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/heroGB.webp')",
-            backgroundSize: "cover",
-            opacity: 0.2,
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,169,110,0.04) 0%, transparent 70%)",
           }}
-          aria-hidden="true"
         />
         <div
           style={{

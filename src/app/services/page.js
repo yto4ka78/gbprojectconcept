@@ -108,7 +108,7 @@ const services = [
       "Béton architectonique",
       "Terrasses sur-élevées",
     ],
-    img: "/gbprojectconcept_service12.webp",
+    img: "/gbprojectconcept_service14.webp",
     highlight: "Garantie 10 ANS",
   },
   {
@@ -118,7 +118,7 @@ const services = [
     subtitle: "Revêtements extérieurs",
     desc: "Nous aménageons vos allées, cours et parkings afin qu'ils soient à la fois pratiques, esthétiques et durables. Chaque réalisation est pensée et adaptée à vos usages, à votre environnement et à votre style de vie, pour vous offrir une entrée harmonieuse, propre et accueillante.",
     features: ["Pavés", "Enrobé à chaud", "Gravier avec stabilisateur"],
-    img: "/gbprojectconcept_service9.webp",
+    img: "/gbprojectconcept_service15.webp",
     highlight: "20+ matériaux disponibles",
   },
   {
@@ -134,7 +134,7 @@ const services = [
       "Portails et portillons (Si nécessaire avant installation)",
       "Seuil béton et piliers (Si nécessaire avant installation)",
     ],
-    img: "/gbprojectconcept_service10.webp",
+    img: "/gbprojectconcept_service16.webp",
     highlight: "Installation sous 2 semaines",
   },
   {
@@ -151,7 +151,7 @@ const services = [
       "Création de piliers avec seuil pour portail",
       "Enduit de façade et finitions",
     ],
-    img: "/gbprojectconcept_service12.webp",
+    img: "/gbprojectconcept_service17.webp",
     highlight: "Matériaux premium",
   },
   {
@@ -167,7 +167,7 @@ const services = [
       "Drainage et évacuation des eaux",
       "Préparation fondations",
     ],
-    img: "/gbprojectconcept_service7.webp",
+    img: "/gbprojectconcept_service18.webp",
     highlight: "Terrain prêt en 48h",
   },
 ];
@@ -180,35 +180,49 @@ export default function Services() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section
         style={{
           position: "relative",
           background: "#0A0A0A",
           paddingTop: "160px",
-          paddingBottom: "80px",
+          paddingBottom: "100px",
           overflow: "hidden",
         }}
-        aria-labelledby="services-page-heading"
+        aria-labelledby="about-heading"
       >
         <div
-          className="hero-bg-photo"
+          className="about-hero-img hero-bg-photo"
           style={{
-            position: "absolute",
-            inset: 0,
             backgroundImage: "url('/heroGB.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.25,
+            opacity: 0.45,
+            height: "105%",
           }}
           aria-hidden="true"
         />
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            width: "55%",
             background:
-              "linear-gradient(to bottom, #0A0A0A 0%, transparent 50%, #0A0A0A 100%)",
+              "linear-gradient(to right, #0A0A0A 20%, transparent 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="hidden-mobile"
+          style={{
+            position: "absolute",
+            top: "88px",
+            right: "40px",
+            width: "120px",
+            height: "120px",
+            border: "1px solid rgba(200,169,110,0.12)",
           }}
           aria-hidden="true"
         />
@@ -218,7 +232,7 @@ export default function Services() {
             Ce que nous faisons
           </p>
           <h1
-            id="services-page-heading"
+            id="about-heading"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
@@ -226,11 +240,12 @@ export default function Services() {
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
               color: "#F0EBE3",
-              maxWidth: "700px",
+              maxWidth: "680px",
               marginBottom: "32px",
             }}
           >
-            Nos <span style={{ color: "#C8A96E" }}>services</span>
+            Nos
+            <span style={{ color: "#C8A96E" }}> services</span>
             <br />
             d&apos;excellence
           </h1>
@@ -238,15 +253,13 @@ export default function Services() {
             style={{
               fontSize: "1rem",
               color: "#6A6560",
-              maxWidth: "520px",
+              maxWidth: "460px",
               lineHeight: 1.8,
             }}
           >
-            Cinq domaines d&apos;expertise, une seule promesse : des
-            réalisations durables, esthétiques et parfaitement exécutées.
+            Cinq domaines d'expertise, une seule promesse : des réalisations
+            durables, esthétiques et parfaitement exécutées.
           </p>
-
-          {/* Quick-jump chips */}
           <nav
             aria-label="Sections des services"
             style={{
