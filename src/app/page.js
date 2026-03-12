@@ -49,16 +49,16 @@ const GOOGLE_REVIEWS_URL = "https://share.google/48MGU4p0cDixVoBSg";
 
 const reviews = [
   {
-    name: "Mickael Legoupil",
+    name: "Fabrice Peyrard",
     rating: 5,
     date: "Il y a 2 semaines",
-    text: "J'ai fait appel à Gaisa et son équipe par deux fois et à chaque fois un travail d'une grande qualité.D'abord pour ma terrasse et le pourtour de ma maison en lui demandant un béton lissé, ce qui a été réalisé parfaitement.Plus récemment, Gaisa et son équipe ont réalisé la préparation et le pavage de l'entrée de ma maison avec toujours autant de sérieux et minutie. C'est tellement agréable d'avoir à faire à des professionnels de confiance, qui travaillent vraiment pour la satisfaction du client",
+    text: "Super maçon et super mec, ainsi que son équipe (je précise que je ne le connaissais pas avant les travaux). Il s'est occupé de la construction d'un garage et d'une terrasse, de la pose de l'enrobé, on est ravis.",
   },
   {
-    name: "Cedric Zephcontrol",
+    name: "Mickael Legoupil",
     rating: 5,
     date: "Il y a 1 mois",
-    text: "Nous avons fait appel à Gaisa sur recommandation d'un proche et il a réalisé plusieurs travaux chez nous : terrasse extérieure, pose du carrelage intérieur et peinture. Délais respectés et chantiers toujours parfaitement nettoyés à la fin. Nous sommes super contents du résultat et n’hésiterons pas à refaire appel à lui. Nous recommandons Gaisa les yeux fermés, merci encore pour ton professionnalisme !",
+    text: "J'ai fait appel à Gaisa et son équipe par deux fois et à chaque fois un travail d'une grande qualité. D'abord pour ma terrasse et le pourtour de ma maison en lui demandant un béton lissé, ce qui a été réalisé parfaitement. Plus récemment, Gaisa et son équipe ont réalisé la préparation et le pavage de l'entrée de ma maison avec toujours autant de sérieux et minutie. C'est tellement agréable d'avoir à faire à des professionnels de confiance, qui travaillent vraiment pour la satisfaction du client..",
   },
   {
     name: "Besher Eid",
@@ -73,10 +73,10 @@ const reviews = [
     text: "J'ai eu l'occasion de solliciter cette entreprise à deux reprises, l'année dernière et puis à nouveau cette année, et mon constat reste le même : une équipe d'un grand sérieux. Le travail est réalisé avec une précision de véritables professionnels. Un point particulièrement appréciable : la propreté exemplaire du chantier du début à la fin des travaux. C'est rare de trouver une telle rigueur. Je recommande les yeux fermés pour quiconque cherche de la qualité et de la tranquillité d'esprit.",
   },
   {
-    name: "Sabrina",
+    name: "Rose Mickael",
     rating: 5,
     date: "Il y a 4 mois",
-    text: "Gaisa et son équipe ont réalisé des travaux de rénovation dans notre maison (peinture et pose de parquet). Nous sommes très satisfaits du résultat et nous les recommandons les yeux fermés. Le travail est soigné, de qualité et pour un prix correct. La satisfaction du client est leur objectif principal.",
+    text: "Artisan très sérieux avec des gens qui travaillent avec passion, très pro, très minutieux et en plus très sympathiques et respectueux. Je recommande les yeux fermés ! Nous sommes très satisfaits du résultat et encore merci pour tout 👌",
   },
   {
     name: "HELENE BEUVE",
@@ -127,21 +127,21 @@ const services = [
 
 const projects = [
   {
-    title: "Villa Moderne — Yvelines",
+    title: "Villa Moderne",
     tag: "Cour & parking",
-    img: "/gbprojectconcept_service6.webp",
+    img: "/gbprojectconcept_service4.webp",
     year: "2024",
   },
   {
     title: "Résidence Belvédère",
     tag: "Clôture & Portail",
-    img: "/gbprojectconcept_service13.webp",
+    img: "/gbprojectconcept_service11.webp",
     year: "2023",
   },
   {
-    title: "Jardin contemporain — Versailles",
-    tag: "Carrelage",
-    img: "/gbprojectconcept_service8.webp",
+    title: "Jardin contemporain",
+    tag: "Pavage",
+    img: "/gbprojectconcept_service19.webp",
     year: "2023",
   },
 ];
@@ -790,31 +790,79 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CTA button */}
-            <a
-              href={GOOGLE_REVIEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-              style={{ whiteSpace: "nowrap", flexShrink: 0 }}
+            {/* CTA buttons */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+                flexShrink: 0,
+              }}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                aria-hidden="true"
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+                style={{ whiteSpace: "nowrap" }}
               >
-                <path
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>Voir tous les avis</span>
+              </a>
+              <a
+                href="https://www.instagram.com/gb_projet_concept/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  padding: "10px 20px",
+                  border: "1px solid rgba(200,169,110,0.3)",
+                  background: "transparent",
+                  color: "#C8A96E",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
+                  transition: "background 0.2s, color 0.2s",
+                }}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                />
-              </svg>
-              <span>Voir tous les avis</span>
-            </a>
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                </svg>
+                <span>Nous suivre sur Instagram</span>
+              </a>
+            </div>
           </div>
 
           {/* Review cards grid */}
@@ -1112,112 +1160,130 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
+      {/* ── POURQUOI NOUS CHOISIR ── */}
       <section
         className="section-xl"
         style={{ background: "#0A0A0A" }}
-        aria-labelledby="process-heading"
+        aria-labelledby="why-heading"
       >
         <div className="container">
-          <div className="process-layout">
-            <div className="process-sticky">
-              <p className="section-label" style={{ marginBottom: "20px" }}>
-                Comment nous travaillons
-              </p>
-              <h2
-                id="process-heading"
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.03em",
-                  color: "#F0EBE3",
-                  marginBottom: "24px",
-                }}
-              >
-                Un processus
-                <br />
-                <span style={{ color: "#C8A96E" }}>éprouvé</span>
-              </h2>
-              <p
-                style={{
-                  fontSize: "0.88rem",
-                  color: "#5A5550",
-                  lineHeight: 1.8,
-                  marginBottom: "36px",
-                }}
-              >
-                Chaque projet suit un processus rigoureux pour garantir les
-                meilleurs résultats.
-              </p>
-              <Link href="/contact" className="btn-gold">
-                <span>Démarrer un projet</span>
-              </Link>
-            </div>
-
-            <ol
+          <div style={{ maxWidth: "800px", marginBottom: "56px" }}>
+            <p className="section-label" style={{ marginBottom: "20px" }}>
+              Pourquoi nous choisir ?
+            </p>
+            <h2
+              id="why-heading"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+                lineHeight: 1.1,
+                letterSpacing: "-0.03em",
+                color: "#F0EBE3",
+                marginBottom: "24px",
               }}
             >
-              {process.map((step, i) => (
-                <li
-                  key={i}
+              Votre projet entre{" "}
+              <span style={{ color: "#C8A96E" }}>de bonnes mains</span>
+            </h2>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "#5A5550",
+                lineHeight: 1.85,
+                maxWidth: "640px",
+              }}
+            >
+              Chez GB Projet Concept, nous vous accompagnons dans tous vos travaux d&apos;aménagement extérieur avec sérieux, transparence et exigence de qualité. Notre objectif est simple : valoriser votre espace extérieur et vous garantir un résultat durable et soigné.
+            </p>
+          </div>
+
+          <div
+            className="why-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "2px",
+            }}
+          >
+            {[
+              {
+                title: "Forte expérience",
+                desc: "Grâce à notre expérience dans les travaux d'aménagement extérieur et de maçonnerie, nous réalisons chaque projet avec méthode et savoir-faire.",
+              },
+              {
+                title: "Assurance décennale et responsabilité civile",
+                desc: "Tous nos travaux sont couverts par une assurance décennale et responsabilité civile professionnelle, pour vous garantir une totale tranquillité.",
+              },
+              {
+                title: "Devis transparent",
+                desc: "Nous proposons des devis clairs et détaillés, sans frais cachés, afin que vous sachiez exactement ce qui est prévu dans votre projet.",
+              },
+              {
+                title: "Respect de l'environnement et du chantier",
+                desc: "Nous veillons à protéger votre terrain et votre habitation pendant les travaux, à travailler proprement et à nettoyer le chantier à la fin.",
+              },
+              {
+                title: "La satisfaction client avant tout",
+                desc: "La réputation de notre entreprise repose sur la satisfaction de nos clients. Chaque projet est réalisé avec sérieux, respect et engagement.",
+              },
+              {
+                title: "Matériaux de qualité",
+                desc: "Nous sélectionnons des matériaux fiables et durables afin de garantir la solidité, l'esthétique et la longévité de vos aménagements extérieurs.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: "#111111",
+                  padding: "36px 32px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "14px",
+                }}
+              >
+                <div
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "64px 1fr",
-                    gap: "28px",
-                    paddingBottom: "40px",
-                    borderBottom:
-                      i < process.length - 1 ? "1px solid #141414" : "none",
-                    paddingTop: i > 0 ? "40px" : "0",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
                   }}
                 >
-                  <div aria-hidden="true">
-                    <span
-                      style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "2.2rem",
-                        color: "#1A1A1A",
-                        letterSpacing: "-0.05em",
-                        lineHeight: 1,
-                      }}
-                    >
-                      {step.n}
-                    </span>
-                  </div>
-                  <div>
-                    <h3
-                      style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "1.1rem",
-                        color: "#F0EBE3",
-                        marginBottom: "8px",
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: "0.88rem",
-                        color: "#5A5550",
-                        lineHeight: 1.7,
-                      }}
-                    >
-                      {step.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+                  <span
+                    style={{
+                      color: "#C8A96E",
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: "1.1rem",
+                      lineHeight: 1,
+                    }}
+                    aria-hidden="true"
+                  >
+                    ✔
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontWeight: 600,
+                      fontSize: "0.95rem",
+                      color: "#F0EBE3",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "#5A5550",
+                    lineHeight: 1.75,
+                    paddingLeft: "26px",
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

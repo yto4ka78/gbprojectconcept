@@ -23,6 +23,7 @@ const defaultBrands = [
   { name: "Leborgne", logo: "/brands/Logo_Leborg.png" },
   { name: "GEO FENNEL", logo: "/brands/geo-fennel-logo-.png" },
   { name: "RUBI", logo: "/brands/rubi-logo.png" },
+  { name: "Moasure", logo: "/brands/moasure-logo.png" },
 ];
 
 export default function PartnersSection({

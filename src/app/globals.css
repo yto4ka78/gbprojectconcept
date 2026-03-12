@@ -731,6 +731,9 @@ h6 {
   body {
     background-color: #00000015;
   }
+  .why-grid {
+    grid-template-columns: 1fr !important;
+  }
   /* Container */
   .container {
     padding: 0 20px !important;
@@ -1071,6 +1074,9 @@ h6 {
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     padding: 0 32px;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr);
