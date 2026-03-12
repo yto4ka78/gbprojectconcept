@@ -8,7 +8,7 @@ import PartnersSection from "@/components/PartnersSection";
 export const metadata = {
   title: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers Île-de-France`,
   description:
-    "Clôtures, allées, terrasses, maçonnerie paysagère en Île-de-France. Devis gratuit, garantie 10 ans. 340+ chantiers réalisés depuis 2012.",
+    "Terrasses, allées, clôtures, maçonnerie et terrassement en Île-de-France. Devis gratuit, garantie 10 ans. 100+ chantiers réalisés, 7 ans d'expertise.",
   alternates: {
     canonical: SITE_URL,
   },

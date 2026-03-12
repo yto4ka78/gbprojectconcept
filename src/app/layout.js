@@ -63,11 +63,11 @@ const organizationSchema = {
         "@type": "OfferCatalog",
         name:    "Services d'aménagement extérieur",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Travaux extérieurs & maçonnerie paysagère" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Allées & Chemins" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Clôtures & Portails sur-mesure" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Terrasses bois composite et pierre" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aménagement paysager complet" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#terrasses`,     name: "Terrasses — carrelage, moquette de pierre, bois composite" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#allees`,        name: "Allée & Cour & Parking — pavés, enrobé, gravier" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#clotures`,      name: "Clôtures & Portails sur-mesure" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#travaux`,       name: "Travaux de maçonnerie" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#terrassement`,  name: "Terrassement — déblai, remblai, nivellement" } },
         ],
       },
       aggregateRating: {

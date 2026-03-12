@@ -7,7 +7,7 @@ import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 export const metadata = {
   title: `À propos — Notre histoire & équipe`,
   description:
-    "Découvrez l'histoire de projet concept, fondée en 2012 par Marc Dumont. Paysagiste qualifié RGE en Île-de-France. Garantie décennale, 340+ chantiers réalisés.",
+    "Découvrez l'histoire de projet concept, fondée en 2012 en Île-de-France. Artisans qualifiés en aménagement extérieur, maçonnerie et terrassement. Garantie décennale.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },

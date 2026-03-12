@@ -5,16 +5,16 @@ import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 
 // ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
-  title: `Services — Clôtures, Terrasses, Allées & Paysagisme`,
+  title: `Services — Terrasses, Allées, Clôtures, Maçonnerie & Terrassement`,
   description:
-    "Travaux extérieurs, allées, clôtures et portails, terrasses, aménagement paysager en Île-de-France. Devis gratuit 48h, garantie décennale 10 ans.",
+    "Terrasses, allées & parkings, clôtures & portails, travaux de maçonnerie, terrassement en Île-de-France. Devis gratuit sous 48h. Garantie décennale 10 ans.",
   alternates: {
     canonical: `${SITE_URL}/services`,
   },
   openGraph: {
     title: `Services d'aménagement extérieur — ${SITE_NAME}`,
     description:
-      "Clôtures, allées, terrasses, maçonnerie paysagère. Devis gratuit, garantie 10 ans en Île-de-France.",
+      "Terrasses, allées, clôtures, maçonnerie et terrassement en Île-de-France. Devis gratuit, garantie 10 ans.",
     url: `${SITE_URL}/services`,
     images: OG_IMAGES,
   },
@@ -35,6 +35,7 @@ const servicesSchema = {
     },
     {
       "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/services/#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
         {
@@ -47,48 +48,53 @@ const servicesSchema = {
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}/services/#travaux`,
-      name: "Travaux extérieurs & maçonnerie paysagère",
+      "@id": `${SITE_URL}/services/#terrasses`,
+      name: "Terrasses — carrelage, moquette de pierre, bois",
       description:
-        "Murets, soutènements, escaliers en pierre, pavage et dallage en Île-de-France.",
+        "Réalisation de terrasses sur mesure : pose de carrelage, moquette de pierre avec motifs, terrasse en bois. Garantie 10 ans.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
+      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
     },
     {
       "@type": "Service",
       "@id": `${SITE_URL}/services/#allees`,
-      name: "Allées & Chemins",
+      name: "Allée & Cour & Parking — pavés, enrobé, gravier",
       description:
-        "Béton désactivé, pavés autobloquants, gravier stabilisé, pierre naturelle.",
+        "Aménagement d'allées, cours et parkings : pavés autobloquants, enrobé à chaud, gravier avec stabilisateur. 20+ matériaux disponibles.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
+      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
     },
     {
       "@type": "Service",
       "@id": `${SITE_URL}/services/#clotures`,
       name: "Clôtures & Portails sur-mesure",
       description:
-        "Systèmes de clôture acier, aluminium laqué, portails motorisés.",
+        "Installation de clôtures rigides avec soubassement béton, clôtures alu, bois ou composite, murs en parpaings, portails et portillons motorisés. Installation sous 2 semaines.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
+      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}/services/#terrasses`,
-      name: "Terrasses bois composite et pierre",
+      "@id": `${SITE_URL}/services/#travaux`,
+      name: "Travaux de maçonnerie",
       description:
-        "Terrasses sur-élevées, dalles sur plots, bois composite, pierre naturelle. Garantie 10 ans.",
+        "Création d'ouvertures, dallage béton armé, jointoiement de pierre, élévation de murs en parpaings, création de piliers, enduit de façade. Assurance décennale.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
+      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}/services/#paysager`,
-      name: "Aménagement paysager complet",
+      "@id": `${SITE_URL}/services/#terrassement`,
+      name: "Terrassement — déblai, remblai, nivellement",
       description:
-        "Conception jardin 3D, arrosage automatique, éclairage LED, massifs et plantations.",
+        "Travaux de terrassement : déblai et évacuation des terres, remblai et compactage, nivellement, drainage, préparation fondations. Terrain prêt en 48h.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
+      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
     },
   ],
 };
@@ -188,7 +194,7 @@ export default function Services() {
           paddingBottom: "100px",
           overflow: "hidden",
         }}
-        aria-labelledby="about-heading"
+        aria-labelledby="services-hero-heading"
       >
         <div
           className="about-hero-img hero-bg-photo"
@@ -231,7 +237,7 @@ export default function Services() {
             Ce que nous faisons
           </p>
           <h1
-            id="about-heading"
+            id="services-hero-heading"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,

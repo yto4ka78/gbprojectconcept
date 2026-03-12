@@ -13,9 +13,9 @@ export const SITE_DESCRIPTION =
 /** Reusable OpenGraph image list */
 export const OG_IMAGES = [
   {
-    url:    `${SITE_URL}/og-image.jpg`,
+    url:    `${SITE_URL}/heroGB.webp`,
     width:  1200,
-    height: 630,
+    height: 800,
     alt:    "projet concept — Aménagement extérieur Île-de-France",
   },
 ];
@@ -29,14 +29,16 @@ export const baseMeta = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "aménagement extérieur",
-    "paysagiste Île-de-France",
-    "clôtures portails",
-    "terrasses bois composite",
-    "allées béton",
+    "aménagement extérieur Île-de-France",
+    "terrasse extérieure",
+    "allée pavée",
+    "clôture portail sur mesure",
+    "travaux de maçonnerie",
+    "terrassement",
     "maçonnerie paysagère",
     "devis gratuit",
     "garantie décennale",
+    "GB Projet Concept",
   ],
   authors:  [{ name: SITE_NAME, url: SITE_URL }],
   creator:  SITE_NAME,
