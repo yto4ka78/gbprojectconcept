@@ -10,6 +10,7 @@ function AccordionItem({ q, a }) {
         borderBottom: "1px solid #1A1A1A",
         background: open ? "rgba(200,169,110,0.03)" : "transparent",
         transition: "background 0.2s ease",
+        padding: open ? "0 20px" : "0",
       }}
     >
       <button
