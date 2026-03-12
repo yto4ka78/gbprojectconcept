@@ -113,7 +113,7 @@ const services = [
     num: "04",
     title: "Travaux de maçonnerie",
     desc: "Ouvertures, dallage béton armé, murs en parpaings, façades et finitions.",
-    img: "/gbprojectconcept_service17.webp",
+    img: "/gbprojectconcept_service1.webp",
     href: "/services#travaux",
   },
   {
@@ -229,37 +229,22 @@ export default function Home() {
           background: "#000000",
         }}
       >
-        {/* Hero image — в обёртке, чтобы не было чёрных полос от scale */}
-        <div
-          aria-hidden="true"
+        {/* Hero image */}
+        <Image
+          src="/photo_logo_backgroundblack.webp"
+          alt="Aménagement extérieur projet concept — allée en pierre naturelle"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="hero-bg-img hero-anim-img"
           style={{
-            position: "absolute",
-            left: "70%",
-            top: "45%",
-            transform: "translate(-50%, -50%)",
-            width: "min(90vw, 90vh)",
-            height: "min(90vw, 90vh)",
-            zIndex: 0,
-            overflow: "hidden",
+            objectFit: "cover",
+            objectPosition: "65% center",
+            opacity: 0.92,
+            filter: "brightness(0.5) contrast(1.06)",
           }}
-          className="hero-bg-img-wrap"
-        >
-          <Image
-            src="/photo_logo_backgroundblack.webp"
-            alt="Aménagement extérieur projet concept — allée en pierre naturelle"
-            fill
-            priority
-            quality={85}
-            sizes="85vw"
-            className="hero-bg-img"
-            style={{
-              objectFit: "contain",
-              objectPosition: "center center",
-              opacity: 0.92,
-              filter: "brightness(0.78) contrast(1.06)",
-            }}
-          />
-        </div>
+        />
         <div
           className="scroll-indicator"
           style={{
@@ -274,11 +259,15 @@ export default function Home() {
         />
 
         <div className="hero-wrap" style={{ paddingBottom: 0 }}>
-          <p className="section-label" style={{ marginBottom: "28px" }}>
+          <p
+            className="section-label hero-anim-label"
+            style={{ marginBottom: "28px" }}
+          >
             Aménagement extérieur & Maçonnerie
           </p>
 
           <h1
+            className="hero-anim-h1"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
@@ -298,6 +287,7 @@ export default function Home() {
           </h1>
 
           <p
+            className="hero-anim-desc"
             style={{
               fontSize: "1rem",
               color: "#8A8680",
@@ -311,7 +301,7 @@ export default function Home() {
             s&apos;adapte à vos besoins.
           </p>
 
-          <div className="cta-row">
+          <div className="cta-row hero-anim-cta">
             <Link href="/contact" className="btn-gold">
               <span>Demander un devis</span>
               <svg
@@ -337,7 +327,7 @@ export default function Home() {
 
           {/* Stats */}
           <div
-            className="hero-stats-grid"
+            className="hero-stats-grid hero-anim-stats"
             role="list"
             aria-label="Chiffres clés"
           >
@@ -1194,7 +1184,10 @@ export default function Home() {
                 maxWidth: "640px",
               }}
             >
-              Chez GB Projet Concept, nous vous accompagnons dans tous vos travaux d&apos;aménagement extérieur avec sérieux, transparence et exigence de qualité. Notre objectif est simple : valoriser votre espace extérieur et vous garantir un résultat durable et soigné.
+              Chez GB Projet Concept, nous vous accompagnons dans tous vos
+              travaux d&apos;aménagement extérieur avec sérieux, transparence et
+              exigence de qualité. Notre objectif est simple : valoriser votre
+              espace extérieur et vous garantir un résultat durable et soigné.
             </p>
           </div>
 
