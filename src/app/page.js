@@ -1,10 +1,8 @@
-// ── Server Component (SSG) — no "use client" needed ──────────────────────────
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 import PartnersSection from "@/components/PartnersSection";
 
-// ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
   title: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers Île-de-France`,
   description:
@@ -21,7 +19,6 @@ export const metadata = {
   },
 };
 
-// ── Page JSON-LD (WebPage + BreadcrumbList) ──────────────────────────────────
 const pageSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -44,7 +41,6 @@ const pageSchema = {
   ],
 };
 
-// ── Google Reviews data ───────────────────────────────────────────────────────
 const GOOGLE_REVIEWS_URL = "https://share.google/48MGU4p0cDixVoBSg";
 
 const reviews = [
@@ -86,7 +82,6 @@ const reviews = [
   },
 ];
 
-// ── Data ─────────────────────────────────────────────────────────────────────
 const services = [
   {
     num: "01",
@@ -127,19 +122,19 @@ const services = [
 
 const projects = [
   {
-    title: "Villa Moderne",
+    title: "Parking enrobé",
     tag: "Cour & parking",
     img: "/gbprojectconcept_service4.webp",
     year: "2024",
   },
   {
-    title: "Résidence Belvédère",
+    title: "Installation clôture",
     tag: "Clôture & Portail",
     img: "/gbprojectconcept_service11.webp",
     year: "2023",
   },
   {
-    title: "Jardin contemporain",
+    title: "Pavage extérieur",
     tag: "Pavage",
     img: "/gbprojectconcept_service19.webp",
     year: "2023",
@@ -198,7 +193,6 @@ const marqueeItems = [
   "TERRASSEMENT",
 ];
 
-// ── Mosaic column config ──────────────────────────────────────────────────────
 const mosaicSpans = [
   { col: "span 5", height: "380px" },
   { col: "span 7", height: "380px" },
@@ -215,7 +209,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
-      {/* ── HERO ── */}
       <section
         aria-label="Présentation de projet concept"
         style={{
@@ -229,7 +222,6 @@ export default function Home() {
           background: "#000000",
         }}
       >
-        {/* Hero image */}
         <Image
           src="/photo_logo_backgroundblack.webp"
           alt="Aménagement extérieur projet concept — allée en pierre naturelle"
@@ -325,7 +317,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Stats */}
           <div
             className="hero-stats-grid hero-anim-stats"
             role="list"
@@ -391,7 +382,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MARQUEE ── */}
       <div
         aria-hidden="true"
         style={{
@@ -452,7 +442,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── SERVICES ── */}
       <section
         className="section-xl"
         style={{ background: "#0A0A0A" }}
@@ -530,7 +519,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mosaic grid — uses next/image fill for all cards */}
           <div className="mosaic-grid" role="list">
             {services.map((svc, i) => {
               const spans = mosaicSpans[i];
@@ -614,7 +602,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── GOOGLE REVIEWS ── */}
       <section
         className="section-xl"
         style={{ background: "#111111", borderTop: "1px solid #1A1A1A" }}
@@ -648,7 +635,6 @@ export default function Home() {
         />
 
         <div className="container">
-          {/* Header */}
           <div
             style={{
               display: "flex",
@@ -680,7 +666,6 @@ export default function Home() {
                 <span style={{ color: "#C8A96E" }}>nos clients</span>
               </h2>
 
-              {/* Rating summary */}
               <div
                 style={{
                   display: "flex",
@@ -689,7 +674,6 @@ export default function Home() {
                   flexWrap: "wrap",
                 }}
               >
-                {/* Google icon badge */}
                 <div
                   style={{
                     display: "flex",
@@ -701,7 +685,6 @@ export default function Home() {
                     borderRadius: "8px",
                   }}
                 >
-                  {/* Google G icon */}
                   <svg
                     width="18"
                     height="18"
@@ -741,7 +724,6 @@ export default function Home() {
                 <div
                   style={{ display: "flex", alignItems: "center", gap: "10px" }}
                 >
-                  {/* Stars */}
                   <div style={{ display: "flex", gap: "3px" }}>
                     {[1, 2, 3, 4, 5].map((s) => (
                       <svg
@@ -780,7 +762,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CTA buttons */}
             <div
               style={{
                 display: "flex",
@@ -855,7 +836,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Review cards grid */}
           <div className="reviews-grid" role="list">
             {reviews.map((review, i) => (
               <article
@@ -872,7 +852,6 @@ export default function Home() {
                   transition: "border-color 0.2s ease",
                 }}
               >
-                {/* Stars */}
                 <div
                   style={{ display: "flex", gap: "3px" }}
                   aria-label={`${review.rating} étoiles sur 5`}
@@ -891,7 +870,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Text */}
                 <p
                   style={{
                     fontSize: "0.875rem",
@@ -904,7 +882,6 @@ export default function Home() {
                   &ldquo;{review.text}&rdquo;
                 </p>
 
-                {/* Author + date */}
                 <div
                   style={{
                     display: "flex",
@@ -969,7 +946,6 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  {/* Google G small badge */}
                   <svg
                     width="16"
                     height="16"
@@ -1001,10 +977,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PARTNERS & BRANDS ── */}
       <PartnersSection />
 
-      {/* ── PROJECTS ── */}
       <section
         className="section-xl"
         style={{ background: "#0D0D0D" }}
@@ -1150,7 +1124,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── POURQUOI NOUS CHOISIR ── */}
       <section
         className="section-xl"
         style={{ background: "#0A0A0A" }}
@@ -1281,7 +1254,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section
         style={{
           position: "relative",
@@ -1396,7 +1368,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Mobile sticky CTA bar ── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
         <Link href="/contact" className="btn-gold">
           <span>Devis gratuit</span>

@@ -47,7 +47,6 @@ export default function Navbar() {
         }}
       >
         <nav className="nav-inner">
-          {/* Logo */}
           <Link
             href="/"
             style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}
@@ -74,7 +73,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav links */}
           <ul
             className="hidden-mobile"
             style={{
@@ -113,7 +111,6 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Desktop CTA + hamburger */}
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <Link
               href="/contact"
@@ -123,7 +120,6 @@ export default function Navbar() {
               <span>Devis gratuit</span>
             </Link>
 
-            {/* Hamburger button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -167,7 +163,6 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* ── Mobile full-screen overlay ── */}
       <div
         className="show-mobile"
         style={{
@@ -188,7 +183,6 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="Menu de navigation"
       >
-        {/* Decorative top line */}
         <div
           style={{
             position: "absolute",
@@ -200,7 +194,6 @@ export default function Navbar() {
           }}
         />
 
-        {/* Nav links */}
         <nav style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 28px" }}>
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column" }}>
             {navLinks.map((link, i) => (
@@ -240,7 +233,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile CTA buttons */}
           <div
             style={{
               marginTop: "36px",
@@ -288,7 +280,6 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Footer info */}
         <div
           style={{
             padding: "20px 28px calc(20px + env(safe-area-inset-bottom))",

@@ -1,9 +1,7 @@
-// ── Server Component (SSG) — accordion is a separate Client Component ─────────
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 
-// ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
   title: `FAQ — Questions fréquentes sur nos services`,
   description:
@@ -20,7 +18,6 @@ export const metadata = {
   },
 };
 
-// ── FAQ data (server-side) ───────────────────────────────────────────────────
 const faqs = [
   {
     cat: "Devis & Tarifs",
@@ -92,7 +89,6 @@ const faqs = [
   },
 ];
 
-// ── FAQPage JSON-LD ──────────────────────────────────────────────────────────
 const faqSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -134,7 +130,6 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ── HERO ── */}
       <section
         style={{
           background: "#0A0A0A",
@@ -237,14 +232,12 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* ── FAQ CONTENT ── */}
       <section
         className="section-lg"
         style={{ background: "#0A0A0A", paddingTop: "60px" }}
       >
         <div className="container">
           <div className="faq-layout">
-            {/* Sidebar — hidden on mobile via CSS */}
             <aside
               className="faq-sidebar"
               style={{ position: "sticky", top: "100px" }}
@@ -363,13 +356,11 @@ export default function FAQ() {
               </div>
             </aside>
 
-            {/* Accordion — Client Component */}
             <FAQAccordion faqs={faqs} />
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section
         style={{
           background: "#111111",
@@ -429,7 +420,6 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* ── Mobile sticky CTA bar ── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
         <Link href="/contact" className="btn-gold">
           <span>Devis gratuit</span>

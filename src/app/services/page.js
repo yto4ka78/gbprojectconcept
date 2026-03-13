@@ -1,9 +1,7 @@
-// ── Server Component (SSG) ────────────────────────────────────────────────────
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 
-// ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
   title: `Services — Terrasses, Allées, Clôtures, Maçonnerie & Terrassement`,
   description:
@@ -20,7 +18,6 @@ export const metadata = {
   },
 };
 
-// ── Service JSON-LD ──────────────────────────────────────────────────────────
 const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -54,7 +51,14 @@ const servicesSchema = {
         "Réalisation de terrasses sur mesure : pose de carrelage, moquette de pierre avec motifs, terrasse en bois. Garantie 10 ans.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+        },
+      },
     },
     {
       "@type": "Service",
@@ -64,7 +68,14 @@ const servicesSchema = {
         "Aménagement d'allées, cours et parkings : pavés autobloquants, enrobé à chaud, gravier avec stabilisateur. 20+ matériaux disponibles.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+        },
+      },
     },
     {
       "@type": "Service",
@@ -74,7 +85,14 @@ const servicesSchema = {
         "Installation de clôtures rigides avec soubassement béton, clôtures alu, bois ou composite, murs en parpaings, portails et portillons motorisés. Installation sous 2 semaines.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+        },
+      },
     },
     {
       "@type": "Service",
@@ -84,7 +102,14 @@ const servicesSchema = {
         "Création d'ouvertures, dallage béton armé, jointoiement de pierre, élévation de murs en parpaings, création de piliers, enduit de façade. Assurance décennale.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+        },
+      },
     },
     {
       "@type": "Service",
@@ -94,12 +119,18 @@ const servicesSchema = {
         "Travaux de terrassement : déblai et évacuation des terres, remblai et compactage, nivellement, drainage, préparation fondations. Terrain prêt en 48h.",
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "EUR" } },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+        },
+      },
     },
   ],
 };
 
-// ── Data ─────────────────────────────────────────────────────────────────────
 const services = [
   {
     id: "terrasses",
@@ -113,7 +144,6 @@ const services = [
       "Terrasse en bois",
     ],
     img: "/gbprojectconcept_service14.webp",
-    highlight: "Garantie 10 ANS",
   },
   {
     id: "allees",
@@ -123,7 +153,6 @@ const services = [
     desc: "Nous aménageons vos allées, cours et parkings afin qu'ils soient à la fois pratiques, esthétiques et durables. Chaque réalisation est pensée et adaptée à vos usages, à votre environnement et à votre style de vie, pour vous offrir une entrée harmonieuse, propre et accueillante.",
     features: ["Pavés", "Enrobé à chaud", "Gravier avec stabilisateur"],
     img: "/gbprojectconcept_service15.webp",
-    highlight: "20+ matériaux disponibles",
   },
   {
     id: "clotures",
@@ -139,7 +168,6 @@ const services = [
       "Seuil béton et piliers (Si nécessaire avant installation)",
     ],
     img: "/gbprojectconcept_service16.webp",
-    highlight: "Installation sous 2 semaines",
   },
   {
     id: "travaux",
@@ -148,15 +176,15 @@ const services = [
     subtitle: "Maçonnerie",
     desc: "Nous réalisons vos travaux de maçonnerie avec précision, en respectant votre habitation et vos espaces extérieurs à chaque étape. Chaque chantier est soigneusement protégé et organisé, avec une exigence constante de propreté du début à la fin des travaux. Conformes aux normes en vigueur et couverts par une assurance décennale, nos ouvrages sont pensés pour vous garantir solidité, durabilité et sérénité.",
     features: [
+      "Extension de maison (possibilité clé en main)",
       "Création d'ouvertures (portes, fenêtres, baies vitrées) – mur porteur ou non porteur",
-      "Dallage béton armé (terrasse, garage, abri, extension)",
+      "Dallage béton armé",
       "Jointoiement de pierre",
       "Élévation de murs en parpaings",
       "Création de piliers avec seuil pour portail",
       "Enduit de façade et finitions",
     ],
     img: "/gbprojectconcept_service1.webp",
-    highlight: "Matériaux premium",
   },
   {
     id: "terrassement",
@@ -173,7 +201,6 @@ const services = [
       "Assainissement",
     ],
     img: "/gbprojectconcept_service18.webp",
-    highlight: "Terrain prêt en 48h",
   },
 ];
 
@@ -185,7 +212,6 @@ export default function Services() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
 
-      {/* HERO */}
       <section
         style={{
           position: "relative",
@@ -304,7 +330,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── SERVICE SECTIONS ── */}
       {services.map((svc, i) => (
         <section
           key={svc.id}
@@ -318,7 +343,6 @@ export default function Services() {
         >
           <div className="container">
             <div className={`svc-row ${i % 2 === 1 ? "svc-row-rtl" : ""}`}>
-              {/* Image — next/image for optimization */}
               <div className="svc-img-wrap" style={{ direction: "ltr" }}>
                 <Image
                   src={svc.img}
@@ -354,7 +378,6 @@ export default function Services() {
                 </div>
               </div>
 
-              {/* Text */}
               <div style={{ direction: "ltr" }}>
                 <div
                   style={{
@@ -470,7 +493,6 @@ export default function Services() {
         </section>
       ))}
 
-      {/* ── CTA ── */}
       <section
         style={{
           background: "#111111",
@@ -545,7 +567,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Mobile sticky CTA bar ── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
         <Link href="/contact" className="btn-gold">
           <span>Devis gratuit</span>

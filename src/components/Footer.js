@@ -32,7 +32,6 @@ export default function Footer() {
       }}
     >
       <div className="footer-inner">
-        {/* Brand column */}
         <div style={{ gridColumn: "span 1" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "18px" }}>
             <Image
@@ -97,7 +96,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Services column */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>Services</p>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -116,7 +114,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Navigation column */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>Navigation</p>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -135,7 +132,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact column */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>Contact</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -159,7 +155,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="footer-bottom">
         <p style={{ fontSize: "0.72rem", color: "#3A3530", letterSpacing: "0.05em" }}>
           © {year} projet concept — Tous droits réservés

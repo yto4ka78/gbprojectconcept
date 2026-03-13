@@ -94,11 +94,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
-        {/* ── Font preconnect (speeds up Space Grotesk + Inter) ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* ── Organization / LocalBusiness structured data ── */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

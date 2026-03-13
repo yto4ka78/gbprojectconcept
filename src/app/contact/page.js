@@ -1,8 +1,6 @@
-// ── Server Component (SSG) ────────────────────────────────────────────────────
 import Link from "next/link";
 import { SITE_URL, SITE_NAME, PHONE, EMAIL, OG_IMAGES } from "@/lib/seo";
 
-// ── Per-page metadata ────────────────────────────────────────────────────────
 export const metadata = {
   title: `Contact — Devis gratuit sous 48h`,
   description:
@@ -19,7 +17,6 @@ export const metadata = {
   },
 };
 
-// ── ContactPage JSON-LD ──────────────────────────────────────────────────────
 const contactSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -47,7 +44,6 @@ const contactSchema = {
   ],
 };
 
-// ── Data ─────────────────────────────────────────────────────────────────────
 const contactItems = [
   {
     icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
@@ -126,7 +122,6 @@ export default function Contact() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
 
-      {/* ── HERO ── */}
       <section
         className="contact-hero"
         style={{
@@ -231,11 +226,9 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── MAIN SECTION ── */}
       <section style={{ background: "#0A0A0A", padding: "48px 0 100px" }}>
         <div className="container">
           <div className="contact-layout">
-            {/* LEFT */}
             <div>
               <address
                 style={{
@@ -437,7 +430,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div
               className="contact-panel-right"
               style={{
@@ -628,7 +620,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── TRUST STRIP ── */}
       <section
         className="contact-trust-strip"
         style={{
@@ -705,7 +696,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Mobile sticky CTA bar ── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
         <a
           href={`tel:${PHONE}`}
