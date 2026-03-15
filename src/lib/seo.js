@@ -5,7 +5,7 @@
 export const SITE_URL  = "https://www.projetconcept.fr";
 export const SITE_NAME = "projet concept";
 export const PHONE     = "+33620783131";
-export const EMAIL     = "gb.btp14@gmail.com";
+export const EMAIL     = "contact@gbprojectconcept.fr";
 
 export const SITE_DESCRIPTION =
   "Aménagement extérieur et maçonnerie paysagère en Île-de-France — clôtures, allées, terrasses, jardins. Devis gratuit, garantie 10 ans.";

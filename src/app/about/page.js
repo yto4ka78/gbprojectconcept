@@ -78,29 +78,29 @@ const values = [
 
 const timeline = [
   {
-    year: "2017",
+    year: "2019",
     title: "Début dans le bâtiment",
-    desc: "Première expérience sur des chantiers de construction de maisons individuelles. Apprentissage des bases du métier aux côtés d'artisans expérimentés.",
+    desc: "Premières expériences sur différents chantiers de construction et de rénovation. Apprentissage du métier directement sur le terrain aux côtés d'artisans expérimentés, avec une attention particulière portée au travail bien fait et aux finitions.",
   },
   {
-    year: "2018",
-    title: "Spécialisation en aménagement extérieur",
-    desc: "Formation en aménagement extérieur afin de développer des compétences techniques dans la création d'espaces extérieurs et les travaux paysagers.",
+    year: "2020 – 2021",
+    title: "Développement de l'expérience",
+    desc: "Participation à plusieurs chantiers dans le domaine du bâtiment, ce qui m'a permis d'acquérir de solides bases techniques et une bonne organisation du travail sur chantier.",
   },
   {
-    year: "2023",
-    title: "Expérience sur de nombreux chantiers",
-    desc: "Participation à de nombreux projets de construction et d'aménagement. Développement d'un savoir-faire polyvalent dans les travaux extérieurs, les terrasses, les clôtures et l'aménagement de jardins.",
+    year: "2022",
+    title: "Orientation vers l'aménagement extérieur",
+    desc: "Avec l'expérience acquise sur le terrain, je me suis progressivement orienté vers les travaux d'aménagement extérieur : terrasses, allée, cour, clôture, divers travaux de maçonnerie. Ces réalisations permettent de transformer un terrain en un espace extérieur agréable, fonctionnel et durable.",
   },
   {
     year: "2024",
     title: "Création de l'entreprise",
-    desc: "Création de l'entreprise afin de proposer des services d'aménagement extérieur et de travaux pour les particuliers avec une approche sérieuse, durable et soignée.",
+    desc: "Création de GB Projet Concept, afin de proposer aux particuliers des travaux d'aménagement extérieur réalisés avec sérieux, précision et des matériaux de qualité.",
   },
   {
-    year: "2026",
-    title: "Aujourd'hui",
-    desc: "Une entreprise locale qui accompagne ses clients dans leurs projets d'aménagement extérieur et de construction avec des solutions adaptées et un travail de qualité.",
+    year: "Aujourd'hui",
+    title: "Un artisan à l'écoute de ses clients",
+    desc: "Aujourd'hui, j'accompagne mes clients dans leurs projets d'aménagement extérieur en proposant des solutions adaptées à chaque terrain, chaque besoin et chaque budget. Mon objectif est simple : réaliser un travail propre, durable et à la hauteur des attentes de mes clients.",
   },
 ];
 
@@ -185,8 +185,8 @@ export default function About() {
               lineHeight: 1.8,
             }}
           >
-            Je réalise des aménagements extérieurs pensés pour durer, avec un
-            travail soigné et des matériaux de qualité.
+            Aménagements extérieurs. Mon objectif est simple — vous offrir un
+            extérieur dont vous serez fier pendant de nombreuses années.
           </p>
         </div>
       </section>
@@ -207,7 +207,7 @@ export default function About() {
                   left: 0,
                   right: "18%",
                   bottom: "18%",
-                  backgroundImage: "url('/gbprojectconcept_service2.webp')",
+                  backgroundImage: "url('/gbprojectconcept_service20.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -220,7 +220,7 @@ export default function About() {
                   right: 0,
                   width: "52%",
                   height: "44%",
-                  backgroundImage: "url('/gbprojectconcept_service3.webp')",
+                  backgroundImage: "url('/gbprojectconcept_service7.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   border: "4px solid #0D0D0D",
@@ -272,11 +272,7 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Je travaille dans le bâtiment depuis plusieurs années.
-                  J&apos;ai commencé sur des chantiers de construction de
-                  maisons individuelles, où j&apos;ai appris le métier
-                  directement sur le terrain aux côtés de professionnels
-                  expérimentés.
+                  Depuis plusieurs années, je travaille dans le bâtiment avec une conviction simple : le travail bien fait et la satisfaction des clients passent avant tout.
                 </p>
                 <p
                   style={{
@@ -285,10 +281,7 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Avec le temps, j&apos;ai souhaité développer mes compétences
-                  et je me suis formé à l&apos;aménagement extérieur afin de
-                  pouvoir proposer des réalisations complètes : terrasses,
-                  clôtures, aménagements de jardins et travaux extérieurs.
+                  J&apos;ai commencé sur des chantiers de construction de maisons individuelles, où j&apos;ai appris le métier directement sur le terrain aux côtés d&apos;artisans expérimentés. Cette expérience m&apos;a permis de développer un savoir-faire solide et une vraie exigence pour les finitions et la qualité du travail.
                 </p>
                 <p
                   style={{
@@ -297,11 +290,7 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Après plusieurs années d&apos;expérience sur différents
-                  projets, j&apos;ai décidé de créer mon entreprise pour
-                  accompagner les particuliers dans leurs travaux avec une
-                  approche simple : un travail sérieux, des finitions soignées
-                  et des solutions adaptées à chaque projet.
+                  Avec le temps, je me suis naturellement orienté vers l&apos;aménagement extérieur, un domaine qui me passionne car il permet de transformer un simple terrain en un véritable espace de vie.
                 </p>
                 <p
                   style={{
@@ -310,8 +299,25 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Aujourd&apos;hui, je mets mon expérience et mon savoir-faire
-                  au service de vos projets.
+                  Terrasses, pavages, clôtures ou maçonnerie extérieure : chaque projet est pensé pour être esthétique, durable et adapté aux besoins de mes clients.
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.9rem",
+                    color: "#6A6560",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  Après plusieurs années d&apos;expérience sur différents chantiers, j&apos;ai décidé de créer GB Projet Concept afin d&apos;accompagner les particuliers dans leurs projets avec une approche claire : un travail sérieux, des matériaux de qualité et des finitions soignées.
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.9rem",
+                    color: "#6A6560",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  Aujourd&apos;hui, je mets mon expérience et mon savoir-faire au service de vos projets afin de vous proposer des aménagements extérieurs durables et à la hauteur de vos attentes.
                 </p>
               </div>
               <blockquote
@@ -352,14 +358,14 @@ export default function About() {
         <div className="container">
           <div className="stats-bar" role="list">
             {[
-              { val: "9+", label: "Années d'expérience", sub: "Depuis 2017" },
+              { val: "7+", label: "Années d'expérience", sub: "Depuis 2019" },
               {
                 val: "100+",
                 label: "Chantiers réalisés",
                 sub: "En Calvados",
               },
               {
-                val: "98%",
+                val: "100%",
                 label: "Satisfaction client",
                 sub: "Mesurée en 2024",
               },

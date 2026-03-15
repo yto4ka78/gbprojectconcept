@@ -133,31 +133,6 @@ export default function Contact() {
         }}
         aria-labelledby="contact-heading"
       >
-        <div
-          className="hero-bg-photo"
-          style={{
-            position: "absolute",
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: "40%",
-            backgroundImage: "url('/heroGB.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.2,
-          }}
-          aria-hidden="true"
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to right, #0A0A0A 50%, transparent 100%)",
-          }}
-          aria-hidden="true"
-        />
-
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <p className="section-label" style={{ marginBottom: "24px" }}>
             Travaillons ensemble
@@ -331,7 +306,7 @@ export default function Contact() {
                 }}
               >
                 <iframe
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=2.29,48.85,2.38,48.88&layer=mapnik"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-0.38,49.17,-0.36,49.20&layer=mapnik"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -340,7 +315,7 @@ export default function Contact() {
                     filter:
                       "grayscale(100%) invert(90%) sepia(10%) saturate(0.5)",
                   }}
-                  title="Localisation projet concept — Île-de-France"
+                  title="Localisation GB Projet Concept — Caen"
                   loading="lazy"
                 />
                 <div
