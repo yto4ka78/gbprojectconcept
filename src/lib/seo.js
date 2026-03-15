@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const SITE_URL  = "https://www.projetconcept.fr";
-export const SITE_NAME = "projet concept";
+export const SITE_NAME = "Projet concept";
 export const PHONE     = "+33620783131";
 export const EMAIL     = "contact@gbprojectconcept.fr";
 
@@ -71,5 +71,8 @@ export const baseMeta = {
   },
   alternates: {
     canonical: SITE_URL,
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
 };
