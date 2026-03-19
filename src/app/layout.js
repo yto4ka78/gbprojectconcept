@@ -1,7 +1,22 @@
 import "./globals.css";
+import { Space_Grotesk, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { baseMeta, SITE_URL, SITE_NAME, PHONE, EMAIL } from "@/lib/seo";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 // ── Metadata (used by all pages unless overridden) ──────────────────────────
 export const metadata = baseMeta;
@@ -63,11 +78,11 @@ const organizationSchema = {
         "@type": "OfferCatalog",
         name:    "Services d'aménagement extérieur",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#terrasses`,     name: "Terrasses — carrelage, moquette de pierre, bois composite" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#allees`,        name: "Allée & Cour & Parking — pavés, enrobé, gravier" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#clotures`,      name: "Clôtures & Portails sur-mesure" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#travaux`,       name: "Travaux de maçonnerie" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.projetconcept.fr/services/#terrassement`,  name: "Terrassement — déblai, remblai, nivellement" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#terrasses`,     name: "Terrasses — carrelage, moquette de pierre, bois composite" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#allees`,        name: "Allée & Cour & Parking — pavés, enrobé, gravier" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#clotures`,      name: "Clôtures & Portails sur-mesure" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#travaux`,       name: "Travaux de maçonnerie" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#terrassement`,  name: "Terrassement — déblai, remblai, nivellement" } },
         ],
       },
       aggregateRating: {
@@ -94,15 +109,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="flex min-h-screen flex-col antialiased">
+      <body className={`flex min-h-screen flex-col antialiased ${spaceGrotesk.variable} ${inter.variable}`}>
         <Navbar />
         <main className="flex-1" id="main-content">
           {children}

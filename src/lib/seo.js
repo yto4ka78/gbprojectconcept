@@ -2,7 +2,7 @@
 // Central SEO configuration — update SITE_URL before going live
 // ─────────────────────────────────────────────────────────────
 
-export const SITE_URL  = "https://www.projetconcept.fr";
+export const SITE_URL  = "https://www.gbprojectconcept.fr";
 export const SITE_NAME = "Projet concept";
 export const PHONE     = "+33620783131";
 export const EMAIL     = "contact@gbprojectconcept.fr";

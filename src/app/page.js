@@ -223,21 +223,38 @@ export default function Home() {
           background: "#000000",
         }}
       >
-        <Image
-          src="/photo_logo_backgroundblack.webp"
-          alt="Aménagement extérieur projet concept — allée en pierre naturelle"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="hero-bg-img hero-anim-img"
-          style={{
-            objectFit: "cover",
-            objectPosition: "65% center",
-            opacity: 0.92,
-            filter: "brightness(0.5) contrast(1.06)",
-          }}
-        />
+        <picture className="hero-bg-picture">
+          {/* мобильная версия ≤ 640px */}
+          <source
+            media="(max-width: 640px)"
+            srcSet="/photo_logo_backgroundblack_mobile_2.webp"
+            type="image/webp"
+          />
+          {/* планшетная версия 641px – 1024px */}
+          <source
+            media="(max-width: 1024px)"
+            srcSet="/photo_logo_backgroundblack_tablet_2.webp"
+            type="image/webp"
+          />
+          {/* десктоп ≥ 1025px */}
+          <img
+            src="/photo_logo_backgroundblack_2.webp"
+            alt="Aménagement extérieur projet concept — allée en pierre naturelle"
+            fetchPriority="high"
+            decoding="async"
+            className="hero-bg-img hero-anim-img"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "65% center",
+              opacity: 0.92,
+              filter: "brightness(0.5) contrast(1.06)",
+            }}
+          />
+        </picture>
         <div
           className="scroll-indicator"
           style={{
@@ -546,7 +563,7 @@ export default function Home() {
                         alt={svc.title}
                         fill
                         loading={i < 2 ? "eager" : "lazy"}
-                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 40vw, 520px"
                         style={{ objectFit: "cover" }}
                         className="mosaic-img"
                       />
@@ -1026,7 +1043,7 @@ export default function Home() {
                       alt={`${p.title} — ${p.tag}`}
                       fill
                       loading="lazy"
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                       style={{ objectFit: "cover" }}
                       className="project-img"
                     />
