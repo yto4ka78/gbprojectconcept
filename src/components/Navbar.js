@@ -218,16 +218,6 @@ export default function Navbar() {
                   }}
                 >
                   <span>{link.label}</span>
-                  <span
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "0.65rem",
-                      color: "#3A3530",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    0{i + 1}
-                  </span>
                 </Link>
               </li>
             ))}

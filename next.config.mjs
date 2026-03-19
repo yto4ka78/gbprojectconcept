@@ -35,6 +35,18 @@ const nextConfig = {
   // ── Compression ────────────────────────────────────────────────────────────
   compress: true,
 
+  // ── 301: non-www → www (canonical enforcement) ─────────────────────────────
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "gbprojectconcept.fr" }],
+        destination: "https://www.gbprojectconcept.fr/:path*",
+        permanent: true, // 301
+      },
+    ];
+  },
+
   // ── Power headers (security + performance) ─────────────────────────────────
   async headers() {
     return [
