@@ -149,7 +149,6 @@ h6 {
 .card-hover::after {
   content: "";
   position: absolute;
-  inset: 0;
   border: 1px solid transparent;
   transition: border-color 0.3s ease;
   pointer-events: none;
@@ -283,27 +282,105 @@ h6 {
   z-index: 1;
 }
 
-/* ── next/image: затемнение под тёмный стиль проекта ── */
-.mosaic-img {
-  transition:
-    transform 0.6s ease,
-    opacity 0.3s ease !important;
-  filter: brightness(var(--img-brightness)) contrast(var(--img-contrast)) !important;
-}
-.img-overlay:hover .mosaic-img {
-  transform: scale(1.04) !important;
-  opacity: 0.92 !important;
+/* ── mosaic cards ── */
+
+/* 1. Внешняя карточка — только подъём, без overflow:hidden */
+.mosaic-card {
+  background: #111111;
 }
 
-.project-img {
-  transition:
-    transform 0.6s ease,
-    opacity 0.3s ease !important;
+/* 2. Clip-контейнер — только обрезает, никогда не трансформируется */
+.mosaic-inner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* 3. Единственный трансформируемый слой — содержит картинку И оверлей */
+.mosaic-zoom-layer {
+  position: absolute;
+  inset: -3px; /* 3px запас, чтобы края не обнажались при scale */
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform-origin: center center;
+  transform: scale(1) translateZ(0);
+  backface-visibility: hidden;
+}
+.mosaic-card:hover .mosaic-zoom-layer {
+  transform: scale(1.02) translateZ(0);
+}
+
+/* 4. Картинка — занимает весь zoom-слой */
+.mosaic-img {
   filter: brightness(var(--img-brightness)) contrast(var(--img-contrast)) !important;
 }
-.card-hover:hover .project-img {
-  transform: scale(1.04) !important;
-  opacity: 1 !important;
+
+/* 5. Оверлей — градиент + текст, привязан к zoom-слою */
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+/* ── project cards ── */
+
+/* 1. Внешняя карточка — только подъём */
+.project-card {
+  position: relative;
+  background: #111111;
+}
+
+/* 2. Clip-контейнер — только обрезает, не трансформируется */
+.project-img-wrap {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3. Единственный трансформируемый слой — картинка + оверлеи вместе */
+.project-zoom-layer {
+  position: absolute;
+  inset: -3px;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform-origin: center center;
+  transform: scale(1) translateZ(0);
+  backface-visibility: hidden;
+}
+.project-card:hover .project-zoom-layer {
+  transform: scale(1.02) translateZ(0);
+}
+
+/* 4. Картинка */
+.project-img {
+  filter: brightness(var(--img-brightness)) contrast(var(--img-contrast)) !important;
+}
+
+/* 5. Градиентный оверлей */
+.project-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+}
+
+/* 6. Бейдж с тегом */
+.project-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 4px 10px;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Service image */
@@ -407,12 +484,22 @@ h6 {
 
 /* ── Hero entrance animations ────────────────────────────────────────────── */
 @keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes hero-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-anim-label {
@@ -596,8 +683,9 @@ h6 {
 /* Trust 4-col */
 .trust-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 340px));
   gap: 1px;
+  justify-content: center;
 }
 
 /* Process */

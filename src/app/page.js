@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
+import { SERVICE_IMAGES } from "@/lib/serviceImages";
 import PartnersSection from "@/components/PartnersSection";
 
 export const metadata = {
@@ -87,35 +88,35 @@ const services = [
     num: "01",
     title: "Terrasses",
     desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
-    img: "/gbprojectconcept_service23.webp",
+    img: SERVICE_IMAGES.terrasses,
     href: "/services#terrasses",
   },
   {
     num: "02",
     title: "Allée & Cour & Parking",
     desc: "Pavés, enrobé à chaud ou gravier pour des accès élégants et durables.",
-    img: "/gbprojectconcept_service22.webp",
+    img: SERVICE_IMAGES.allees,
     href: "/services#allees",
   },
   {
     num: "03",
     title: "Clôtures & Portails",
     desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou composite.",
-    img: "/gbprojectconcept_service21.webp",
+    img: SERVICE_IMAGES.clotures,
     href: "/services#clotures",
   },
   {
     num: "04",
     title: "Travaux de maçonnerie",
     desc: "Ouvertures, dallage béton armé, murs en parpaings, façades et finitions.",
-    img: "/gbprojectconcept_service1.webp",
+    img: SERVICE_IMAGES.travaux,
     href: "/services#travaux",
   },
   {
     num: "05",
     title: "Terrassement",
     desc: "Déblai, remblai, nivellement et drainage pour préparer votre terrain.",
-    img: "/gbprojectconcept_service18.webp",
+    img: SERVICE_IMAGES.terrassement,
     href: "/services#terrassement",
   },
 ];
@@ -527,72 +528,64 @@ export default function Home() {
                   key={i}
                   href={svc.href}
                   role="listitem"
-                  className="img-overlay card-hover"
+                  className="card-hover mosaic-card"
                   style={{
                     gridColumn: spans.col,
                     height: spans.height,
                     display: "block",
                     position: "relative",
                     textDecoration: "none",
-                    background: "#111111",
-                    overflow: "hidden",
                   }}
                 >
-                  <Image
-                    src={svc.img}
-                    alt={svc.title}
-                    fill
-                    loading={i < 2 ? "eager" : "lazy"}
-                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                    className="mosaic-img"
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      padding: "24px",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      zIndex: 2,
-                      background:
-                        "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        fontSize: "0.65rem",
-                        fontWeight: 700,
-                        color: "rgba(200,169,110,0.5)",
-                        letterSpacing: "0.2em",
-                      }}
-                    >
-                      {svc.num}
-                    </span>
-                    <div>
-                      <h3
-                        style={{
-                          fontFamily: "'Space Grotesk', sans-serif",
-                          fontWeight: 600,
-                          fontSize: "1.1rem",
-                          color: "#F0EBE3",
-                          marginBottom: "6px",
-                          letterSpacing: "-0.02em",
-                        }}
-                      >
-                        {svc.title}
-                      </h3>
-                      <p
-                        style={{
-                          fontSize: "0.78rem",
-                          color: "#8A8680",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {svc.desc}
-                      </p>
+                  {/* overflow:hidden clip — никогда не трансформируется */}
+                  <div className="mosaic-inner">
+                    {/* единственный трансформируемый слой — картинка + оверлей вместе */}
+                    <div className="mosaic-zoom-layer">
+                      <Image
+                        src={svc.img}
+                        alt={svc.title}
+                        fill
+                        loading={i < 2 ? "eager" : "lazy"}
+                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        style={{ objectFit: "cover" }}
+                        className="mosaic-img"
+                      />
+                      <div className="mosaic-overlay">
+                        <span
+                          style={{
+                            fontFamily: "'Space Grotesk', sans-serif",
+                            fontSize: "0.65rem",
+                            fontWeight: 700,
+                            color: "rgba(200,169,110,0.5)",
+                            letterSpacing: "0.2em",
+                          }}
+                        >
+                          {svc.num}
+                        </span>
+                        <div>
+                          <h3
+                            style={{
+                              fontFamily: "'Space Grotesk', sans-serif",
+                              fontWeight: 600,
+                              fontSize: "1.1rem",
+                              color: "#F0EBE3",
+                              marginBottom: "6px",
+                              letterSpacing: "-0.02em",
+                            }}
+                          >
+                            {svc.title}
+                          </h3>
+                          <p
+                            style={{
+                              fontSize: "0.78rem",
+                              color: "#8A8680",
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            {svc.desc}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -1022,58 +1015,35 @@ export default function Home() {
               <article
                 key={i}
                 role="listitem"
-                className="card-hover"
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                  background: "#111111",
-                }}
+                className="card-hover project-card"
               >
-                <div
-                  style={{
-                    height: "300px",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Image
-                    src={p.img}
-                    alt={`${p.title} — ${p.tag}`}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                    style={{ objectFit: "cover", opacity: 1 }}
-                    className="project-img"
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background:
-                        "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "16px",
-                      left: "16px",
-                      padding: "4px 10px",
-                      border: "1px solid rgba(200,169,110,0.4)",
-                      background: "rgba(0,0,0,0.5)",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        fontSize: "0.62rem",
-                        color: "#C8A96E",
-                        letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {p.tag}
-                    </span>
+                {/* clip-контейнер — только обрезает, не трансформируется */}
+                <div className="project-img-wrap">
+                  {/* единственный трансформируемый слой */}
+                  <div className="project-zoom-layer">
+                    <Image
+                      src={p.img}
+                      alt={`${p.title} — ${p.tag}`}
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                      className="project-img"
+                    />
+                    <div className="project-gradient" />
+                    <div className="project-tag">
+                      <span
+                        style={{
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontSize: "0.62rem",
+                          color: "#C8A96E",
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {p.tag}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div

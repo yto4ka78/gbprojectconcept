@@ -327,22 +327,6 @@ export default function Contact() {
                   }}
                   aria-hidden="true"
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%,-50%)",
-                    width: "12px",
-                    height: "12px",
-                    background: "#C8A96E",
-                    borderRadius: "50%",
-                    boxShadow: "0 0 0 4px rgba(200,169,110,0.2)",
-                    pointerEvents: "none",
-                    zIndex: 10,
-                  }}
-                  aria-hidden="true"
-                />
               </div>
 
               <div

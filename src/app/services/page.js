@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
+import { SERVICE_IMAGES } from "@/lib/serviceImages";
 
 export const metadata = {
   title: `Services — Terrasses, Allées, Clôtures, Maçonnerie & Terrassement`,
@@ -143,7 +144,7 @@ const services = [
       "Moquette de pierre avec motifs",
       "Terrasse en bois",
     ],
-    img: "/gbprojectconcept_service23.webp",
+    img: SERVICE_IMAGES.terrasses,
   },
   {
     id: "allees",
@@ -152,7 +153,7 @@ const services = [
     subtitle: "Revêtements extérieurs",
     desc: "Nous aménageons vos allées, cours et parkings afin qu'ils soient à la fois pratiques, esthétiques et durables. Chaque réalisation est pensée et adaptée à vos usages, à votre environnement et à votre style de vie, pour vous offrir une entrée harmonieuse, propre et accueillante.",
     features: ["Pavés", "Enrobé à chaud", "Gravier avec stabilisateur"],
-    img: "/gbprojectconcept_service22.webp",
+    img: SERVICE_IMAGES.allees,
   },
   {
     id: "clotures",
@@ -167,7 +168,7 @@ const services = [
       "Portails et portillons",
       "Seuil béton et piliers (Si nécessaire avant installation)",
     ],
-    img: "/gbprojectconcept_service21.webp",
+    img: SERVICE_IMAGES.clotures,
   },
   {
     id: "travaux",
@@ -184,7 +185,7 @@ const services = [
       "Création de piliers avec seuil pour portail",
       "Enduit de façade et finitions",
     ],
-    img: "/gbprojectconcept_service1.webp",
+    img: SERVICE_IMAGES.travaux,
   },
   {
     id: "terrassement",
@@ -200,7 +201,7 @@ const services = [
       "Préparation fondations",
       "Assainissement",
     ],
-    img: "/gbprojectconcept_service18.webp",
+    img: SERVICE_IMAGES.terrassement,
   },
 ];
 
