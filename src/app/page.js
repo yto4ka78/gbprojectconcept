@@ -1,20 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
-import { SERVICE_IMAGES } from "@/lib/serviceImages";
+import { SERVICES } from "@/lib/servicesData";
+import { LOCAL_CITIES } from "@/lib/localCities";
 import PartnersSection from "@/components/PartnersSection";
 
 export const metadata = {
-  title: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers Île-de-France`,
+  title: `${SITE_NAME} — Aménagement Extérieur à Caen et alentours`,
   description:
-    "Terrasses, allées, clôtures, maçonnerie et terrassement en Île-de-France. Devis gratuit, garantie 10 ans. 100+ chantiers réalisés, 7 ans d'expertise.",
+    "Terrasses, allées, clôtures, maçonnerie et terrassement à Caen et alentours. Devis gratuit sous 48h, garantie décennale 10 ans. 100+ chantiers réalisés.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
+    title: `${SITE_NAME} — Aménagement Extérieur à Caen et alentours`,
     description:
-      "Clôtures, allées, terrasses, maçonnerie paysagère en Île-de-France. Devis gratuit, garantie 10 ans.",
+      "Clôtures, allées, terrasses, maçonnerie paysagère à Caen et alentours. Devis gratuit, garantie 10 ans.",
     url: SITE_URL,
     images: OG_IMAGES,
   },
@@ -83,43 +84,14 @@ const reviews = [
   },
 ];
 
-const services = [
-  {
-    num: "01",
-    title: "Terrasses",
-    desc: "Terrasses en bois composite, pierre naturelle ou béton architectonique.",
-    img: SERVICE_IMAGES.terrasses,
-    href: "/services#terrasses",
-  },
-  {
-    num: "02",
-    title: "Allée & Cour & Parking",
-    desc: "Pavés, enrobé à chaud ou gravier pour des accès élégants et durables.",
-    img: SERVICE_IMAGES.allees,
-    href: "/services#allees",
-  },
-  {
-    num: "03",
-    title: "Clôtures & Portails",
-    desc: "Systèmes de clôture sur-mesure — acier, aluminium, bois ou composite.",
-    img: SERVICE_IMAGES.clotures,
-    href: "/services#clotures",
-  },
-  {
-    num: "04",
-    title: "Travaux de maçonnerie",
-    desc: "Ouvertures, dallage béton armé, murs en parpaings, façades et finitions.",
-    img: SERVICE_IMAGES.travaux,
-    href: "/services#travaux",
-  },
-  {
-    num: "05",
-    title: "Terrassement",
-    desc: "Déblai, remblai, nivellement et drainage pour préparer votre terrain.",
-    img: SERVICE_IMAGES.terrassement,
-    href: "/services#terrassement",
-  },
-];
+// Derived from the shared central data source — do not duplicate content here.
+const services = SERVICES.map((svc) => ({
+  num: svc.num,
+  title: svc.title,
+  desc: svc.shortDescription,
+  img: svc.image,
+  href: `/services/${svc.slug}`,
+}));
 
 const projects = [
   {
@@ -1237,6 +1209,164 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Zones d'intervention ──────────────────────────────────── */}
+      <section
+        className="section-xl"
+        style={{ background: "#111111", borderTop: "1px solid #1A1A1A" }}
+        aria-labelledby="zones-heading"
+      >
+        <div className="container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "64px",
+              alignItems: "start",
+            }}
+            className="zones-grid"
+          >
+            {/* Left — text block */}
+            <div>
+              <p className="section-label" style={{ marginBottom: "20px" }}>
+                Zones d&apos;intervention
+              </p>
+              <h2
+                id="zones-heading"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.03em",
+                  color: "#F0EBE3",
+                  marginBottom: "24px",
+                }}
+              >
+                Nous intervenons à{" "}
+                <span style={{ color: "#C8A96E" }}>Caen</span>
+                <br />
+                et dans les communes voisines
+              </h2>
+              <p
+                style={{
+                  fontSize: "0.92rem",
+                  color: "#5A5550",
+                  lineHeight: 1.85,
+                  maxWidth: "460px",
+                  marginBottom: "32px",
+                }}
+              >
+                Basée à Caen, notre équipe se déplace directement sur votre
+                chantier dans tout le secteur du Calvados. Terrasses,
+                clôtures, allées, maçonnerie et terrassement — nous réalisons
+                vos projets extérieurs avec le même niveau d&apos;exigence,
+                quelle que soit la commune.
+              </p>
+              <Link href="/contact" className="btn-gold">
+                <span>Demander un devis gratuit</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Right — city links grid */}
+            <div>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "2px",
+                }}
+                aria-label="Villes desservies"
+              >
+                {LOCAL_CITIES.map((city) => (
+                  <li key={city.slug}>
+                    <Link
+                      href={`/amenagement-exterieur/${city.slug}`}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        padding: "20px 24px",
+                        background: "#0A0A0A",
+                        border: "1px solid #1A1A1A",
+                        textDecoration: "none",
+                        transition: "border-color 0.2s, background 0.2s",
+                      }}
+                      className="zone-card"
+                    >
+                      <span
+                        style={{
+                          width: "6px",
+                          height: "6px",
+                          borderRadius: "50%",
+                          background: "#C8A96E",
+                          flexShrink: 0,
+                        }}
+                        aria-hidden="true"
+                      />
+                      <span
+                        style={{
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontWeight: 500,
+                          fontSize: "0.88rem",
+                          color: "#8A8680",
+                          letterSpacing: "-0.01em",
+                        }}
+                      >
+                        {city.name}
+                      </span>
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#C8A96E"
+                        strokeWidth="2"
+                        style={{ marginLeft: "auto", opacity: 0.5 }}
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 12h14M12 5l7 7-7 7"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p
+                style={{
+                  fontSize: "0.75rem",
+                  color: "#3A3530",
+                  marginTop: "16px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Et dans toutes les communes du Calvados sur demande.
+              </p>
+            </div>
           </div>
         </div>
       </section>

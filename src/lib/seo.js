@@ -2,21 +2,21 @@
 // Central SEO configuration — update SITE_URL before going live
 // ─────────────────────────────────────────────────────────────
 
-export const SITE_URL  = "https://www.gbprojectconcept.fr";
-export const SITE_NAME = "Projet concept";
-export const PHONE     = "+33620783131";
-export const EMAIL     = "contact@gbprojectconcept.fr";
+export const SITE_URL = "https://www.gbprojectconcept.fr";
+export const SITE_NAME = "GB Projet Concept";
+export const PHONE = "+33620783131";
+export const EMAIL = "contact@gbprojectconcept.fr";
 
 export const SITE_DESCRIPTION =
-  "Aménagement extérieur et maçonnerie paysagère en Île-de-France — clôtures, allées, terrasses, jardins. Devis gratuit, garantie 10 ans.";
+  "Aménagement extérieur et maçonnerie paysagère à Caen et alentours — terrasses, clôtures, allées, maçonnerie, terrassement. Devis gratuit, garantie décennale 10 ans.";
 
 /** Reusable OpenGraph image list */
 export const OG_IMAGES = [
   {
-    url:    `${SITE_URL}/heroGB.webp`,
-    width:  1200,
+    url: `${SITE_URL}/heroGB.webp`,
+    width: 1200,
     height: 800,
-    alt:    "projet concept — Aménagement extérieur Île-de-France",
+    alt: "GB Projet Concept — Aménagement extérieur à Caen et alentours",
   },
 ];
 
@@ -24,50 +24,51 @@ export const OG_IMAGES = [
 export const baseMeta = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:  `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
+    default: `${SITE_NAME} — Aménagement Extérieur à Caen et alentours`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "aménagement extérieur Île-de-France",
-    "terrasse extérieure",
-    "allée pavée",
-    "clôture portail sur mesure",
-    "travaux de maçonnerie",
-    "terrassement",
-    "maçonnerie paysagère",
-    "devis gratuit",
+    "aménagement extérieur Caen",
+    "terrasse Caen",
+    "clôture portail Caen",
+    "allée pavée Caen",
+    "travaux maçonnerie Caen",
+    "terrassement Caen",
+    "maçonnerie paysagère Caen",
+    "artisan extérieur Caen",
+    "devis gratuit Caen",
     "garantie décennale",
     "GB Projet Concept",
   ],
-  authors:  [{ name: SITE_NAME, url: SITE_URL }],
-  creator:  SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
   publisher: SITE_NAME,
   robots: {
-    index:  true,
+    index: true,
     follow: true,
     googleBot: {
-      index:                true,
-      follow:               true,
-      "max-image-preview":  "large",
-      "max-snippet":        -1,
-      "max-video-preview":  -1,
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
   openGraph: {
-    type:     "website",
-    locale:   "fr_FR",
-    url:      SITE_URL,
+    type: "website",
+    locale: "fr_FR",
+    url: SITE_URL,
     siteName: SITE_NAME,
-    title:    `${SITE_NAME} — Aménagement Extérieur & Travaux Paysagers`,
+    title: `${SITE_NAME} — Aménagement Extérieur à Caen et alentours`,
     description: SITE_DESCRIPTION,
-    images:   OG_IMAGES,
+    images: OG_IMAGES,
   },
   twitter: {
-    card:        "summary_large_image",
-    title:       `${SITE_NAME} — Aménagement Extérieur`,
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Aménagement Extérieur à Caen`,
     description: SITE_DESCRIPTION,
-    images:      OG_IMAGES.map((i) => i.url),
+    images: OG_IMAGES.map((i) => i.url),
   },
   alternates: {
     canonical: SITE_URL,

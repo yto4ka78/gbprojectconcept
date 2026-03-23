@@ -46,7 +46,7 @@ const organizationSchema = {
       },
       image:         `${SITE_URL}/heroGB.webp`,
       description:
-        "Aménagement extérieur et maçonnerie paysagère en Île-de-France. Clôtures, allées, terrasses, jardins depuis 2012.",
+        "Artisan spécialiste de l'aménagement extérieur à Caen et dans les communes alentours. Terrasses, clôtures, allées, maçonnerie et terrassement depuis 2012.",
       telephone:     PHONE,
       email:         EMAIL,
       foundingDate:  "2012",
@@ -55,10 +55,13 @@ const organizationSchema = {
         addressLocality:   "Caen",
         addressCountry:    "FR",
       },
-      areaServed: {
-        "@type": "State",
-        name:    "Île-de-France",
-      },
+      areaServed: [
+        { "@type": "City", name: "Caen",                   "@id": "https://www.wikidata.org/wiki/Q6484" },
+        { "@type": "City", name: "Hérouville-Saint-Clair", "@id": "https://www.wikidata.org/wiki/Q193671" },
+        { "@type": "City", name: "Mondeville",             "@id": "https://www.wikidata.org/wiki/Q622424" },
+        { "@type": "City", name: "Ifs",                    "@id": "https://www.wikidata.org/wiki/Q484037" },
+        { "@type": "City", name: "Fleury-sur-Orne",        "@id": "https://www.wikidata.org/wiki/Q1416697" },
+      ],
       openingHoursSpecification: [
         {
           "@type":     "OpeningHoursSpecification",

@@ -1263,3 +1263,38 @@ h6 {
     padding: 28px 32px 0;
   }
 }
+
+/* ── Local zones section ──────────────────────────────────────────────────── */
+.zone-card:hover {
+  border-color: rgba(200, 169, 110, 0.3) !important;
+  background: rgba(200, 169, 110, 0.03) !important;
+}
+.zone-card:hover span:last-child {
+  color: #C8A96E;
+}
+
+@media (max-width: 767px) {
+  .zones-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ── Local city pages ─────────────────────────────────────────────────────── */
+.local-svc-card:hover {
+  border-color: rgba(200, 169, 110, 0.25) !important;
+}
+.local-svc-card:hover h3 {
+  color: #C8A96E;
+}
+
+@media (max-width: 767px) {
+  .local-svc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .local-svc-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

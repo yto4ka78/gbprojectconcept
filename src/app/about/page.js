@@ -5,14 +5,14 @@ import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 export const metadata = {
   title: `À propos — Notre histoire & équipe`,
   description:
-    "Découvrez l'histoire de projet concept, fondée en 2012 en Île-de-France. Artisans qualifiés en aménagement extérieur, maçonnerie et terrassement. Garantie décennale.",
+    "Découvrez l'histoire de projet concept, basée à Caen depuis 2012. Artisans qualifiés en aménagement extérieur, maçonnerie et terrassement. Garantie décennale.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
     title: `À propos de ${SITE_NAME} — Notre histoire & équipe`,
     description:
-      "Paysagiste qualifié RGE en Île-de-France depuis 2012. Découvrez notre équipe et nos valeurs.",
+      "Artisan qualifié en aménagement extérieur à Caen depuis 2012. Découvrez notre équipe et nos valeurs.",
     url: `${SITE_URL}/about`,
     images: OG_IMAGES,
   },

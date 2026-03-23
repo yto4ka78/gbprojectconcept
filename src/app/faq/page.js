@@ -5,7 +5,7 @@ import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 export const metadata = {
   title: `FAQ — Questions fréquentes sur nos services`,
   description:
-    "Toutes vos questions sur nos devis, délais, garanties et matériaux. Réponses de l'équipe projet concept, paysagiste Île-de-France.",
+    "Toutes vos questions sur nos devis, délais, garanties et matériaux. Réponses de l'équipe projet concept, artisan à Caen et alentours.",
   alternates: {
     canonical: `${SITE_URL}/faq`,
   },
@@ -28,7 +28,7 @@ const faqs = [
       },
       {
         q: "Le déplacement pour le devis est-il payant ?",
-        a: "Non. La visite sur site et l'établissement du devis sont entièrement gratuits et sans engagement. Nous nous déplaçons dans tout le secteur Île-de-France.",
+        a: "Non. La visite sur site et l'établissement du devis sont entièrement gratuits et sans engagement. Nous nous déplaçons dans tout le secteur de Caen et les communes alentours.",
       },
       {
         q: "Quels sont vos délais de réponse après une demande de devis ?",

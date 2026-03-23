@@ -4,19 +4,28 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "Travaux extérieurs", href: "/services#travaux" },
-  { label: "Allées & Chemins", href: "/services#allees" },
-  { label: "Clôtures & Portails", href: "/services#clotures" },
-  { label: "Terrasses", href: "/services#terrasses" },
-  { label: "Aménagement paysager", href: "/services#paysager" },
+  { label: "Terrasses",             href: "/services/terrasses" },
+  { label: "Allées & Parkings",     href: "/services/allees" },
+  { label: "Clôtures & Portails",   href: "/services/clotures" },
+  { label: "Travaux de maçonnerie", href: "/services/travaux-de-maconnerie" },
+  { label: "Terrassement",          href: "/services/terrassement" },
 ];
 
 const links = [
-  { label: "Accueil", href: "/" },
-  { label: "À propos", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Accueil",   href: "/" },
+  { label: "À propos",  href: "/about" },
+  { label: "Services",  href: "/services" },
+  { label: "FAQ",       href: "/faq" },
+  { label: "Contact",   href: "/contact" },
+];
+
+// Key cities shown in footer — concise list
+const zones = [
+  { label: "Caen",                   href: "/amenagement-exterieur/caen" },
+  { label: "Hérouville-Saint-Clair", href: "/amenagement-exterieur/herouville-saint-clair" },
+  { label: "Mondeville",             href: "/amenagement-exterieur/mondeville" },
+  { label: "Ifs",                    href: "/amenagement-exterieur/ifs" },
+  { label: "Fleury-sur-Orne",        href: "/amenagement-exterieur/fleury-sur-orne" },
 ];
 
 export default function Footer() {
@@ -32,6 +41,7 @@ export default function Footer() {
       }}
     >
       <div className="footer-inner">
+        {/* ── Brand ── */}
         <div style={{ gridColumn: "span 1" }}>
           <div
             style={{
@@ -43,7 +53,7 @@ export default function Footer() {
           >
             <Image
               src="/logo.svg"
-              alt="projet concept"
+              alt="GB Projet Concept — aménagement extérieur à Caen"
               width={48}
               height={48}
               style={{ display: "block", objectFit: "contain" }}
@@ -70,8 +80,8 @@ export default function Footer() {
               maxWidth: "240px",
             }}
           >
-            Allée, cour, parking Clôture, portail Maçonnerie Terrassement
-            Terrasse.
+            Artisan en aménagement extérieur à Caen et alentours. Terrasses,
+            allées, clôtures, maçonnerie et terrassement.
           </p>
           <div style={{ marginTop: "24px", display: "flex", gap: "10px" }}>
             {/* Instagram */}
@@ -79,7 +89,7 @@ export default function Footer() {
               href="https://www.instagram.com/gb_projet_concept/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label="Instagram GB Projet Concept"
               style={{
                 width: "40px",
                 height: "40px",
@@ -99,7 +109,16 @@ export default function Footer() {
                 e.currentTarget.style.borderColor = "#242424";
               }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
@@ -137,6 +156,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ── Services ── */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>
             Services
@@ -162,12 +182,8 @@ export default function Footer() {
                     transition: "color 0.2s",
                     lineHeight: 1.5,
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#C8A96E";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#6A6560";
-                  }}
+                  onMouseEnter={(e) => { e.target.style.color = "#C8A96E"; }}
+                  onMouseLeave={(e) => { e.target.style.color = "#6A6560"; }}
                 >
                   {s.label}
                 </Link>
@@ -176,6 +192,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* ── Navigation ── */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>
             Navigation
@@ -200,12 +217,8 @@ export default function Footer() {
                     textDecoration: "none",
                     transition: "color 0.2s",
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#C8A96E";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#6A6560";
-                  }}
+                  onMouseEnter={(e) => { e.target.style.color = "#C8A96E"; }}
+                  onMouseLeave={(e) => { e.target.style.color = "#6A6560"; }}
                 >
                   {l.label}
                 </Link>
@@ -214,6 +227,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* ── Contact + Zones ── */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>
             Contact
@@ -224,7 +238,7 @@ export default function Footer() {
             {[
               {
                 icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
-                text: "Caen",
+                text: "Caen et alentours",
                 href: null,
               },
               {
@@ -275,6 +289,44 @@ export default function Footer() {
               </a>
             ))}
           </div>
+
+          {/* Zones strip */}
+          <div style={{ marginTop: "28px" }}>
+            <p
+              className="section-label"
+              style={{ marginBottom: "14px", fontSize: "0.62rem" }}
+            >
+              Zones desservies
+            </p>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+              }}
+            >
+              {zones.map((z) => (
+                <li key={z.label}>
+                  <Link
+                    href={z.href}
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "#4A4540",
+                      textDecoration: "none",
+                      transition: "color 0.2s",
+                    }}
+                    onMouseEnter={(e) => { e.target.style.color = "#C8A96E"; }}
+                    onMouseLeave={(e) => { e.target.style.color = "#4A4540"; }}
+                  >
+                    {z.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -300,12 +352,8 @@ export default function Footer() {
                 letterSpacing: "0.05em",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => {
-                e.target.style.color = "#8A8680";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = "#3A3530";
-              }}
+              onMouseEnter={(e) => { e.target.style.color = "#8A8680"; }}
+              onMouseLeave={(e) => { e.target.style.color = "#3A3530"; }}
             >
               {t}
             </Link>

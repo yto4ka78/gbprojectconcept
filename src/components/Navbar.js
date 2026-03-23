@@ -277,7 +277,7 @@ export default function Navbar() {
           }}
         >
           <p style={{ fontSize: "0.72rem", color: "#3A3530", letterSpacing: "0.06em" }}>
-            Île-de-France · Lun–Ven 8h–18h · Sam 9h–13h
+            Caen · Lun–Ven 8h–18h · Sam 9h–13h
           </p>
         </div>
       </div>

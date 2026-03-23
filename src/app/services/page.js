@@ -1,19 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
-import { SERVICE_IMAGES } from "@/lib/serviceImages";
+import { SERVICES } from "@/lib/servicesData";
 
 export const metadata = {
   title: `Services — Terrasses, Allées, Clôtures, Maçonnerie & Terrassement`,
   description:
-    "Terrasses, allées & parkings, clôtures & portails, travaux de maçonnerie, terrassement en Île-de-France. Devis gratuit sous 48h. Garantie décennale 10 ans.",
+    "Terrasses, allées & parkings, clôtures & portails, travaux de maçonnerie, terrassement à Caen et alentours. Devis gratuit sous 48h. Garantie décennale 10 ans.",
   alternates: {
     canonical: `${SITE_URL}/services`,
   },
   openGraph: {
     title: `Services d'aménagement extérieur — ${SITE_NAME}`,
     description:
-      "Terrasses, allées, clôtures, maçonnerie et terrassement en Île-de-France. Devis gratuit, garantie 10 ans.",
+      "Terrasses, allées, clôtures, maçonnerie et terrassement à Caen et alentours. Devis gratuit, garantie 10 ans.",
     url: `${SITE_URL}/services`,
     images: OG_IMAGES,
   },
@@ -44,14 +44,14 @@ const servicesSchema = {
         },
       ],
     },
-    {
+    ...SERVICES.map((svc) => ({
       "@type": "Service",
-      "@id": `${SITE_URL}/services/#terrasses`,
-      name: "Terrasses — carrelage, moquette de pierre, bois",
-      description:
-        "Réalisation de terrasses sur mesure : pose de carrelage, moquette de pierre avec motifs, terrasse en bois. Garantie 10 ans.",
+      "@id": `${SITE_URL}/services/${svc.slug}/#service`,
+      name: svc.title,
+      description: svc.seo.description,
       provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "State", name: "Île-de-France" },
+      areaServed: { "@type": "City", name: "Caen" },
+      url: `${SITE_URL}/services/${svc.slug}`,
       offers: {
         "@type": "Offer",
         availability: "https://schema.org/InStock",
@@ -60,150 +60,9 @@ const servicesSchema = {
           priceCurrency: "EUR",
         },
       },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/services/#allees`,
-      name: "Allée & Cour & Parking — pavés, enrobé, gravier",
-      description:
-        "Aménagement d'allées, cours et parkings : pavés autobloquants, enrobé à chaud, gravier avec stabilisateur. 20+ matériaux disponibles.",
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-        },
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/services/#clotures`,
-      name: "Clôtures & Portails sur-mesure",
-      description:
-        "Installation de clôtures rigides avec soubassement béton, clôtures alu, bois ou composite, murs en parpaings, portails et portillons motorisés. Installation sous 2 semaines.",
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-        },
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/services/#travaux`,
-      name: "Travaux de maçonnerie",
-      description:
-        "Création d'ouvertures, dallage béton armé, jointoiement de pierre, élévation de murs en parpaings, création de piliers, enduit de façade. Assurance décennale.",
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-        },
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/services/#terrassement`,
-      name: "Terrassement — déblai, remblai, nivellement",
-      description:
-        "Travaux de terrassement : déblai et évacuation des terres, remblai et compactage, nivellement, drainage, préparation fondations. Terrain prêt en 48h.",
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "State", name: "Île-de-France" },
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-        },
-      },
-    },
+    })),
   ],
 };
-
-const services = [
-  {
-    id: "terrasses",
-    num: "01",
-    title: "Terrasses",
-    subtitle: "Espaces de vie extérieurs",
-    desc: "Nous réalisons des terrasses sur mesure pour que vous profitiez pleinement de votre jardin, en famille ou entre amis. Chaque terrasse est pensée pour être esthétique, durable et parfaitement adaptée à votre habitat. Selon vos besoins, nous vous proposons différentes finitions :",
-    features: [
-      "Pose de carrelage",
-      "Moquette de pierre avec motifs",
-      "Terrasse en bois",
-    ],
-    img: SERVICE_IMAGES.terrasses,
-  },
-  {
-    id: "allees",
-    num: "02",
-    title: "Allée & Cour & Parking",
-    subtitle: "Revêtements extérieurs",
-    desc: "Nous aménageons vos allées, cours et parkings afin qu'ils soient à la fois pratiques, esthétiques et durables. Chaque réalisation est pensée et adaptée à vos usages, à votre environnement et à votre style de vie, pour vous offrir une entrée harmonieuse, propre et accueillante.",
-    features: ["Pavés", "Enrobé à chaud", "Gravier avec stabilisateur"],
-    img: SERVICE_IMAGES.allees,
-  },
-  {
-    id: "clotures",
-    num: "03",
-    title: "Clôtures & Portails",
-    subtitle: "Sécurisation & délimitation",
-    desc: "Nous vous proposons l'installation de tous types de clôtures avec portails et portillons, pour sécuriser votre maison tout en valorisant votre patrimoine. En plus d'apporter une touche esthétique, nos solutions sont pratiques et durables. Nous réalisons tous types de clôtures : la pose de clôtures rigides avec soubassement béton, clôtures en alu, en bois ou en composite, ainsi que des murs en parpaings. Pour vos portails et portillons, nous proposons les mêmes matériaux et un ajustement parfait à votre clôture, pour un ensemble harmonieux, sécurisé et élégant. Et si votre projet nécessite un seuil en béton et des piliers avant l'installation du portail, nous prenons également en charge ces ouvrages, pour un résultat solide et durable.",
-    features: [
-      "Clôtures rigides avec soubassement béton",
-      "Clôtures alu, bois ou composite",
-      "Murs en parpaings",
-      "Portails et portillons",
-      "Seuil béton et piliers (Si nécessaire avant installation)",
-    ],
-    img: SERVICE_IMAGES.clotures,
-  },
-  {
-    id: "travaux",
-    num: "04",
-    title: "Travaux de maçonnerie",
-    subtitle: "Maçonnerie",
-    desc: "Nous réalisons vos travaux de maçonnerie avec précision, en respectant votre habitation et vos espaces extérieurs à chaque étape. Chaque chantier est soigneusement protégé et organisé, avec une exigence constante de propreté du début à la fin des travaux. Conformes aux normes en vigueur et couverts par une assurance décennale, nos ouvrages sont pensés pour vous garantir solidité, durabilité et sérénité.",
-    features: [
-      "Extension de maison (possibilité clé en main)",
-      "Création d'ouvertures (portes, fenêtres, baies vitrées) – mur porteur ou non porteur",
-      "Dallage béton armé",
-      "Jointoiement de pierre",
-      "Élévation de murs en parpaings",
-      "Création de piliers avec seuil pour portail",
-      "Enduit de façade et finitions",
-    ],
-    img: SERVICE_IMAGES.travaux,
-  },
-  {
-    id: "terrassement",
-    num: "05",
-    title: "Terrassement",
-    subtitle: "Préparation du terrain",
-    desc: "Le terrassement est la première étape essentielle de tout projet d'aménagement extérieur. Nous réalisons les travaux de terrassement nécessaires à la préparation de votre terrain : déblai, remblai, nivellement et compactage, pour poser des bases solides à vos futurs aménagements.",
-    features: [
-      "Déblai et évacuation des terres",
-      "Remblai et compactage",
-      "Nivellement de terrain",
-      "Drainage et évacuation des eaux",
-      "Préparation fondations",
-      "Assainissement",
-    ],
-    img: SERVICE_IMAGES.terrassement,
-  },
-];
 
 export default function Services() {
   return (
@@ -213,6 +72,7 @@ export default function Services() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
 
+      {/* ── Hero ────────────────────────────────────────────────────── */}
       <section
         style={{
           position: "relative",
@@ -289,9 +149,11 @@ export default function Services() {
               lineHeight: 1.8,
             }}
           >
-            Cinq domaines d'expertise, une seule promesse : des réalisations
-            durables, esthétiques et parfaitement exécutées.
+            Cinq domaines d&apos;expertise, une seule promesse : des
+            réalisations durables, esthétiques et parfaitement exécutées.
           </p>
+
+          {/* Quick-nav chips — scroll to anchor on this page */}
           <nav
             aria-label="Sections des services"
             style={{
@@ -303,10 +165,10 @@ export default function Services() {
               paddingBottom: "4px",
             }}
           >
-            {services.map((s) => (
+            {SERVICES.map((s) => (
               <a
-                key={s.id}
-                href={`#${s.id}`}
+                key={s.slug}
+                href={`#${s.slug}`}
                 className="svc-chip"
                 style={{
                   padding: "10px 20px",
@@ -331,11 +193,12 @@ export default function Services() {
         </div>
       </section>
 
-      {services.map((svc, i) => (
+      {/* ── Service rows ─────────────────────────────────────────────── */}
+      {SERVICES.map((svc, i) => (
         <section
-          key={svc.id}
-          id={svc.id}
-          aria-labelledby={`svc-heading-${svc.id}`}
+          key={svc.slug}
+          id={svc.slug}
+          aria-labelledby={`svc-heading-${svc.slug}`}
           style={{
             background: i % 2 === 0 ? "#0A0A0A" : "#0D0D0D",
             padding: "80px 0",
@@ -346,8 +209,8 @@ export default function Services() {
             <div className={`svc-row ${i % 2 === 1 ? "svc-row-rtl" : ""}`}>
               <div className="svc-img-wrap" style={{ direction: "ltr" }}>
                 <Image
-                  src={svc.img}
-                  alt={`${svc.title} — projet concept Île-de-France`}
+                  src={svc.image}
+                  alt={`${svc.title} — artisan à Caen et alentours`}
                   fill
                   loading={i === 0 ? "eager" : "lazy"}
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 520px"
@@ -410,8 +273,9 @@ export default function Services() {
                   />
                   <p className="section-label">{svc.subtitle}</p>
                 </div>
+
                 <h2
-                  id={`svc-heading-${svc.id}`}
+                  id={`svc-heading-${svc.slug}`}
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontWeight: 700,
@@ -424,6 +288,7 @@ export default function Services() {
                 >
                   {svc.title}
                 </h2>
+
                 <p
                   style={{
                     fontSize: "0.9rem",
@@ -432,7 +297,7 @@ export default function Services() {
                     marginBottom: "32px",
                   }}
                 >
-                  {svc.desc}
+                  {svc.fullDescription}
                 </p>
 
                 <ul
@@ -470,30 +335,40 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <Link href="/contact" className="btn-gold">
-                  <span>Demander un devis</span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
+                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                  <Link href="/contact" className="btn-gold">
+                    <span>{svc.ctaText}</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                  <Link
+                    href={`/services/${svc.slug}`}
+                    className="btn-outline"
+                    style={{ fontSize: "0.8rem" }}
                   >
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
+                    <span>En savoir plus</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
       ))}
 
+      {/* ── Bottom CTA ───────────────────────────────────────────────── */}
       <section
         style={{
           background: "#111111",
@@ -568,6 +443,7 @@ export default function Services() {
         </div>
       </section>
 
+      {/* ── Mobile sticky bar ────────────────────────────────────────── */}
       <div className="mobile-cta-bar" aria-label="Actions rapides">
         <Link href="/contact" className="btn-gold">
           <span>Devis gratuit</span>

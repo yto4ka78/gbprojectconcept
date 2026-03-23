@@ -3,6 +3,15 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** Keep in sync with `LOCAL_CITIES` slugs in `src/lib/localCities.js` */
+const LEGACY_CITY_SLUGS = [
+  "caen",
+  "herouville-saint-clair",
+  "mondeville",
+  "ifs",
+  "fleury-sur-orne",
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -36,6 +45,14 @@ const nextConfig = {
   compress: true,
 
   // ── Power headers (security + performance) ─────────────────────────────────
+  async redirects() {
+    return LEGACY_CITY_SLUGS.map((slug) => ({
+      source: `/amenagement-exterieur-${slug}`,
+      destination: `/amenagement-exterieur/${slug}`,
+      permanent: true,
+    }));
+  },
+
   async headers() {
     return [
       {

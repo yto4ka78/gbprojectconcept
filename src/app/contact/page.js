@@ -4,7 +4,7 @@ import { SITE_URL, SITE_NAME, PHONE, EMAIL, OG_IMAGES } from "@/lib/seo";
 export const metadata = {
   title: `Contact — Devis gratuit sous 48h`,
   description:
-    "Contactez projet concept pour un devis gratuit. Paysagiste Île-de-France. Réponse sous 24h, déplacement gratuit sur site. Téléphone : 06 20 78 31 31.",
+    "Contactez projet concept pour un devis gratuit. Artisan à Caen et alentours. Réponse sous 24h, déplacement gratuit sur site. Téléphone : 06 20 78 31 31.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
@@ -87,7 +87,7 @@ const benefits = [
   {
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
     title: "Équipe calvados & disponible",
-    desc: "Basés en Île-de-France, nous intervenons rapidement sur tous vos chantiers.",
+    desc: "Basés à Caen, nous intervenons rapidement sur tout le secteur de Caen.",
   },
   {
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
@@ -110,7 +110,7 @@ const trustItems = [
   {
     icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
     title: "Déplacement gratuit",
-    desc: "Nous visitons votre site en Île-de-France sans frais.",
+    desc: "Nous visitons votre site à Caen sans frais.",
   },
 ];
 
