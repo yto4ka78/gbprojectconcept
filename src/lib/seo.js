@@ -8,7 +8,7 @@ export const PHONE = "+33620783131";
 export const EMAIL = "contact@gbprojectconcept.fr";
 
 export const SITE_DESCRIPTION =
-  "Aménagement extérieur et maçonnerie paysagère à Caen et alentours — terrasses, clôtures, allées, maçonnerie, terrassement. Devis gratuit, garantie décennale 10 ans.";
+  "Aménagement extérieur et maçonnerie paysagère à Caen et alentours, dans un rayon de 30 km — terrasses, clôtures, allées, maçonnerie, terrassement. Devis gratuit, garantie décennale 10 ans.";
 
 /** Reusable OpenGraph image list */
 export const OG_IMAGES = [
