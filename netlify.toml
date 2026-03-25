@@ -1,0 +1,11 @@
+[[redirects]]
+from = "http://gbprojectconcept.fr/*"
+to = "https://gbprojetconcept.fr/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://gbprojectconcept.fr/*"
+to = "https://gbprojetconcept.fr/:splat"
+status = 301
+force = true
