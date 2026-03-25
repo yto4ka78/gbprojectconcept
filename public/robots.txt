@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://www.gbprojectconcept.fr/sitemap.xml
-Host: https://www.gbprojectconcept.fr
+Sitemap: https://gbprojetconcept.fr/sitemap.xml
+Host: https://gbprojetconcept.fr
