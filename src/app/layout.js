@@ -81,11 +81,11 @@ const organizationSchema = {
         "@type": "OfferCatalog",
         name:    "Services d'aménagement extérieur",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#terrasses`,     name: "Terrasses — carrelage, moquette de pierre, bois composite" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#allees`,        name: "Allée & Cour & Parking — pavés, enrobé, gravier" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#clotures`,      name: "Clôtures & Portails sur-mesure" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#travaux`,       name: "Travaux de maçonnerie" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `https://www.gbprojectconcept.fr/services/#terrassement`,  name: "Terrassement — déblai, remblai, nivellement" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE_URL}/services/#terrasses`,     name: "Terrasses — carrelage, moquette de pierre, bois composite" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE_URL}/services/#allees`,        name: "Allée & Cour & Parking — pavés, enrobé, gravier" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE_URL}/services/#clotures`,      name: "Clôtures & Portails sur-mesure" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE_URL}/services/#travaux`,       name: "Travaux de maçonnerie" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE_URL}/services/#terrassement`,  name: "Terrassement — déblai, remblai, nivellement" } },
         ],
       },
       aggregateRating: {

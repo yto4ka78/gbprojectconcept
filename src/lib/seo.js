@@ -2,10 +2,10 @@
 // Central SEO configuration — update SITE_URL before going live
 // ─────────────────────────────────────────────────────────────
 
-export const SITE_URL = "https://www.gbprojectconcept.fr";
+export const SITE_URL = "https://gbprojetconcept.fr";
 export const SITE_NAME = "GB Projet Concept";
 export const PHONE = "+33620783131";
-export const EMAIL = "contact@gbprojectconcept.fr";
+export const EMAIL = "contact@gbprojetconcept.fr";
 
 export const SITE_DESCRIPTION =
   "Aménagement extérieur et maçonnerie paysagère à Caen et alentours, dans un rayon de 30 km — terrasses, clôtures, allées, maçonnerie, terrassement. Devis gratuit, garantie décennale 10 ans.";
