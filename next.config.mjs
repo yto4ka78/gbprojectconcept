@@ -6,10 +6,22 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** Keep in sync with `LOCAL_CITIES` slugs in `src/lib/localCities.js` */
 const LEGACY_CITY_SLUGS = [
   "caen",
-  "herouville-saint-clair",
+  "cagny",
+  "cabourg",
+  "soliers",
   "mondeville",
-  "ifs",
+  "ouistreham",
+  "giberville",
+  "amfreville",
+  "colombelles",
+  "luc-sur-mer",
+  "demouville",
+  "benouville",
+  "herouvillette",
   "fleury-sur-orne",
+  "courseulles-sur-mer",
+  "hermanville-sur-mer",
+  "herouville-saint-clair",
 ];
 
 /** @type {import('next').NextConfig} */
@@ -46,11 +58,24 @@ const nextConfig = {
 
   // ── Power headers (security + performance) ─────────────────────────────────
   async redirects() {
-    return LEGACY_CITY_SLUGS.map((slug) => ({
-      source: `/amenagement-exterieur-${slug}`,
-      destination: `/amenagement-exterieur/${slug}`,
-      permanent: true,
-    }));
+    return [
+      ...LEGACY_CITY_SLUGS.map((slug) => ({
+        source: `/amenagement-exterieur-${slug}`,
+        destination: `/amenagement-exterieur/${slug}`,
+        permanent: true,
+      })),
+      // Ancienne page « Ifs » (retirée de LOCAL_CITIES) → zone principale
+      {
+        source: "/amenagement-exterieur-ifs",
+        destination: "/amenagement-exterieur/caen",
+        permanent: true,
+      },
+      {
+        source: "/amenagement-exterieur/ifs",
+        destination: "/amenagement-exterieur/caen",
+        permanent: true,
+      },
+    ];
   },
 
   async headers() {

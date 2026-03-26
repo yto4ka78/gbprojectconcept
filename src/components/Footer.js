@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { LOCAL_CITIES } from "@/lib/localCities";
 
 const services = [
   { label: "Terrasses",             href: "/services/terrasses" },
@@ -19,14 +20,11 @@ const links = [
   { label: "Contact",   href: "/contact" },
 ];
 
-// Key cities shown in footer — concise list
-const zones = [
-  { label: "Caen",                   href: "/amenagement-exterieur/caen" },
-  { label: "Hérouville-Saint-Clair", href: "/amenagement-exterieur/herouville-saint-clair" },
-  { label: "Mondeville",             href: "/amenagement-exterieur/mondeville" },
-  { label: "Ifs",                    href: "/amenagement-exterieur/ifs" },
-  { label: "Fleury-sur-Orne",        href: "/amenagement-exterieur/fleury-sur-orne" },
-];
+// Zones — keep in sync with LOCAL_CITIES
+const zones = LOCAL_CITIES.map((city) => ({
+  label: city.name,
+  href: `/amenagement-exterieur/${city.slug}`,
+}));
 
 export default function Footer() {
   const year = new Date().getFullYear();
