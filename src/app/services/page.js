@@ -217,29 +217,6 @@ export default function Services() {
                   style={{ objectFit: "cover" }}
                   className="svc-img-el"
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "20px",
-                    left: "20px",
-                    padding: "7px 14px",
-                    background: "rgba(10,10,10,0.85)",
-                    border: "1px solid rgba(200,169,110,0.3)",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "0.7rem",
-                      color: "#C8A96E",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    ◆ {svc.highlight}
-                  </span>
-                </div>
               </div>
 
               <div style={{ direction: "ltr" }}>

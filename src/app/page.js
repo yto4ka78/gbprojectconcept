@@ -1091,7 +1091,7 @@ export default function Home() {
         <div className="container">
           <div style={{ maxWidth: "800px", marginBottom: "56px" }}>
             <p className="section-label" style={{ marginBottom: "20px" }}>
-              Pourquoi nous choisir ?
+              Pour quoi payez-vous
             </p>
             <h2
               id="why-heading"

@@ -301,9 +301,9 @@ export default function Footer() {
                 listStyle: "none",
                 padding: 0,
                 margin: 0,
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "8px 16px",
               }}
             >
               {zones.map((z) => (
@@ -311,14 +311,28 @@ export default function Footer() {
                   <Link
                     href={z.href}
                     style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
                       fontSize: "0.78rem",
                       color: "#4A4540",
                       textDecoration: "none",
                       transition: "color 0.2s",
+                      lineHeight: 1.45,
                     }}
-                    onMouseEnter={(e) => { e.target.style.color = "#C8A96E"; }}
-                    onMouseLeave={(e) => { e.target.style.color = "#4A4540"; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#C8A96E"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#4A4540"; }}
                   >
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        width: "4px",
+                        height: "4px",
+                        borderRadius: "50%",
+                        background: "rgba(200,169,110,0.65)",
+                        flexShrink: 0,
+                      }}
+                    />
                     {z.label}
                   </Link>
                 </li>
