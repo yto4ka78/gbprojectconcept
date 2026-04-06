@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   if (!svc) return {};
 
   return {
-    title: svc.seo.title,
+    title: { absolute: svc.seo.title },
     description: svc.seo.description,
     alternates: {
       canonical: `${SITE_URL}/services/${svc.slug}`,

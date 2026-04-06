@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   if (!data) return {};
 
   return {
-    title: data.seo.title,
+    title: { absolute: data.seo.title },
     description: data.seo.description,
     alternates: {
       canonical: `${SITE_URL}/amenagement-exterieur/${data.slug}`,
