@@ -748,31 +748,6 @@ export default async function LocalCityPage({ params }) {
         </div>
       </section>
 
-      {/* Mobile sticky bar */}
-      <div className="mobile-cta-bar" aria-label="Actions rapides">
-        <Link href="/contact" className="btn-gold">
-          <span>Devis gratuit</span>
-        </Link>
-        <a
-          href="tel:+33620783131"
-          className="btn-call"
-          aria-label="Appeler GB Projet Concept"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d={PHONE_PATH} />
-          </svg>
-        </a>
-      </div>
     </>
   );
 }

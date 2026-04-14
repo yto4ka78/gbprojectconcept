@@ -40,7 +40,7 @@ export default function Footer() {
     >
       <div className="footer-inner">
         {/* ── Brand ── */}
-        <div style={{ gridColumn: "span 1" }}>
+        <div>
           <div
             style={{
               display: "flex",
@@ -154,6 +154,9 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ── Services + Navigation wrapper (2-col on mobile) ── */}
+        <div className="footer-cols-2" style={{ display: "contents" }}>
+
         {/* ── Services ── */}
         <div>
           <p className="section-label" style={{ marginBottom: "20px" }}>
@@ -191,7 +194,7 @@ export default function Footer() {
         </div>
 
         {/* ── Navigation ── */}
-        <div>
+        <div className="footer-nav-col">
           <p className="section-label" style={{ marginBottom: "20px" }}>
             Navigation
           </p>
@@ -225,8 +228,10 @@ export default function Footer() {
           </ul>
         </div>
 
+        </div>{/* close footer-cols-2 */}
+
         {/* ── Contact + Zones ── */}
-        <div>
+        <div className="footer-contact-col">
           <p className="section-label" style={{ marginBottom: "20px" }}>
             Contact
           </p>
@@ -289,7 +294,7 @@ export default function Footer() {
           </div>
 
           {/* Zones strip */}
-          <div style={{ marginTop: "28px" }}>
+          <div className="footer-zones-strip" style={{ marginTop: "28px" }}>
             <p
               className="section-label"
               style={{ marginBottom: "14px", fontSize: "0.62rem" }}

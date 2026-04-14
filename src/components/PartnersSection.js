@@ -38,7 +38,7 @@ export default function PartnersSection({
       <div className="container">
         <div style={{ marginBottom: "56px", maxWidth: "600px" }}>
           <p className="section-label" style={{ marginBottom: "20px" }}>
-            Nos partenaires &amp; marques
+            Matériaux &amp; équipements
           </p>
           <h2
             id="partners-heading"

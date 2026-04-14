@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/",         label: "Accueil" },
-  { href: "/about",    label: "À propos" },
-  { href: "/services", label: "Services" },
-  { href: "/faq",      label: "FAQ" },
-  { href: "/contact",  label: "Contact" },
+  { href: "/",                label: "Accueil" },
+  { href: "/about",           label: "À propos" },
+  { href: "/services",        label: "Services" },
+  { href: "/nos-partenaires", label: "Partenaires" },
+  { href: "/faq",             label: "FAQ" },
+  { href: "/contact",         label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -25,6 +26,7 @@ export default function Navbar() {
   }, []);
 
   // Close on route change
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   // Lock body scroll when menu open

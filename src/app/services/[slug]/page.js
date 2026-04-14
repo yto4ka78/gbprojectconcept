@@ -322,30 +322,10 @@ export default async function ServicePage({ params }) {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "16px",
+                  gap: "12px",
                   marginBottom: "24px",
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "2.8rem",
-                    fontWeight: 700,
-                    color: "#1A1A1A",
-                    letterSpacing: "-0.05em",
-                    lineHeight: 1,
-                  }}
-                  aria-hidden="true"
-                >
-                  {svc.num}
-                </span>
-                <div
-                  style={{
-                    width: "1px",
-                    height: "40px",
-                    background: "rgba(200,169,110,0.2)",
-                  }}
-                />
                 <p className="section-label">{svc.subtitle}</p>
               </div>
 
@@ -679,31 +659,6 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* ── Mobile sticky bar ────────────────────────────────────────── */}
-      <div className="mobile-cta-bar" aria-label="Actions rapides">
-        <Link href="/contact" className="btn-gold">
-          <span>Devis gratuit</span>
-        </Link>
-        <a
-          href="tel:+33620783131"
-          className="btn-call"
-          aria-label="Appeler projet concept"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-        </a>
-      </div>
     </>
   );
 }
