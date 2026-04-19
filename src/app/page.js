@@ -47,16 +47,16 @@ const GOOGLE_REVIEWS_URL = "https://share.google/48MGU4p0cDixVoBSg";
 
 const reviews = [
   {
-    name: "Fabrice Peyrard",
+    name: "Sedat Aydar",
     rating: 5,
     date: "Il y a 2 semaines",
-    text: "Super maçon et super mec, ainsi que son équipe (je précise que je ne le connaissais pas avant les travaux). Il s'est occupé de la construction d'un garage et d'une terrasse, de la pose de l'enrobé, on est ravis.",
+    text: "On a contacté GB Projet Concept par recommandation de connaissances. Depuis plusieurs années, notre cour était en gravier et nous ne savions pas vraiment quelle solution choisir. Nous voulions quelque chose de simple et assez facile a entretenir. Gaïsa nous a proposé de faire un enrobé, et franchement nous sommes très contents du résultat. Le travail a été réalisé avec soin, proprement et dans les délais annoncés. Le rendu est vraiment propre et soigné, et cela change complètement notre extérieur. Merci encore à Gaïsa pour son sérieux, ses conseils et la qualité de son travail.",
   },
   {
-    name: "Mickael Legoupil",
+    name: "Victor LS",
     rating: 5,
     date: "Il y a 1 mois",
-    text: "J'ai fait appel à Gaisa et son équipe par deux fois et à chaque fois un travail d'une grande qualité. D'abord pour ma terrasse et le pourtour de ma maison en lui demandant un béton lissé, ce qui a été réalisé parfaitement. Plus récemment, Gaisa et son équipe ont réalisé la préparation et le pavage de l'entrée de ma maison avec toujours autant de sérieux et minutie. C'est tellement agréable d'avoir à faire à des professionnels de confiance, qui travaillent vraiment pour la satisfaction du client..",
+    text: "J’ai contacté Gaisa pour un projet d’aménagement extérieur. Il a su parfaitement m’accompagner, m’aider à me projeter et me proposer un projet qui correspondait à ce que je recherchais. C’est une personne humainement très sympathique, à l’écoute et de très bon conseil. Son professionnalisme est également à souligner : il a su m’orienter vers d’autres professionnels pour les travaux complémentaires que je souhaite réaliser. Je l’ai sollicité à plusieurs reprises sur différents types de travaux, et je l’ai également recommandé à mon entourage, car c’est quelqu’un de confiance. Je le recommande chaleureusement",
   },
   {
     name: "Besher Eid",
@@ -65,10 +65,10 @@ const reviews = [
     text: "Excellente prestation du début à la fin. L’enrobé est parfaitement réalisé et la clôture posée avec soin. Équipe sérieuse, ponctuelle et à l’écoute. Très satisfait du résultat final.",
   },
   {
-    name: "Hichem KHEROUF",
+    name: "Mickael Legoupil",
     rating: 5,
     date: "Il y a 3 mois",
-    text: "J'ai eu l'occasion de solliciter cette entreprise à deux reprises, l'année dernière et puis à nouveau cette année, et mon constat reste le même : une équipe d'un grand sérieux. Le travail est réalisé avec une précision de véritables professionnels. Un point particulièrement appréciable : la propreté exemplaire du chantier du début à la fin des travaux. C'est rare de trouver une telle rigueur. Je recommande les yeux fermés pour quiconque cherche de la qualité et de la tranquillité d'esprit.",
+    text: "J'ai fait appel à Gaisa et son équipe par deux fois et à chaque fois un travail d'une grande qualité. D'abord pour ma terrasse et le pourtour de ma maison en lui demandant un béton lissé, ce qui a été réalisé parfaitement. Plus récemment, Gaisa et son équipe ont réalisé la préparation et le pavage de l'entrée de ma maison avec toujours autant de sérieux et minutie. C'est tellement agréable d'avoir à faire à des professionnels de confiance, qui travaillent vraiment pour la satisfaction du client..",
   },
   {
     name: "Rose Mickael",
@@ -77,10 +77,10 @@ const reviews = [
     text: "Artisan très sérieux avec des gens qui travaillent avec passion, très pro, très minutieux et en plus très sympathiques et respectueux. Je recommande les yeux fermés ! Nous sommes très satisfaits du résultat et encore merci pour tout 👌",
   },
   {
-    name: "HELENE BEUVE",
+    name: "Hichem KHEROUF",
     rating: 5,
     date: "Il y a 5 mois",
-    text: "Je recommande Gaisa à 100%, j’ai fait appel à lui pour la pose d’une clôture rigide. Le résultat est impeccable, travail soigneux, rapide. Gaisa a su s’adapter et trouver une solution. Il est en plus très agréable et ponctuel. Je ferai appel à lui sans aucun doute pour mes prochains travaux.",
+    text: "J'ai eu l'occasion de solliciter cette entreprise à deux reprises, l'année dernière et puis à nouveau cette année, et mon constat reste le même : une équipe d'un grand sérieux. Le travail est réalisé avec une précision de véritables professionnels. Un point particulièrement appréciable : la propreté exemplaire du chantier du début à la fin des travaux. C'est rare de trouver une telle rigueur. Je recommande les yeux fermés pour quiconque cherche de la qualité et de la tranquillité d'esprit.",
   },
 ];
 
@@ -253,7 +253,7 @@ export default function Home() {
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
-              fontSize: "clamp(2.8rem, 7vw, 7.5rem)",
+              fontSize: "clamp(2.4rem, 6vw, 6.25rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
               color: "#F0EBE3",
@@ -738,7 +738,7 @@ export default function Home() {
                       color: "#5A5550",
                     }}
                   >
-                    / 5 · Basé sur 18 avis
+                    / 5 · Basé sur 32 avis
                   </span>
                 </div>
               </div>
@@ -1090,9 +1090,6 @@ export default function Home() {
       >
         <div className="container">
           <div style={{ maxWidth: "800px", marginBottom: "56px" }}>
-            <p className="section-label" style={{ marginBottom: "20px" }}>
-              Pour quoi payez-vous
-            </p>
             <h2
               id="why-heading"
               style={{
@@ -1261,10 +1258,10 @@ export default function Home() {
                 }}
               >
                 Basée à Caen, notre équipe se déplace directement sur votre
-                chantier dans tout le secteur du Calvados. Terrasses,
-                clôtures, allées, maçonnerie et terrassement — nous réalisons
-                vos projets extérieurs avec le même niveau d&apos;exigence,
-                quelle que soit la commune.
+                chantier dans tout le secteur du Calvados. Terrasses, clôtures,
+                allées, maçonnerie et terrassement — nous réalisons vos projets
+                extérieurs avec le même niveau d&apos;exigence, quelle que soit
+                la commune.
               </p>
               <Link href="/contact" className="btn-gold">
                 <span>Demander un devis gratuit</span>
@@ -1484,7 +1481,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

@@ -207,7 +207,7 @@ export default function About() {
                   left: 0,
                   right: "18%",
                   bottom: "18%",
-                  backgroundImage: "url('/gbprojectconcept_service20.webp')",
+                  backgroundImage: "url('/gbprojectconcept_about.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -272,7 +272,9 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Depuis plusieurs années, je travaille dans le bâtiment avec une conviction simple : le travail bien fait et la satisfaction des clients passent avant tout.
+                  Depuis plusieurs années, je travaille dans le bâtiment avec
+                  une conviction simple : le travail bien fait et la
+                  satisfaction des clients passent avant tout.
                 </p>
                 <p
                   style={{
@@ -281,7 +283,12 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  J&apos;ai commencé sur des chantiers de construction de maisons individuelles, où j&apos;ai appris le métier directement sur le terrain aux côtés d&apos;artisans expérimentés. Cette expérience m&apos;a permis de développer un savoir-faire solide et une vraie exigence pour les finitions et la qualité du travail.
+                  J&apos;ai commencé sur des chantiers de construction de
+                  maisons individuelles, où j&apos;ai appris le métier
+                  directement sur le terrain aux côtés d&apos;artisans
+                  expérimentés. Cette expérience m&apos;a permis de développer
+                  un savoir-faire solide et une vraie exigence pour les
+                  finitions et la qualité du travail.
                 </p>
                 <p
                   style={{
@@ -290,7 +297,10 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Avec le temps, je me suis naturellement orienté vers l&apos;aménagement extérieur, un domaine qui me passionne car il permet de transformer un simple terrain en un véritable espace de vie.
+                  Avec le temps, je me suis naturellement orienté vers
+                  l&apos;aménagement extérieur, un domaine qui me passionne car
+                  il permet de transformer un simple terrain en un véritable
+                  espace de vie.
                 </p>
                 <p
                   style={{
@@ -299,7 +309,9 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Terrasses, pavages, clôtures ou maçonnerie extérieure : chaque projet est pensé pour être esthétique, durable et adapté aux besoins de mes clients.
+                  Terrasses, pavages, clôtures ou maçonnerie extérieure : chaque
+                  projet est pensé pour être esthétique, durable et adapté aux
+                  besoins de mes clients.
                 </p>
                 <p
                   style={{
@@ -308,7 +320,11 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Après plusieurs années d&apos;expérience sur différents chantiers, j&apos;ai décidé de créer GB Projet Concept afin d&apos;accompagner les particuliers dans leurs projets avec une approche claire : un travail sérieux, des matériaux de qualité et des finitions soignées.
+                  Après plusieurs années d&apos;expérience sur différents
+                  chantiers, j&apos;ai décidé de créer GB Projet Concept afin
+                  d&apos;accompagner les particuliers dans leurs projets avec
+                  une approche claire : un travail sérieux, des matériaux de
+                  qualité et des finitions soignées.
                 </p>
                 <p
                   style={{
@@ -317,7 +333,10 @@ export default function About() {
                     lineHeight: 1.8,
                   }}
                 >
-                  Aujourd&apos;hui, je mets mon expérience et mon savoir-faire au service de vos projets afin de vous proposer des aménagements extérieurs durables et à la hauteur de vos attentes.
+                  Aujourd&apos;hui, je mets mon expérience et mon savoir-faire
+                  au service de vos projets afin de vous proposer des
+                  aménagements extérieurs durables et à la hauteur de vos
+                  attentes.
                 </p>
               </div>
               <blockquote
@@ -337,9 +356,9 @@ export default function About() {
                     lineHeight: 1.7,
                   }}
                 >
-                  « Chaque projet est unique. Mon objectif est simple : réaliser
-                  un travail propre, durable et à la hauteur des attentes de mes
-                  clients »
+                  « Chaque projet est unique. Mon objectif est simple :
+                  satisfaire plus de clients en réalisant un travail propre,
+                  durable et à la hauteur des attentes de mes clients. »
                 </p>
               </blockquote>
             </div>

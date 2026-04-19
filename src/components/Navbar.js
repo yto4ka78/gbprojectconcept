@@ -55,7 +55,7 @@ export default function Navbar() {
           >
             <Image
               src="/logo.svg"
-              alt="projet concept"
+              alt="GB Projet Concept"
               width={56}
               height={56}
               style={{ display: "block", objectFit: "contain" }}
@@ -71,7 +71,7 @@ export default function Navbar() {
                 textTransform: "uppercase",
               }}
             >
-              projet concept
+              gb projet concept
             </span>
           </Link>
 
