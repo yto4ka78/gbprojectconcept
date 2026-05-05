@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/about",           label: "À propos" },
   { href: "/services",        label: "Services" },
   { href: "/nos-partenaires", label: "Partenaires" },
-  { href: "/faq",             label: "FAQ" },
   { href: "/contact",         label: "Contact" },
 ];
 

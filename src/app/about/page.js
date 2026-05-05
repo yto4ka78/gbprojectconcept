@@ -210,6 +210,7 @@ export default function About() {
                   backgroundImage: "url('/gbprojectconcept_about.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
+                  transform: "scaleX(-1)",
                 }}
               />
               <div
@@ -220,9 +221,9 @@ export default function About() {
                   right: 0,
                   width: "52%",
                   height: "44%",
-                  backgroundImage: "url('/gbprojectconcept_service7.webp')",
+                  backgroundImage: "url('/gbprojectconcept_service5.webp')",
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundPosition: "30% 30%",
                   border: "4px solid #0D0D0D",
                 }}
               />

@@ -12,6 +12,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/about`, lastModified: now },
     { url: `${SITE_URL}/faq`, lastModified: now },
     { url: `${SITE_URL}/contact`, lastModified: now },
+    { url: `${SITE_URL}/nos-partenaires`, lastModified: now },
   ];
 
   // Individual service pages

@@ -26,15 +26,35 @@ const partners = [
     tagline: "L'excellence de la piscine depuis 50 ans",
     description:
       "Construction, rénovation et entretien de piscines sur mesure. L'expertise Desjoyaux au cœur de l'agglomération caennaise : fabrication française, garantie totale 10 ans, conseil et suivi personnalisé du projet à la maintenance.",
-    tags: ["Construction piscine", "Entretien & maintenance", "Accessoires & sécurité"],
+    tags: [
+      "Construction piscine",
+      "Entretien & maintenance",
+      "Accessoires & sécurité",
+    ],
     url: "https://www.desjoyaux.fr/boutiques-desjoyaux/14120-mondeville/",
     // Minimal SVG icon — water wave
     icon: (
-      <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M4 32c4-6 8-6 12 0s8 6 12 0 8-6 12 0" opacity="0.4" />
         <path d="M4 24c4-6 8-6 12 0s8 6 12 0 8-6 12 0" />
         <path d="M4 16c4-6 8-6 12 0s8 6 12 0 8-6 12 0" opacity="0.6" />
-        <circle cx="38" cy="10" r="3" fill="currentColor" stroke="none" opacity="0.5" />
+        <circle
+          cx="38"
+          cy="10"
+          r="3"
+          fill="currentColor"
+          stroke="none"
+          opacity="0.5"
+        />
       </svg>
     ),
   },
@@ -50,7 +70,16 @@ const partners = [
     url: "https://bconnectfrance.fr/",
     // Minimal SVG icon — lightning
     icon: (
-      <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M28 4L10 28h14l-4 16L42 20H28L32 4z" />
       </svg>
     ),
@@ -67,7 +96,16 @@ const partners = [
     url: "https://sa-clean.fr/",
     // Minimal SVG icon — droplet + sparkle
     icon: (
-      <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M24 6C24 6 10 22 10 30a14 14 0 0028 0C38 22 24 6 24 6z" />
         <path d="M17 32a8 8 0 008 5" opacity="0.5" />
         <path d="M36 10l2-2M38 14h3M36 18l2 2" opacity="0.4" strokeWidth="1" />
@@ -94,7 +132,12 @@ export default function NosPartenaires() {
         "@id": `${SITE_URL}/nos-partenaires/#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Nos partenaires", item: `${SITE_URL}/nos-partenaires` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Nos partenaires",
+            item: `${SITE_URL}/nos-partenaires`,
+          },
         ],
       },
     ],
@@ -163,23 +206,47 @@ export default function NosPartenaires() {
           {/* Breadcrumb */}
           <nav
             aria-label="Fil d'Ariane"
-            style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "32px", flexWrap: "wrap" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginBottom: "32px",
+              flexWrap: "wrap",
+            }}
           >
             <Link
               href="/"
-              style={{ fontSize: "0.75rem", color: "#4A4540", textDecoration: "none", letterSpacing: "0.05em", fontFamily: "'Space Grotesk', sans-serif" }}
+              style={{
+                fontSize: "0.75rem",
+                color: "#4A4540",
+                textDecoration: "none",
+                letterSpacing: "0.05em",
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
             >
               Accueil
             </Link>
             <span style={{ color: "#2A2520", fontSize: "0.75rem" }}>›</span>
-            <span style={{ fontSize: "0.75rem", color: "#C8A96E", letterSpacing: "0.05em", fontFamily: "'Space Grotesk', sans-serif" }}>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                color: "#C8A96E",
+                letterSpacing: "0.05em",
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            >
               Nos partenaires
             </span>
           </nav>
 
           {/* Two-column hero layout */}
           <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "end" }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "48px",
+              alignItems: "end",
+            }}
             className="zones-grid"
           >
             <div>
@@ -206,8 +273,20 @@ export default function NosPartenaires() {
               </h1>
               <Link href="/contact" className="btn-gold">
                 <span>Nous contacter</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </Link>
             </div>
@@ -225,7 +304,7 @@ export default function NosPartenaires() {
               >
                 Nous collaborons avec des artisans et professionnels locaux
                 sélectionnés pour leur sérieux, leur expertise et leur
-                complémentarité avec nos services d&apos;aménagement extérieur.
+                complémentarité.
               </p>
               {/* Partner count badge */}
               <div
@@ -354,7 +433,14 @@ export default function NosPartenaires() {
 
                 {/* Tags */}
                 <ul
-                  style={{ listStyle: "none", padding: 0, margin: "0 0 36px", display: "flex", flexWrap: "wrap", gap: "8px" }}
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: "0 0 36px",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                  }}
                   aria-label="Services proposés"
                 >
                   {partners[0].tags.map((tag) => (
@@ -383,8 +469,20 @@ export default function NosPartenaires() {
                   className="btn-gold"
                 >
                   <span>Visiter le site</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
               </div>
@@ -482,7 +580,12 @@ export default function NosPartenaires() {
                           {stat.val}
                         </div>
                         <div
-                          style={{ fontSize: "0.72rem", color: "#4A4540", letterSpacing: "0.04em", lineHeight: 1.4 }}
+                          style={{
+                            fontSize: "0.72rem",
+                            color: "#4A4540",
+                            letterSpacing: "0.04em",
+                            lineHeight: 1.4,
+                          }}
                         >
                           {stat.label}
                         </div>
@@ -499,7 +602,8 @@ export default function NosPartenaires() {
                     right: "-24px",
                     width: "48px",
                     height: "1px",
-                    background: "linear-gradient(to right, rgba(200,169,110,0.4), transparent)",
+                    background:
+                      "linear-gradient(to right, rgba(200,169,110,0.4), transparent)",
                   }}
                   aria-hidden="true"
                 />
@@ -559,7 +663,6 @@ export default function NosPartenaires() {
                   aria-hidden="true"
                 />
               )}
-
 
               {/* Icon */}
               <div
@@ -673,10 +776,27 @@ export default function NosPartenaires() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
-                style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "0.78rem" }}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  fontSize: "0.78rem",
+                }}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
                 <span>Visiter le site</span>
               </a>
@@ -699,7 +819,10 @@ export default function NosPartenaires() {
         <div
           style={{
             position: "absolute",
-            top: "20px", left: "20px", right: "20px", bottom: "20px",
+            top: "20px",
+            left: "20px",
+            right: "20px",
+            bottom: "20px",
             border: "1px solid rgba(200,169,110,0.05)",
             pointerEvents: "none",
           }}
@@ -745,13 +868,33 @@ export default function NosPartenaires() {
             }}
             className="partner-cta-row"
           >
-            <Link href="/contact" className="btn-gold" style={{ flex: "1 1 auto", justifyContent: "center" }}>
+            <Link
+              href="/contact"
+              className="btn-gold"
+              style={{ flex: "1 1 auto", justifyContent: "center" }}
+            >
               <span>Nous contacter</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
-            <Link href="/services" className="btn-outline" style={{ flex: "1 1 auto", justifyContent: "center" }}>
+            <Link
+              href="/services"
+              className="btn-outline"
+              style={{ flex: "1 1 auto", justifyContent: "center" }}
+            >
               <span>Nos services</span>
             </Link>
           </div>

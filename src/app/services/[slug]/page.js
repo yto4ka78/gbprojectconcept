@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME, OG_IMAGES } from "@/lib/seo";
 import { SERVICES, getServiceBySlug } from "@/lib/servicesData";
+import { LOCAL_CITIES } from "@/lib/localCities";
 
 // ─── Static generation ────────────────────────────────────────────────────────
 export function generateStaticParams() {
@@ -390,6 +391,56 @@ export default async function ServicePage({ params }) {
                   </li>
                 ))}
               </ul>
+
+              <div style={{ marginBottom: "36px" }}>
+                <p className="section-label" style={{ marginBottom: "16px" }}>
+                  Villes d&apos;intervention
+                </p>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                    gap: "8px",
+                  }}
+                  aria-label="Villes où nous intervenons"
+                >
+                  {LOCAL_CITIES.map((city) => (
+                    <li key={city.slug}>
+                      <Link
+                        href={`/amenagement-exterieur/${city.slug}`}
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          width: "100%",
+                          padding: "10px 12px",
+                          border: "1px solid #1E1E1E",
+                          background: "#111111",
+                          textDecoration: "none",
+                          color: "#8A8680",
+                          fontSize: "0.8rem",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        <span
+                          aria-hidden="true"
+                          style={{
+                            width: "5px",
+                            height: "5px",
+                            borderRadius: "50%",
+                            background: "#C8A96E",
+                            flexShrink: 0,
+                          }}
+                        />
+                        {city.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <Link href="/contact" className="btn-gold">
                 <span>{svc.ctaText}</span>
